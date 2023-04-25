@@ -1,92 +1,28 @@
-extends includes/layout.pug
-
-block content
-  -
-    const prev = page.prev
-    const next = page.next
-    const dateConf = theme.post.date
-    const updatedConf = theme.post.updated
-    const excerptConf = theme.post.excerpt
-    const reward = theme.post.reward
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
-    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
-  #post-bg
-    #post-title
-      h1= page.title
-      if (dateConf || updatedConf) && page.published
-        #post-info
-          - var first = true
-          if dateConf
-            span #{__('post.posted')}
-              div.control
-                time(datetime=page.date.toJSON())#date
-                  = ' ' + date(page.date, date_format)
-            - first = false
-          if updatedConf
-            if !first
-              br
-            span #{__('post.edited')}
-              div.control
-                time(datetime=page.updated.toJSON())#updated
-                  = ' ' + date(page.updated, date_format)
-            - first = false
-          if countWord
-            if !first
-              br
-            span #{__('post.countTotal')}
-              div.control #{countWord}
-            - first = false
-          if countTime
-            if !first
-              br
-            span #{__('post.timeTotal')}
-              div.control #{countTime} #{__('post.timeUnit')}
-    hr
-    #post-content
-      if excerptConf || encrypted
-        != page.content
-      else
-        != page.more
-      #paginator!= paginator()
-    #post-footer
-      if prev || next
-        - let fix = ""
-        if prev === undefined
-          - fix = "justify-content: flex-end"
-        if next === undefined
-          - fix = "justify-content: flex-start"
-        #pages(style=fix)
-          if prev !== undefined
-            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
-              a(href=url_for(prev.path))
-                |← Next
-                = ' ' + prev.title
-          if next !== undefined
-            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
-              a(href=url_for(next.path))
-                = next.title + ' '
-                |Prev →
-    if reward !== false
-      details#reward
-        summary #{__('post.reward')}
-        each imgSrc, pay in reward
-          div
-            span #{pay}
-            br
-            img(src=config.root + imgSrc)
-    if page.comments
-      if theme.valine.enable === true
-        #Valine
-      if theme.gitalk.enable === true
-        #comments
-
-block aside-block
-  - 
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-  if (tocContent.length > 0)
-    #toc-div(style=encrypted !== undefined?"display:none":"")
-      h1 #{__('post.index')}
-      |!{tocContent}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>周记(10.31-11.06) | AlaxEleven's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 共 $1 行","copy":"复制","copyFinish":"完成","expand":"展开"}}</script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark-reasonable.min.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>周记(10.31-11.06)</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-11-06T13:16:26.000Z" id="date"> 2022-11-06</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-11-06T13:21:56.794Z" id="updated"> 2022-11-06</time></div></span></div></div><hr><div id="post-content"><h3 id="10-31"><a href="#10-31" class="headerlink" title="10.31"></a>10.31</h3><p>打COD</p>
+<p>去in77玩，啥活动都没有</p>
+<p>买衣服都好贵，润了</p>
+<h3 id="11-1"><a href="#11-1" class="headerlink" title="11.1"></a>11.1</h3><p>万圣节快乐</p>
+<p>买了个XBOX手柄</p>
+<p>体侧GG</p>
+<p>改桌面</p>
+<h3 id="11-2"><a href="#11-2" class="headerlink" title="11.2"></a>11.2</h3><p>明日方舟 异德+1</p>
+<p>原神 宵宫 歪</p>
+<p>3.2主线肝完</p>
+<h3 id="11-3"><a href="#11-3" class="headerlink" title="11.3"></a>11.3</h3><p>XBOX手柄到到手，好耶</p>
+<h3 id="11-4"><a href="#11-4" class="headerlink" title="11.4"></a>11.4</h3><p>NIKKE玩了下，感觉一般</p>
+<p>下回死搁玩</p>
+<h3 id="11-5"><a href="#11-5" class="headerlink" title="11.5"></a>11.5</h3><p>高数真的好难……</p>
+<h3 id="11-6"><a href="#11-6" class="headerlink" title="11.6"></a>11.6</h3><p>推完了亚托莉，后劲有点大</p>
+<p>DRX NB,Deft最后一舞，完美谢幕！</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2022/11/13/2022%E5%91%A8%E8%AE%B0-11-07-11-13/">← Next 周记(11.07-11.13)</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2022/11/03/CPP-for%E5%BE%AA%E7%8E%AF%E7%9A%849%E7%A7%8D%E7%94%A8%E6%B3%95/">CPP(for循环的9种用法) Prev →</a></div></div></div><details id="reward"><summary>打赏</summary></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="INDEX">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-31"><span class="toc-number">1.</span> <span class="toc-text">10.31</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-1"><span class="toc-number">2.</span> <span class="toc-text">11.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-2"><span class="toc-number">3.</span> <span class="toc-text">11.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-3"><span class="toc-number">4.</span> <span class="toc-text">11.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-4"><span class="toc-number">5.</span> <span class="toc-text">11.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-5"><span class="toc-number">6.</span> <span class="toc-text">11.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-6"><span class="toc-number">7.</span> <span class="toc-text">11.6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text"></span></a></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 此条评论委托企鹅物流发送
+});code.findCode();}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>

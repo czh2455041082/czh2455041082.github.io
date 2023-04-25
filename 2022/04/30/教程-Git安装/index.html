@@ -1,92 +1,43 @@
-extends includes/layout.pug
-
-block content
-  -
-    const prev = page.prev
-    const next = page.next
-    const dateConf = theme.post.date
-    const updatedConf = theme.post.updated
-    const excerptConf = theme.post.excerpt
-    const reward = theme.post.reward
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
-    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
-  #post-bg
-    #post-title
-      h1= page.title
-      if (dateConf || updatedConf) && page.published
-        #post-info
-          - var first = true
-          if dateConf
-            span #{__('post.posted')}
-              div.control
-                time(datetime=page.date.toJSON())#date
-                  = ' ' + date(page.date, date_format)
-            - first = false
-          if updatedConf
-            if !first
-              br
-            span #{__('post.edited')}
-              div.control
-                time(datetime=page.updated.toJSON())#updated
-                  = ' ' + date(page.updated, date_format)
-            - first = false
-          if countWord
-            if !first
-              br
-            span #{__('post.countTotal')}
-              div.control #{countWord}
-            - first = false
-          if countTime
-            if !first
-              br
-            span #{__('post.timeTotal')}
-              div.control #{countTime} #{__('post.timeUnit')}
-    hr
-    #post-content
-      if excerptConf || encrypted
-        != page.content
-      else
-        != page.more
-      #paginator!= paginator()
-    #post-footer
-      if prev || next
-        - let fix = ""
-        if prev === undefined
-          - fix = "justify-content: flex-end"
-        if next === undefined
-          - fix = "justify-content: flex-start"
-        #pages(style=fix)
-          if prev !== undefined
-            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
-              a(href=url_for(prev.path))
-                |← Next
-                = ' ' + prev.title
-          if next !== undefined
-            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
-              a(href=url_for(next.path))
-                = next.title + ' '
-                |Prev →
-    if reward !== false
-      details#reward
-        summary #{__('post.reward')}
-        each imgSrc, pay in reward
-          div
-            span #{pay}
-            br
-            img(src=config.root + imgSrc)
-    if page.comments
-      if theme.valine.enable === true
-        #Valine
-      if theme.gitalk.enable === true
-        #comments
-
-block aside-block
-  - 
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-  if (tocContent.length > 0)
-    #toc-div(style=encrypted !== undefined?"display:none":"")
-      h1 #{__('post.index')}
-      |!{tocContent}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Git安装 | AlaxEleven's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 共 $1 行","copy":"复制","copyFinish":"完成","expand":"展开"}}</script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark-reasonable.min.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>Git安装</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-04-30T07:32:20.000Z" id="date"> 2022-04-30</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-06-26T11:08:34.677Z" id="updated"> 2022-06-26</time></div></span></div></div><hr><div id="post-content"><h3 id="一、打开GIt的下载官网：Git-for-Windows-如下图"><a href="#一、打开GIt的下载官网：Git-for-Windows-如下图" class="headerlink" title="一、打开GIt的下载官网：Git for Windows 如下图"></a>一、打开GIt的下载官网：<a target="_blank" rel="noopener" href="https://gitforwindows.org/">Git for Windows</a> 如下图</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSZ7xs"><img src="https://s1.ax1x.com/2022/04/30/OSZ7xs.md.png" alt="OSZ7xs.md.png"></a></p>
+<h3 id="二、点击上图中圈出的Download按钮"><a href="#二、点击上图中圈出的Download按钮" class="headerlink" title="二、点击上图中圈出的Download按钮"></a>二、点击上图中圈出的Download按钮</h3><p>等待下完完成后，在你的下载目录下出现如下图标</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSeAZ6"><img src="https://s1.ax1x.com/2022/04/30/OSeAZ6.png" alt="OSeAZ6.png"></a></p>
+<h3 id="三、双击图标进入安装程序"><a href="#三、双击图标进入安装程序" class="headerlink" title="三、双击图标进入安装程序"></a>三、双击图标进入安装程序</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSeOld"><img src="https://s1.ax1x.com/2022/04/30/OSeOld.md.png" alt="OSeOld.md.png"></a></p>
+<p><strong>点击右下角Next</strong></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSeLSH"><img src="https://s1.ax1x.com/2022/04/30/OSeLSH.md.png" alt="OSeLSH.md.png"></a></p>
+<p><strong>点击箭头所指的Browse可以更改安装目录，我默认路径，继续点击Next</strong></p>
+<h4 id="接下去一堆选项全部选择默认，一直点Next"><a href="#接下去一堆选项全部选择默认，一直点Next" class="headerlink" title="接下去一堆选项全部选择默认，一直点Next"></a>接下去一堆选项全部选择默认，一直点Next</h4><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSeX6A"><img src="https://s1.ax1x.com/2022/04/30/OSeX6A.md.png" alt="OSeX6A.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSebfe"><img src="https://s1.ax1x.com/2022/04/30/OSebfe.md.png" alt="OSebfe.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSe7FO"><img src="https://s1.ax1x.com/2022/04/30/OSe7FO.md.png" alt="OSe7FO.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSejOI"><img src="https://s1.ax1x.com/2022/04/30/OSejOI.md.png" alt="OSejOI.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSexmt"><img src="https://s1.ax1x.com/2022/04/30/OSexmt.md.png" alt="OSexmt.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSez0P"><img src="https://s1.ax1x.com/2022/04/30/OSez0P.md.png" alt="OSez0P.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmSTf"><img src="https://s1.ax1x.com/2022/04/30/OSmSTf.md.png" alt="OSmSTf.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSm9k8"><img src="https://s1.ax1x.com/2022/04/30/OSm9k8.md.png" alt="OSm9k8.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmCtS"><img src="https://s1.ax1x.com/2022/04/30/OSmCtS.md.png" alt="OSmCtS.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmPfg"><img src="https://s1.ax1x.com/2022/04/30/OSmPfg.md.png" alt="OSmPfg.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmFpQ"><img src="https://s1.ax1x.com/2022/04/30/OSmFpQ.md.png" alt="OSmFpQ.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmklj"><img src="https://s1.ax1x.com/2022/04/30/OSmklj.md.png" alt="OSmklj.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmA6s"><img src="https://s1.ax1x.com/2022/04/30/OSmA6s.md.png" alt="OSmA6s.md.png"></a></p>
+<h4 id="到这一步为止，可以看到进度条加载，Git开始安装"><a href="#到这一步为止，可以看到进度条加载，Git开始安装" class="headerlink" title="到这一步为止，可以看到进度条加载，Git开始安装"></a><strong>到这一步为止，可以看到进度条加载，Git开始安装</strong></h4><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmEXn"><img src="https://s1.ax1x.com/2022/04/30/OSmEXn.md.png" alt="OSmEXn.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSmZmq"><img src="https://s1.ax1x.com/2022/04/30/OSmZmq.md.png" alt="OSmZmq.md.png"></a></p>
+<p>到这一步，Git安装完毕，默认箭头所指的选项没有勾选。这个时候俩个选择</p>
+<p>1.不勾选，按Finish。结束安装</p>
+<p>2.勾选，按Finish，出现下图，出现箭头所指的按钮表示Git安装完成</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSme00"><img src="https://s1.ax1x.com/2022/04/30/OSme00.md.png" alt="OSme00.md.png"></a></p>
+<h3 id="四、验证安装是否完成"><a href="#四、验证安装是否完成" class="headerlink" title="四、验证安装是否完成"></a>四、验证安装是否完成</h3><h4 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h4><p>是上方勾选后显示即为安装成功</p>
+<h4 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h4><p>打开任意磁盘，（以windows 11 为例子）。<strong>点击桌面的此电脑–C盘</strong>。右键鼠标出现 <strong>显示更多选项</strong>出现<strong>GTI Bush Here</strong>，单击后出现Git窗口即为安装成功</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSnqsA"><img src="https://s1.ax1x.com/2022/04/30/OSnqsA.md.png" alt="OSnqsA.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSuVoV"><img src="https://s1.ax1x.com/2022/04/30/OSuVoV.md.png" alt="OSuVoV.md.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/OSurwt"><img src="https://s1.ax1x.com/2022/04/30/OSurwt.md.png" alt="OSurwt.md.png"></a></p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2022/04/30/%E6%95%99%E7%A8%8B-Node-js%E5%AE%89%E8%A3%85/">← Next Node.js安装</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2022/04/30/%E6%95%99%E7%A8%8B-Hexo%E7%9A%84%E6%90%AD%E5%BB%BA/">Hexo的搭建 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="INDEX">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%89%93%E5%BC%80GIt%E7%9A%84%E4%B8%8B%E8%BD%BD%E5%AE%98%E7%BD%91%EF%BC%9AGit-for-Windows-%E5%A6%82%E4%B8%8B%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">一、打开GIt的下载官网：Git for Windows 如下图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%82%B9%E5%87%BB%E4%B8%8A%E5%9B%BE%E4%B8%AD%E5%9C%88%E5%87%BA%E7%9A%84Download%E6%8C%89%E9%92%AE"><span class="toc-number">2.</span> <span class="toc-text">二、点击上图中圈出的Download按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8F%8C%E5%87%BB%E5%9B%BE%E6%A0%87%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.</span> <span class="toc-text">三、双击图标进入安装程序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E4%B8%8B%E5%8E%BB%E4%B8%80%E5%A0%86%E9%80%89%E9%A1%B9%E5%85%A8%E9%83%A8%E9%80%89%E6%8B%A9%E9%BB%98%E8%AE%A4%EF%BC%8C%E4%B8%80%E7%9B%B4%E7%82%B9Next"><span class="toc-number">3.1.</span> <span class="toc-text">接下去一堆选项全部选择默认，一直点Next</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%B0%E8%BF%99%E4%B8%80%E6%AD%A5%E4%B8%BA%E6%AD%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%8A%A0%E8%BD%BD%EF%BC%8CGit%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.</span> <span class="toc-text">到这一步为止，可以看到进度条加载，Git开始安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85%E6%98%AF%E5%90%A6%E5%AE%8C%E6%88%90"><span class="toc-number">4.</span> <span class="toc-text">四、验证安装是否完成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">方法一：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">方法二：</span></a></li></ol></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 此条评论委托企鹅物流发送
+});code.findCode();}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>

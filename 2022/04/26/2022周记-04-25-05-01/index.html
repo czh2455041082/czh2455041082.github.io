@@ -1,92 +1,31 @@
-extends includes/layout.pug
-
-block content
-  -
-    const prev = page.prev
-    const next = page.next
-    const dateConf = theme.post.date
-    const updatedConf = theme.post.updated
-    const excerptConf = theme.post.excerpt
-    const reward = theme.post.reward
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
-    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
-  #post-bg
-    #post-title
-      h1= page.title
-      if (dateConf || updatedConf) && page.published
-        #post-info
-          - var first = true
-          if dateConf
-            span #{__('post.posted')}
-              div.control
-                time(datetime=page.date.toJSON())#date
-                  = ' ' + date(page.date, date_format)
-            - first = false
-          if updatedConf
-            if !first
-              br
-            span #{__('post.edited')}
-              div.control
-                time(datetime=page.updated.toJSON())#updated
-                  = ' ' + date(page.updated, date_format)
-            - first = false
-          if countWord
-            if !first
-              br
-            span #{__('post.countTotal')}
-              div.control #{countWord}
-            - first = false
-          if countTime
-            if !first
-              br
-            span #{__('post.timeTotal')}
-              div.control #{countTime} #{__('post.timeUnit')}
-    hr
-    #post-content
-      if excerptConf || encrypted
-        != page.content
-      else
-        != page.more
-      #paginator!= paginator()
-    #post-footer
-      if prev || next
-        - let fix = ""
-        if prev === undefined
-          - fix = "justify-content: flex-end"
-        if next === undefined
-          - fix = "justify-content: flex-start"
-        #pages(style=fix)
-          if prev !== undefined
-            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
-              a(href=url_for(prev.path))
-                |← Next
-                = ' ' + prev.title
-          if next !== undefined
-            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
-              a(href=url_for(next.path))
-                = next.title + ' '
-                |Prev →
-    if reward !== false
-      details#reward
-        summary #{__('post.reward')}
-        each imgSrc, pay in reward
-          div
-            span #{pay}
-            br
-            img(src=config.root + imgSrc)
-    if page.comments
-      if theme.valine.enable === true
-        #Valine
-      if theme.gitalk.enable === true
-        #comments
-
-block aside-block
-  - 
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-  if (tocContent.length > 0)
-    #toc-div(style=encrypted !== undefined?"display:none":"")
-      h1 #{__('post.index')}
-      |!{tocContent}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>周记(04.25-05.01) | AlaxEleven's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 共 $1 行","copy":"复制","copyFinish":"完成","expand":"展开"}}</script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark-reasonable.min.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>周记(04.25-05.01)</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-04-26T01:54:17.000Z" id="date"> 2022-04-26</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-06-26T11:12:57.562Z" id="updated"> 2022-06-26</time></div></span></div></div><hr><div id="post-content"><h3 id="4-25："><a href="#4-25：" class="headerlink" title="4.25："></a>4.25：</h3><h3 id="4-26："><a href="#4-26：" class="headerlink" title="4.26："></a>4.26：</h3><p>拍证件照</p>
+<p>CBD新出的乌漆嘛黑不错</p>
+<p>暴雨袭击</p>
+<p>晚自习看完了《那年夏天，你打来的电话》</p>
+<h3 id="4-27："><a href="#4-27：" class="headerlink" title="4.27："></a>4.27：</h3><p>看完了《那年夏天，我拨去的电话》</p>
+<h3 id="4-28："><a href="#4-28：" class="headerlink" title="4.28："></a>4.28：</h3><p>今天日语考试 裂开，因为志愿者三节课没上了。</p>
+<p>今天网球场的七姊妹开了，淡香。</p>
+<h3 id="4-29："><a href="#4-29：" class="headerlink" title="4.29："></a>4.29：</h3><p>昨天完成了<a target="_blank" rel="noopener" href="https://alax.zone/">新域名</a>的配置工作</p>
+<p>核酸检测</p>
+<p>毛概考试</p>
+<h3 id="4-30："><a href="#4-30：" class="headerlink" title="4.30："></a>4.30：</h3><p>一下午写了一个<a target="_blank" rel="noopener" href="https://alax.zone/2022/04/30/%E6%95%99%E7%A8%8B-Hexo%E7%9A%84%E6%90%AD%E5%BB%BA/">Hexo 搭建教程</a> </p>
+<h3 id="5-1："><a href="#5-1：" class="headerlink" title="5.1："></a>5.1：</h3><p>写了入团申请书</p>
+<p>晚上逛了会天街</p>
+<p>补全了前四步教程的图片</p>
+<h3 id="代办："><a href="#代办：" class="headerlink" title="代办："></a>代办：</h3><p>1.英语视频</p>
+<p>2.毛概手抄报</p>
+<p>3.CET4</p>
+<p>4.学习通（√）</p>
+<p>5.爬虫实训</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2022/04/27/Java-2022-04-27-%E5%B0%8F%E8%AF%8D%E5%85%B8/">← Next Java(2022-04-27-小词典)</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2022/04/26/Java-2022-04-26-%E7%AA%97%E5%8F%A3/">Java(2022-04-26-窗口) Prev →</a></div></div></div><details id="reward"><summary>打赏</summary></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="INDEX">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-25%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">4.25：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-26%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">4.26：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-27%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">4.27：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-28%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">4.28：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-29%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">4.29：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-30%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">4.30：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">5.1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E5%8A%9E%EF%BC%9A"><span class="toc-number">8.</span> <span class="toc-text">代办：</span></a></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 此条评论委托企鹅物流发送
+});code.findCode();}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>

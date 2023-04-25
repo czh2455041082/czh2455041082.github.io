@@ -1,92 +1,17 @@
-extends includes/layout.pug
-
-block content
-  -
-    const prev = page.prev
-    const next = page.next
-    const dateConf = theme.post.date
-    const updatedConf = theme.post.updated
-    const excerptConf = theme.post.excerpt
-    const reward = theme.post.reward
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
-    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
-  #post-bg
-    #post-title
-      h1= page.title
-      if (dateConf || updatedConf) && page.published
-        #post-info
-          - var first = true
-          if dateConf
-            span #{__('post.posted')}
-              div.control
-                time(datetime=page.date.toJSON())#date
-                  = ' ' + date(page.date, date_format)
-            - first = false
-          if updatedConf
-            if !first
-              br
-            span #{__('post.edited')}
-              div.control
-                time(datetime=page.updated.toJSON())#updated
-                  = ' ' + date(page.updated, date_format)
-            - first = false
-          if countWord
-            if !first
-              br
-            span #{__('post.countTotal')}
-              div.control #{countWord}
-            - first = false
-          if countTime
-            if !first
-              br
-            span #{__('post.timeTotal')}
-              div.control #{countTime} #{__('post.timeUnit')}
-    hr
-    #post-content
-      if excerptConf || encrypted
-        != page.content
-      else
-        != page.more
-      #paginator!= paginator()
-    #post-footer
-      if prev || next
-        - let fix = ""
-        if prev === undefined
-          - fix = "justify-content: flex-end"
-        if next === undefined
-          - fix = "justify-content: flex-start"
-        #pages(style=fix)
-          if prev !== undefined
-            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
-              a(href=url_for(prev.path))
-                |← Next
-                = ' ' + prev.title
-          if next !== undefined
-            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
-              a(href=url_for(next.path))
-                = next.title + ' '
-                |Prev →
-    if reward !== false
-      details#reward
-        summary #{__('post.reward')}
-        each imgSrc, pay in reward
-          div
-            span #{pay}
-            br
-            img(src=config.root + imgSrc)
-    if page.comments
-      if theme.valine.enable === true
-        #Valine
-      if theme.gitalk.enable === true
-        #comments
-
-block aside-block
-  - 
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-  if (tocContent.length > 0)
-    #toc-div(style=encrypted !== undefined?"display:none":"")
-      h1 #{__('post.index')}
-      |!{tocContent}
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>【答疑丨第一期】大学生电脑种类选择 | AlaxEleven's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 共 $1 行","copy":"复制","copyFinish":"完成","expand":"展开"}}</script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark-reasonable.min.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>【答疑丨第一期】大学生电脑种类选择</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-08-12T23:43:16.000Z" id="date"> 2022-08-13</time></div></span><br><span>Last Update: <div class="control"><time datetime="2023-03-12T12:22:47.877Z" id="updated"> 2023-03-12</time></div></span></div></div><hr><div id="post-content"><p>问题概述：临近开学，很多刚进入的大一新生会在电脑选择方面产生选择，这里先开一个基础的问答贴。<br>Q1:刚开学一定要买电脑么？<br>A:一般来说计算机对于刚开学的学生来说并非必需品，像计算机类专业（例如我自己），在上课的时候都有机房。而且刚开学许多事情可以在手机上完成。当然有电脑会更加便携，我身边有数媒的朋友都是在第二学期采购入的电脑。</p>
+<p>Q2:电脑的购买时间？<br>A:一般来说618是电脑降价最多的时候，而开学前是电脑涨价最多的时候。如果想要不买到溢价严重的电脑，尽可能避开开学前的时期。或者选择新电脑的首发时期（日后有数码产品首发我会更新）</p>
+<p>Q3:台式机还是笔记本<br>A:如果家在临近学校的同学且自家有台式机电脑可以考虑把电脑搬到学校，但一定要注意邮寄或者搬运中防止硬件损坏。<br>我个人更推荐购入一台笔记本，如果要用台式机玩游戏，也可以考虑台式机＋平板等的学习组合。</p>
+<p>Q4:游戏本，轻薄本，全能本则么选（p2）<br>A:很多同学可能会直接选择游戏本（高性能笔记本），但高性能本并不适合所有人，大概的优缺点看P2，<br>文科类，类似会计，商务英语之类的文科类专业倾向于轻薄本推荐，日常文档的处理和看看视频需求即可。<br>理工科：计算机专业的可以考虑全能本或者游戏本，具体得看专业需求。数媒专业的用ps，pr要选择cpu性能强的，大数据专业的要选择大内存，便于虚拟机等学习。<br>有游戏需求的就可以直接买游戏本，不过外带会不方便，适合放在寝室。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vYOynI"><img src="https://s1.ax1x.com/2022/08/13/vYOynI.jpg" alt="vYOynI.jpg"></a>	<br>End：<br>第一篇答疑先写这么多吧，<br>如果有什么选购方便疑问可以关注公众号留言。<br>如果文章对有帮助，希望可以点个赞，谢谢。<br>如果可以，关注我，我会尽可能保持稳定更新。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2022/08/14/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81%E7%BA%BF%E6%A6%82%E8%A6%81/">← Next 【科普丨第一期】笔记本品牌和产品线概要</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2022/08/05/%E6%95%99%E7%A8%8B-%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/">教程-U盘重装电脑系统 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="INDEX">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"></div></div><div id="aside-block"></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 此条评论委托企鹅物流发送
+});code.findCode();}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>

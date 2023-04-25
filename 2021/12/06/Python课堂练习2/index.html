@@ -1,92 +1,100 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Python课堂练习2 | AlaxEleven's Blog</title><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"键入以继续","blurHolder":"数据检索","noResult":"无 $0 相关数据"},"code":{"codeInfo":"$0 共 $1 行","copy":"复制","copyFinish":"完成","expand":"展开"}}</script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark-reasonable.min.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.3.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><main><header class="closed"><nav><div class="navBtn hide"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></span></li><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>Python课堂练习2</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2021-12-06T04:10:00.000Z" id="date"> 2021-12-06</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-06-26T11:12:10.953Z" id="updated"> 2022-06-26</time></div></span></div></div><hr><div id="post-content"><p> 写在前面，这些题目为我学Python练手的题目，答案仅供参考。</p>
+<h4 id="第1小题："><a href="#第1小题：" class="headerlink" title="第1小题："></a>第1小题：</h4><p>[题目描述]老师发布了在线课堂练习,并规定:最先完成提交的5位同学,可以获得奖励。现有一组按提交时间顺序排列的学生编号 (编号可能有重复) ,要求统计出5位能获奖的学生编号。若不足5位,则按实际数量输出。</p>
+<p>[输入描述] 一行,包含一组以空格为问隔的正整数,表示学生编号。</p>
+<p>[输出描述] 一行,按原顺序输出5个无重复的编号,以空格隔开。不足5个则按实际数量输出。</p>
+<p>[输入样例] 10 14 10 23 9 23 10 30 27 13</p>
+<p>[输出样例] 10 14 23 9 30 Good job!</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">str</span>,<span class="built_in">input</span>().split())) <span class="comment">#输入学生编号</span></span><br><span class="line">b = [] <span class="comment">#输出的列表</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> a:</span><br><span class="line">    <span class="keyword">if</span> c <span class="keyword">not</span> <span class="keyword">in</span> b: <span class="comment">#判断所取出的值是否存在</span></span><br><span class="line">        b.append(c)<span class="comment">#添加这个值到b</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> b[<span class="number">0</span>:<span class="number">5</span>]:<span class="comment">#取前5</span></span><br><span class="line">    <span class="built_in">print</span>(d,end =<span class="string">&#x27;\t&#x27;</span> )</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Good job!&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-block content
-  -
-    const prev = page.prev
-    const next = page.next
-    const dateConf = theme.post.date
-    const updatedConf = theme.post.updated
-    const excerptConf = theme.post.excerpt
-    const reward = theme.post.reward
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
-    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
-  #post-bg
-    #post-title
-      h1= page.title
-      if (dateConf || updatedConf) && page.published
-        #post-info
-          - var first = true
-          if dateConf
-            span #{__('post.posted')}
-              div.control
-                time(datetime=page.date.toJSON())#date
-                  = ' ' + date(page.date, date_format)
-            - first = false
-          if updatedConf
-            if !first
-              br
-            span #{__('post.edited')}
-              div.control
-                time(datetime=page.updated.toJSON())#updated
-                  = ' ' + date(page.updated, date_format)
-            - first = false
-          if countWord
-            if !first
-              br
-            span #{__('post.countTotal')}
-              div.control #{countWord}
-            - first = false
-          if countTime
-            if !first
-              br
-            span #{__('post.timeTotal')}
-              div.control #{countTime} #{__('post.timeUnit')}
-    hr
-    #post-content
-      if excerptConf || encrypted
-        != page.content
-      else
-        != page.more
-      #paginator!= paginator()
-    #post-footer
-      if prev || next
-        - let fix = ""
-        if prev === undefined
-          - fix = "justify-content: flex-end"
-        if next === undefined
-          - fix = "justify-content: flex-start"
-        #pages(style=fix)
-          if prev !== undefined
-            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
-              a(href=url_for(prev.path))
-                |← Next
-                = ' ' + prev.title
-          if next !== undefined
-            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
-              a(href=url_for(next.path))
-                = next.title + ' '
-                |Prev →
-    if reward !== false
-      details#reward
-        summary #{__('post.reward')}
-        each imgSrc, pay in reward
-          div
-            span #{pay}
-            br
-            img(src=config.root + imgSrc)
-    if page.comments
-      if theme.valine.enable === true
-        #Valine
-      if theme.gitalk.enable === true
-        #comments
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第2小题"><a href="#第2小题" class="headerlink" title="第2小题:"></a>第2小题:</h4><p>[题目描述] A. B两个组各有3个组员,每个人抽取1张数字牌(1~9).分别求两个小组三张数字牌上数字的乘积。</p>
+<p>[输入描述]包含两行,各3个整数。表示两个组各抽到的3个数字。</p>
+<p>[输出描述]包含一行, 2个整数,分别是各组3个数字的乘积。</p>
+<p>[输入样例]</p>
+<p>1 2 3</p>
+<p>2 3 4</p>
+<p>[输出样例]</p>
+<p>6 24</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a,b,c = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">d,e,f = <span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">g = a*b*c</span><br><span class="line">f = d*e*f</span><br><span class="line"><span class="built_in">print</span>(g,f)</span><br></pre></td></tr></table></figure>
 
-block aside-block
-  - 
-    const encrypted = page.encrypt || page.password
-    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
-  if (tocContent.length > 0)
-    #toc-div(style=encrypted !== undefined?"display:none":"")
-      h1 #{__('post.index')}
-      |!{tocContent}
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第3小题"><a href="#第3小题" class="headerlink" title="第3小题:"></a>第3小题:</h4><p>[题目描述]有m个士兵,已排好队并按顺序编号为1~m ,现在要重新排队,排队规则为:从1号士兵开始出列,跳过一个,再出列一个,一直到 轮完成,接着在剩下的士兵里面再次按顺序出</p>
+<p>列第一个,间隔一个再出列一个,持续循环,直到全部出列。请按出列次序,输出土兵编号。</p>
+<p>[输入描述]一个正整数,示士兵的人数。</p>
+<p>[输出描述]士兵出列的编号顺序,编号间用空格分隔。</p>
+<p>[输入样例] 10</p>
+<p>[输出样例] 1 3 5 7 9 2 6 10 4 8</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())<span class="comment">#到几</span></span><br><span class="line">ls1 = []</span><br><span class="line">ls2 = []</span><br><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,(a+<span class="number">1</span>)): 去除所有值</span><br><span class="line">    ls1.append(b)<span class="comment">#将值放入列表1</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(ls1) != <span class="number">0</span>:<span class="comment">#判断列表1是否还有值</span></span><br><span class="line">    <span class="keyword">for</span> b <span class="keyword">in</span> ls1[::<span class="number">2</span>]:<span class="comment">#0::2 取出列表中奇数位的值</span></span><br><span class="line">        ls2.append(b)<span class="comment">#将取出的值放入列表2</span></span><br><span class="line">    <span class="keyword">del</span>(ls1[::<span class="number">2</span>])<span class="comment">#删除已经取出的值</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> ls2:<span class="comment">#取出列表2中的值</span></span><br><span class="line">    <span class="built_in">print</span>(c,end=<span class="string">&quot;\t&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第4小题"><a href="#第4小题" class="headerlink" title="第4小题:"></a>第4小题:</h4><p>[题目描述] 输入一个班全部同学的身高,输出其中超过平均身高的那些同学的身高。程序的输入为一行数据,其中以空格分隔,每个数据都是一个正整数。</p>
+<p>[输入描述] 一行,包含若干个正整数,表示全班同学的身高。</p>
+<p>[输出描述]输出一个整数,表示超过平均身高的学生人数。</p>
+<p>[输入样例] 143 174 119 127 117 164 110 128</p>
+<p>[输出样例] 3</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">str</span>,<span class="built_in">input</span>().split())) <span class="comment">#输入身高</span></span><br><span class="line">b = <span class="built_in">len</span>(a)<span class="comment">#总共几个值</span></span><br><span class="line">c = <span class="number">0</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> a:</span><br><span class="line">    c = c+<span class="built_in">int</span>(d)<span class="comment">#全部身高相加</span></span><br><span class="line">    e = c/b <span class="comment">#平均身高</span></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> a:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">int</span>(f) &gt; e:<span class="comment">#判断是否大于平均身高</span></span><br><span class="line">        <span class="built_in">sum</span> += <span class="number">1</span><span class="comment">#累加</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第5小题"><a href="#第5小题" class="headerlink" title="第5小题:"></a>第5小题:</h4><p>[题目描述]暑假很多家庭带孩子出去旅游。某个旅游景点的门票收费标准为:身高小于1.2米者免门票;身高1.2米及以上者半票,身高1.5米及以上者全票.</p>
+<p>现在输入景点全票的价格,以及一个旅游团每个人的身高,请计算出这个旅游团在该景点的门票总费用。</p>
+<p>[输入描述]两行。第一行为门票全票的价格。第二行为若干个小数(以空格分隔) , 表示旅游团中的每个人的身高。</p>
+<p>[输出描述] 一个小数,表示该旅游团在该景点的门票总费用。精确到小数点后一位。</p>
+<p>[输入样例]</p>
+<p>100</p>
+<p>1.0 0.8 1.2 1.3  1.4 1.5  1.6  1.7</p>
+<p>[输出样例]</p>
+<p>450.0</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())<span class="comment">#门票价格</span></span><br><span class="line">b = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">float</span>,<span class="built_in">input</span>().split())) <span class="comment">#全部人身高</span></span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span><span class="comment">#总价</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> b:</span><br><span class="line">    <span class="keyword">if</span> c &gt;= <span class="number">1.5</span>:</span><br><span class="line">        <span class="built_in">sum</span>=<span class="built_in">sum</span>+a</span><br><span class="line">    <span class="keyword">elif</span> c&gt;<span class="number">1.2</span> <span class="keyword">and</span> c&lt;<span class="number">1.5</span>:</span><br><span class="line">        <span class="built_in">sum</span>=<span class="built_in">sum</span>+(a/<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第6小题"><a href="#第6小题" class="headerlink" title="第6小题:"></a>第6小题:</h4><p>[题目描述] 现在需要计算实验课小组的得分,计算规则为:去掉1个最高分和1个最低分后,求出平均分(保留2位小数)作为小组得分,并按格式要求输出。</p>
+<p>[输入描述]一行,小组每个成员的成绩,用空格分隔(每个小组成员多于2个). .</p>
+<p>[输出描述]小组得分。</p>
+<p>[输入样例] 97 98 99</p>
+<p>[输出样例] 98.00</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">str</span>,<span class="built_in">input</span>().split()))<span class="comment">#小组得分</span></span><br><span class="line"><span class="built_in">min</span> = <span class="built_in">min</span>(a)</span><br><span class="line"><span class="built_in">max</span> = <span class="built_in">max</span>(a)</span><br><span class="line">a.remove(<span class="built_in">min</span>)</span><br><span class="line">a.remove(<span class="built_in">max</span>)</span><br><span class="line">count=<span class="built_in">len</span>(a)<span class="comment">#剩下的个数</span></span><br><span class="line">c = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> a:</span><br><span class="line">    c = c+<span class="built_in">float</span>(b) <span class="comment">#剩下的数的总和</span></span><br><span class="line">    d = c/count<span class="comment">#求平均</span></span><br><span class="line">    d = <span class="built_in">round</span>(d,<span class="number">2</span>)<span class="comment">#保留两位小数</span></span><br><span class="line"><span class="built_in">print</span>(d)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第7小题"><a href="#第7小题" class="headerlink" title="第7小题:"></a>第7小题:</h4><p>[题目描述] 某公司为提高发货效率,仓库内毛巾已经按N条为一包打包。若订货数量刚好是N的整数倍,可直接原包装发货。现有5个订单,根据每个订单的订货数量，判断有几个订单可直接原包装发货。</p>
+<p>[输入描述]两行,第一行包含1个整数,表示每包的条数,第二行,包含5个正整数,分别表示每个订单的订货数量。</p>
+<p>[输出描述]一行 ,包含1个整数,表示可直接原包装发货的订单数。</p>
+<p>[输入样例]</p>
+<p>30</p>
+<p>20 30 40 50 60</p>
+<p>[输出样例]</p>
+<p>2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">b =<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">str</span>,<span class="built_in">input</span>().split()))</span><br><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> b:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">int</span>(c) % a ==<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">sum</span>+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第8小题"><a href="#第8小题" class="headerlink" title="第8小题:"></a>第8小题:</h4><p>[题目描述]输入一段英文文章,其中只包含英文字母和空格。按照出现次序,逐一输出文章中的单词,出现多次的单词只输出一次。单词不区分大小写,并一律按小写形式输出。</p>
+<p>[输入描述] 1行,表示一段英文文章,其中只包含英文字母。空格。</p>
+<p>[输出描述] 1行,包含若干单词,单词之间用一个空格分隔。</p>
+<p>[输入样例1]</p>
+<p>like Baby baby baby ohhh Baby baby Like nooo</p>
+<p>[输出样例1]</p>
+<p>like baby ohhh nooo</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">str</span>,<span class="built_in">input</span>().split())) <span class="comment">#输入文章</span></span><br><span class="line">b=[]</span><br><span class="line">e=[]</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> a:</span><br><span class="line">    b.append(c.lower())<span class="comment">#改为小写</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> b:</span><br><span class="line">    <span class="keyword">if</span> d <span class="keyword">not</span> <span class="keyword">in</span> e:</span><br><span class="line">        e.append(d)</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> e:</span><br><span class="line">    <span class="built_in">print</span>(f,end=<span class="string">&quot; &quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<h4 id="第9小题∶"><a href="#第9小题∶" class="headerlink" title="第9小题∶"></a>第9小题∶</h4><p>程序功能∶</p>
+<p>任意输入一个月份，输出季节名称。如∶3-5月为春季，6-8月为夏季，9-11月为秋季，12-2月为冬季。</p>
+<p>[输入描述]</p>
+<p>—个整数，表示月份。</p>
+<p>[输出描述]</p>
+<p>输出季节名称:春季、夏季、秋季、冬季。</p>
+<p>[输入样例]5</p>
+<p>[输出样例]春季</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = int(input())</span><br><span class="line">if a == 3 or a == 4 or a == 5:</span><br><span class="line">    print(&quot;春季&quot;)</span><br><span class="line">if a == 6 or a == 7 or a == 8:</span><br><span class="line">    print(&quot;夏季&quot;)</span><br><span class="line">if a == 9 or a == 10 or a == 11:</span><br><span class="line">    print(&quot;秋季&quot;)</span><br><span class="line">if a == 12 or a == 1 or a == 2:</span><br><span class="line">    print(&quot;冬季&quot;)</span><br></pre></td></tr></table></figure>
+
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2021/12/06/2021%E5%91%A8%E8%AE%B0-11-29-12-05/">← Next 周记(11.29-12.05)</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2021/12/06/Python%E8%AF%BE%E5%A0%82%E7%BB%83%E4%B9%A01/">Python课堂练习1 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary></details><div id="Valine"></div></div><div id="bottom-btn"><a id="to-index" href="#toc-div" title="INDEX">≡</a><a id="to-top" onClick="scrolls.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"></div></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC1%E5%B0%8F%E9%A2%98%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">第1小题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC2%E5%B0%8F%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">第2小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC3%E5%B0%8F%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">第3小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC4%E5%B0%8F%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">第4小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC5%E5%B0%8F%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">第5小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC6%E5%B0%8F%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">第6小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC7%E5%B0%8F%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">第7小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC8%E5%B0%8F%E9%A2%98"><span class="toc-number">8.</span> <span class="toc-text">第8小题:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC9%E5%B0%8F%E9%A2%98%E2%88%B6"><span class="toc-number">9.</span> <span class="toc-text">第9小题∶</span></a></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><nobr>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></nobr><wbr><nobr>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script class="pjax-js">reset=_=>{new Valine({
+ el: '#Valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 此条评论委托企鹅物流发送
+});code.findCode();}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>window.addEventListener("load",()=>{reset()})</script></body></html>
