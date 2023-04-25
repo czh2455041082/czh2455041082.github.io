@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Java-2022-09-09-学生注册（继承-重写-重载）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/14/Java-2022-09-09-%E5%AD%A6%E7%94%9F%E6%B3%A8%E5%86%8C%EF%BC%88%E7%BB%A7%E6%89%BF-%E9%87%8D%E5%86%99-%E9%87%8D%E8%BD%BD%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2022-09-14T03:01:33.000Z" itemprop="datePublished">2022-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/14/Java-2022-09-09-%E5%AD%A6%E7%94%9F%E6%B3%A8%E5%86%8C%EF%BC%88%E7%BB%A7%E6%89%BF-%E9%87%8D%E5%86%99-%E9%87%8D%E8%BD%BD%EF%BC%89/">0909学生注册（继承+重写+重载）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Citizen</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Citizen</span><span class="params">(String name, String sex, String iD, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>.sex = sex;</span><br><span class="line">		ID = iD;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	String name;</span><br><span class="line">	String sex;</span><br><span class="line">	String ID;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getSex</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSex</span><span class="params">(String sex)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getID</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> ID;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setID</span><span class="params">(String iD)</span> &#123;</span><br><span class="line">		ID = iD;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//方法的重载:同一个累的同名方法,</span></span><br><span class="line">	<span class="comment">//参数不同：1、个数不同 2、个数相同，对应类型不同</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayAll</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;姓名：&quot;</span>+name);</span><br><span class="line">		System.out.println(<span class="string">&quot;性别：&quot;</span>+sex);</span><br><span class="line">		System.out.println(<span class="string">&quot;ID：&quot;</span>+ID);</span><br><span class="line">		System.out.println(<span class="string">&quot;年纪：&quot;</span>+age);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayAll</span><span class="params">(String name)</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;姓名：&quot;</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayAll</span><span class="params">(<span class="type">int</span> age)</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;年龄：&quot;</span>+age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField_1;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField_2;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField_3;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField_4;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField textField_5;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> </span><br><span class="line">	&#123;</span><br><span class="line"><span class="comment">//		ResultRegister res= new ResultRegister(&quot;一一&quot;, &quot;男&quot;, &quot;123456&quot;, 18, &quot;6011210&quot;, 520);</span></span><br><span class="line"><span class="comment">//		res.displayAll();	</span></span><br><span class="line">		</span><br><span class="line">		<span class="type">JFrame</span> <span class="variable">myFrame</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JFrame</span>(<span class="string">&quot;登录界面&quot;</span>);</span><br><span class="line">		myFrame.setVisible(<span class="literal">true</span>);</span><br><span class="line">		myFrame.setSize(<span class="number">229</span>,<span class="number">515</span>);</span><br><span class="line">		myFrame.getContentPane().setLayout(<span class="literal">null</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">jl1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u59D3\u540D&quot;</span>);</span><br><span class="line">		jl1.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		jl1.setBounds(<span class="number">27</span>, <span class="number">22</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(jl1);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">jl1_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u6027\u522B&quot;</span>);</span><br><span class="line">		jl1_1.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		jl1_1.setBounds(<span class="number">27</span>, <span class="number">80</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(jl1_1);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">lblId</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;ID&quot;</span>);</span><br><span class="line">		lblId.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		lblId.setBounds(<span class="number">27</span>, <span class="number">148</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(lblId);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">jl1_2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u5E74\u9F84&quot;</span>);</span><br><span class="line">		jl1_2.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		jl1_2.setBounds(<span class="number">27</span>, <span class="number">208</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(jl1_2);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">jl1_3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u5B66\u53F7&quot;</span>);</span><br><span class="line">		jl1_3.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		jl1_3.setBounds(<span class="number">27</span>, <span class="number">271</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(jl1_3);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">jl1_4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u6210\u7EE9&quot;</span>);</span><br><span class="line">		jl1_4.setFont(<span class="keyword">new</span> <span class="title class_">Font</span>(<span class="string">&quot;宋体&quot;</span>, Font.PLAIN, <span class="number">20</span>));</span><br><span class="line">		jl1_4.setBounds(<span class="number">27</span>, <span class="number">333</span>, <span class="number">59</span>, <span class="number">48</span>);</span><br><span class="line">		myFrame.getContentPane().add(jl1_4);</span><br><span class="line">		</span><br><span class="line">		textField = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField.setBounds(<span class="number">106</span>, <span class="number">38</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField);</span><br><span class="line">		textField.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		textField_1 = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField_1.setBounds(<span class="number">106</span>, <span class="number">96</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField_1);</span><br><span class="line">		textField_1.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		textField_2 = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField_2.setBounds(<span class="number">106</span>, <span class="number">164</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField_2);</span><br><span class="line">		textField_2.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		textField_3 = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField_3.setBounds(<span class="number">106</span>, <span class="number">224</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField_3);</span><br><span class="line">		textField_3.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		textField_4 = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField_4.setBounds(<span class="number">106</span>, <span class="number">287</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField_4);</span><br><span class="line">		textField_4.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		textField_5 = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		textField_5.setBounds(<span class="number">106</span>, <span class="number">349</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(textField_5);</span><br><span class="line">		textField_5.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JButton</span> <span class="variable">btnNewButton</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;\u786E\u8BA4&quot;</span>);</span><br><span class="line">		btnNewButton.setBounds(<span class="number">48</span>, <span class="number">403</span>, <span class="number">124</span>, <span class="number">42</span>);</span><br><span class="line">		myFrame.getContentPane().add(btnNewButton);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ResultRegister</span> <span class="keyword">extends</span> <span class="title class_">Citizen</span>&#123;</span><br><span class="line">	</span><br><span class="line">	String stu_no;</span><br><span class="line">	<span class="type">int</span> result;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> MAX=<span class="number">700</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> MIN=<span class="number">560</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">ResultRegister</span><span class="params">(String name, String sex, String iD, <span class="type">int</span> age, String stu_no, <span class="type">int</span> result)</span> &#123;</span><br><span class="line">		<span class="comment">//父类的构造方法不能被继承，只能被调用</span></span><br><span class="line">		<span class="comment">//用super关键字来调用父类的方法</span></span><br><span class="line">		<span class="comment">//如果是调用父类的构造方法，super必须写在第一句的位置</span></span><br><span class="line">		<span class="built_in">super</span>(name, sex, iD, age);</span><br><span class="line">		<span class="built_in">this</span>.stu_no = stu_no;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(result&gt;MAX||result&lt;MIN)</span><br><span class="line">		&#123;</span><br><span class="line">			String res=</span><br><span class="line">				JOptionPane.showInputDialog(<span class="string">&quot;请核对成绩！&quot;</span>);</span><br><span class="line">			result=Integer.parseInt(res);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">this</span>.result = result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getStu_no</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> stu_no;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setStu_no</span><span class="params">(String stu_no)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.stu_no = stu_no;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getResult</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setResult</span><span class="params">(<span class="type">int</span> result)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.result = result;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> MAX;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMin</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> MIN;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//方法的重写：在父和子两个类里的同名方法</span></span><br><span class="line">	<span class="comment">//子类可以重新编写父类的同名方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayAll</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//调用父类的同名方法</span></span><br><span class="line">	</span><br><span class="line">		<span class="built_in">super</span>.displayAll();</span><br><span class="line">		System.out.println(<span class="string">&quot;学号:&quot;</span>+stu_no);</span><br><span class="line">		System.out.println(<span class="string">&quot;成绩:&quot;</span>+result);</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/14/Java-2022-09-09-%E5%AD%A6%E7%94%9F%E6%B3%A8%E5%86%8C%EF%BC%88%E7%BB%A7%E6%89%BF-%E9%87%8D%E5%86%99-%E9%87%8D%E8%BD%BD%EF%BC%89/" data-id="clgwdaur0006c3s455kjb0yk7" data-title="0909学生注册（继承+重写+重载）" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java-2022-09-07-传递-封装类实现对象交换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/14/Java-2022-09-07-%E4%BC%A0%E9%80%92-%E5%B0%81%E8%A3%85%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E4%BA%A4%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-09-14T03:01:16.000Z" itemprop="datePublished">2022-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/14/Java-2022-09-07-%E4%BC%A0%E9%80%92-%E5%B0%81%E8%A3%85%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E4%BA%A4%E6%8D%A2/">0907(传递+封装类实现对象交换)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Citizen</span> &#123;</span><br><span class="line">	<span class="comment">//先定义成员变量</span></span><br><span class="line">	String name;</span><br><span class="line">	String sex;</span><br><span class="line">	<span class="type">int</span> age;</span><br><span class="line">	String id;</span><br><span class="line">	<span class="comment">//再定义成员方法；先定义构造。在getter/setter,最后其他</span></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Citizen</span><span class="params">(String name, String sex, <span class="type">int</span> age, String id)</span> &#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">		<span class="built_in">this</span>.sex = sex;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">		<span class="built_in">this</span>.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getSex</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSex</span><span class="params">(String sex)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.sex = sex;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">getId</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setId</span><span class="params">(String id)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">displayAll</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;姓名:&quot;</span>+name);</span><br><span class="line">		System.out.println(<span class="string">&quot;性别:&quot;</span>+sex);</span><br><span class="line">		System.out.println(<span class="string">&quot;年龄:&quot;</span>+age);</span><br><span class="line">		System.out.println(<span class="string">&quot;身份证:&quot;</span>+id);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用封装类实现对象的交换</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CitizenWrapper</span> &#123;</span><br><span class="line"></span><br><span class="line">	Citizen c;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">CitizenWrapper</span><span class="params">(Citizen c)</span> &#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.c = c;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		Citizen p1=<span class="keyword">new</span> <span class="title class_">Citizen</span>(<span class="string">&quot;一一&quot;</span>,<span class="string">&quot;男&quot;</span>,<span class="number">23</span>,<span class="string">&quot;12345&quot;</span>);</span><br><span class="line">		Citizen p2=<span class="keyword">new</span> <span class="title class_">Citizen</span>(<span class="string">&quot;二二&quot;</span>,<span class="string">&quot;女&quot;</span>,<span class="number">13</span>,<span class="string">&quot;54321&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">CitizenWrapper</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CitizenWrapper</span>(p1);</span><br><span class="line">		<span class="type">CitizenWrapper</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CitizenWrapper</span>(p2);</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//int a=4,b=5;</span></span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;交换前&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;p1:&quot;</span>);</span><br><span class="line">		c1.c.displayAll();</span><br><span class="line">		<span class="comment">//p1.displayAll();</span></span><br><span class="line">		System.out.println(<span class="string">&quot;p2:&quot;</span>);</span><br><span class="line">		c2.c.displayAll();</span><br><span class="line">		<span class="comment">//p2.displayAll();</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//System.out.println(&quot;a=&quot;+a);</span></span><br><span class="line">		<span class="comment">//System.out.println(&quot;b=&quot;+b);</span></span><br><span class="line">		<span class="comment">//swap(a,b);</span></span><br><span class="line">		</span><br><span class="line">	<span class="comment">//	swap(p1,p2);</span></span><br><span class="line">		swap(c1,c2);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;p1:&quot;</span>);</span><br><span class="line">		c1.c.displayAll();</span><br><span class="line">		System.out.println(<span class="string">&quot;p2:&quot;</span>);</span><br><span class="line">		c2.c.displayAll();</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		System.out.println(&quot;交换后&quot;);</span></span><br><span class="line"><span class="comment">//		System.out.println(&quot;p1:&quot;);</span></span><br><span class="line"><span class="comment">//		p1.displayAll();</span></span><br><span class="line"><span class="comment">//		System.out.println(&quot;p2:&quot;);</span></span><br><span class="line"><span class="comment">//		p2.displayAll();</span></span><br><span class="line">		</span><br><span class="line"><span class="comment">//		System.out.println(&quot;a=&quot;+a);</span></span><br><span class="line"><span class="comment">//		System.out.println(&quot;b=&quot;+b);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(CitizenWrapper c3, CitizenWrapper c4)</span> &#123;</span><br><span class="line">		Citizen p;</span><br><span class="line">		p=c3.c;</span><br><span class="line">		c3.c=c4.c;</span><br><span class="line">		c4.c=p;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//	private static void swap(Citizen p3, Citizen p4) &#123;</span></span><br><span class="line"><span class="comment">//		Citizen p;</span></span><br><span class="line"><span class="comment">//		p=p3;</span></span><br><span class="line"><span class="comment">//		p3=p4;</span></span><br><span class="line"><span class="comment">//		p4=p;</span></span><br><span class="line"><span class="comment">//		</span></span><br><span class="line"><span class="comment">//		</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//	private static void swap(int c, int d) &#123;</span></span><br><span class="line"><span class="comment">//		int t;</span></span><br><span class="line"><span class="comment">//		t=c;</span></span><br><span class="line"><span class="comment">//		c=d;</span></span><br><span class="line"><span class="comment">//		d=t;</span></span><br><span class="line"><span class="comment">//			</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/14/Java-2022-09-07-%E4%BC%A0%E9%80%92-%E5%B0%81%E8%A3%85%E7%B1%BB%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%B1%A1%E4%BA%A4%E6%8D%A2/" data-id="clgwdauqz00653s454pd8foo0" data-title="0907(传递+封装类实现对象交换)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022周记-09-05-09-11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/12/2022%E5%91%A8%E8%AE%B0-09-05-09-11/" class="article-date">
+  <time class="dt-published" datetime="2022-09-12T08:12:31.000Z" itemprop="datePublished">2022-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/09/12/2022%E5%91%A8%E8%AE%B0-09-05-09-11/">周记(09.05-09.11)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="9-5："><a href="#9-5：" class="headerlink" title="9.5："></a>9.5：</h3><p>正式开学第一天，收到了补款了的初音景品</p>
+<h3 id="9-6："><a href="#9-6：" class="headerlink" title="9.6："></a>9.6：</h3><p>去了天街，可惜那边的华为没有真机，徒步回了印象城，看了下三星的新品</p>
+<h3 id="9-7："><a href="#9-7：" class="headerlink" title="9.7："></a>9.7：</h3><p>安装CentOS</p>
+<p>买完了Cytus2的角色。</p>
+<h3 id="9-8："><a href="#9-8：" class="headerlink" title="9.8："></a>9.8：</h3><p>周五上完课一个人去了in77，可惜了ip14还没上展示机，逛了华为店，看了新出的产品</p>
+<p>买了一杯喜茶X原神的联动，味道不错</p>
+<h3 id="9-9："><a href="#9-9：" class="headerlink" title="9.9："></a>9.9：</h3><p>中秋&amp;教师节快乐！</p>
+<p>甘雨一命。</p>
+<h3 id="9-10"><a href="#9-10" class="headerlink" title="9.10:"></a>9.10:</h3><p>和朋友去了杭州博物馆</p>
+<h3 id="9-11"><a href="#9-11" class="headerlink" title="9.11:"></a>9.11:</h3><p>购入一只新的猫猫</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/09/12/2022%E5%91%A8%E8%AE%B0-09-05-09-11/" data-id="clgwdaupy001t3s45amr7b6z1" data-title="周记(09.05-09.11)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【电脑游戏丨第二期】平台介绍之Epic" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BEpic/" class="article-date">
+  <time class="dt-published" datetime="2022-08-18T01:27:44.000Z" itemprop="datePublished">2022-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BEpic/">【电脑游戏丨第二期】平台介绍之Epic</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>简介</li>
+</ul>
+<p>EPIC目前最为第二大受欢迎的平台，有许多的限时独占游戏，而且在折扣方面比steam会更大，每周还会送游戏。</p>
+<p>不过缺点是服务器较差，且社区玩法不丰富。</p>
+<ul>
+<li><p>下载</p>
+<p>打开百度搜索EPIC，进入如下的界面，注意辨别真伪，如今有许多的盗版平台假冒EPIC。</p>
+</li>
+</ul>
+<p>如何区分真假平台，最简单的就是看网址</p>
+<p><a target="_blank" rel="noopener" href="https://store.epicgames.com/zh-CN/%E2%80%9C%E2%80%9D%E5%B0%B1%E6%98%AFEPIC%E7%9A%84%E5%AE%98%E7%BD%91%E3%80%82">https://store.epicgames.com/zh-CN/“”就是EPIC的官网。</a></p>
+<p>点击右上角的获取客户端即可下载EPIC的安装程序到电脑中去了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/hcGSJ50as212IRjibuDMTyb4EojibMI09LWtU3FyicC5M0mpS7GW2b61q5TwkyCO64EZWMEeBUuYc61HAXAYkoYgQ/640?wx_fmt=png" alt="img"></p>
+<ul>
+<li><p>注册</p>
+<p>下载好EPIC之后进入账号注册，用邮箱注册好账号后就可以进去EPIC的商店页面了</p>
+</li>
+<li><p>购买</p>
+<p>EPIC中有一款好玩的免费游戏堡垒之夜。也有许多游戏会有EPIC的独占发行。</p>
+</li>
+<li><p>促销活动</p>
+<p>EPIC中许多游戏会定时打折，夏季促销，秋季促销，新年大促等</p>
+<p>不同游戏都会有不同价格下降，如果不是特别想玩，就可以做等等党。</p>
+</li>
+<li><p>结尾</p>
+<p>以上就是EPIC的粗略介绍。若果有帮助可以点个赞或者关注我，我会持续更新。也可以在评论区讨论。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BEpic/" data-id="clgwdaurb008n3s4555rn4rua" data-title="【电脑游戏丨第二期】平台介绍之Epic" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【电脑游戏丨第一期】平台介绍之Steam" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BSteam/" class="article-date">
+  <time class="dt-published" datetime="2022-08-18T01:12:23.000Z" itemprop="datePublished">2022-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BSteam/">【电脑游戏丨第一期】平台介绍之Steam</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这篇是一个新坑，用来介绍一些游戏平台和一些好的游戏。</p>
+<p>第一期先来说一下那些好的电脑游戏应该在哪里下载。</p>
+<p>目前电脑上有很多的游戏平台和游戏发行商，其中Steam是目前体量最大，知名度也最广的游戏。</p>
+<p>许多独立游戏和大厂游戏都会上架steam。</p>
+<p>Tips: steam官网的商店界面进不去可以下载加速器：例如UU加速器就可以。</p>
+<ul>
+<li><p>下载</p>
+<p>打开百度搜索steam，进入如下的界面，注意辨别真伪，如今有许多的盗版平台假冒steam。</p>
+</li>
+</ul>
+<p>如何区分真假平台，最简单的就是看网址</p>
+<p>“<a target="_blank" rel="noopener" href="https://store.steampowered.com/%22%E5%B0%B1%E6%98%AFsteam%E7%9A%84%E5%AE%98%E7%BD%91%E3%80%82">https://store.steampowered.com/&quot;就是steam的官网。</a></p>
+<p>点击右上角的安装steam即可下载steam的安装程序到电脑中去了。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/hcGSJ50as212IRjibuDMTyb4EojibMI09Low57sOwOIuBd20jKPJibIvasCzD0teFjdE8icjEzvDuovMcYXicUTeibug/640?wx_fmt=png" alt="img"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/hcGSJ50as212IRjibuDMTyb4EojibMI09LIByhbeUrnYJvqD236iajfw32eZ9NIe72rJLwZdJfDP1QssMvnv2RtNA/640?wx_fmt=png" alt="img"></p>
+<ul>
+<li><p>注册</p>
+<p>下载好steam之后进入账号注册，用邮箱注册好账号后就可以进去steam的商店页面了</p>
+</li>
+<li><p>购买</p>
+<p>Steam中有许多免费的游戏，例如CSGO，data2，PUBG等都是免费的游戏。大多数游戏都是需要购买的，在国内支持支付宝和微信支付。</p>
+</li>
+<li><p>促销活动</p>
+<p>steam中许多游戏会定时打折，周三折扣，厂商折扣，夏季促销等</p>
+<p>不同游戏都会有不同价格下降，如果不是特别想玩，就可以做等等党。</p>
+</li>
+<li><p>结尾</p>
+<p>以上就是Steam的粗略介绍。若果有帮助可以点个赞或者关注我，我会持续更新。也可以在评论区讨论。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/18/%E3%80%90%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D%E4%B9%8BSteam/" data-id="clgwdaura008i3s45h8zb52v1" data-title="【电脑游戏丨第一期】平台介绍之Steam" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【科普丨第二期】笔记本配置的选择简述" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/18/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%E7%9A%84%E9%80%89%E6%8B%A9%E7%AE%80%E8%BF%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-08-18T00:23:56.000Z" itemprop="datePublished">2022-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/18/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%E7%9A%84%E9%80%89%E6%8B%A9%E7%AE%80%E8%BF%B0/">【科普|第二期】笔记本配置的选择简述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>科普第二期，这期概述的讲讲笔记本选购时如果确定自己所需要的配置。</p>
+<p>我先以自己的笔电为例子，讲一下咋么看那些参数是我们需要关注和注意的。</p>
+<p>打开京东搜索型号Thinkbook 16+ </p>
+<p>我选购的是英特尔I7，2050的版本。我们通过这台笔记本的详情页来看我们所需要关注的参数。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hcGSJ50as23j2sqz740Uib5NmUzGJCfppRkkYnaAnGBUibmNXqqPpbZT9e6oSCwC8NPdGUIA3bazOic9mGXJryf2Q/0?wx_fmt=jpeg" alt="img"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hcGSJ50as23j2sqz740Uib5NmUzGJCfppFTEiau6K3PtlDfkE64l36K1DnA4xoHA3lhkrnicrACg6Dba6jJEU5YKA/0?wx_fmt=jpeg" alt="img"></p>
+<ul>
+<li>重量</li>
+</ul>
+<p>重量，第一期科普时提到笔记本的三大分类，轻薄本，全能本，游戏本的重量都不一样。</p>
+<p>轻薄本：1.5kg-  游戏本:2kg+ 全能本：介于两者之间。</p>
+<p>我这台是一台标准的全能本，1.8kg的适中重量。</p>
+<ul>
+<li>处理器</li>
+</ul>
+<p>处理器就是常说的CPU，目前是有俩家，英特尔和AMD。前者是酷睿版，后者则称锐龙版。当然普遍来说选择R5，I5或者R7，I7适合90%以上的专业了。</p>
+<p>简述一下，如果需要具体了解也可以自行百度。</p>
+<p>英特尔 I7-12700H。</p>
+<p>7代表处理器等级，总共分为3,5,7,9 默认数字越大越强</p>
+<p>12代表第十二代，是目前最新的一代</p>
+<p>中间的不细讲，H则是高压。</p>
+<p>AMD：R6-6800H</p>
+<p>6是代数，目前AMD最新的6000系</p>
+<p>H则是高压。</p>
+<p>普遍来说，同一时代，I5对标R5 I7对标R7等、具体的表现得具体到每一台笔记本上才能区分。</p>
+<p>今年轻薄本更适合AMD，续航会久点，游戏本适合英特尔，性能会更强。不过英特尔会贵一点。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hcGSJ50as23j2sqz740Uib5NmUzGJCfpp1Qc0JBJSIAQ0emCYD85unYSmXh8wjMp77BiaicA3ylugUx2EcOZg31NA/0?wx_fmt=jpeg" alt="img"></p>
+<p>继续往下看详情页：</p>
+<ul>
+<li>显卡</li>
+</ul>
+<p>显卡关系到笔记本图形输出的清晰度。</p>
+<p>常见的显卡分为NVIDIA和AMD，一般前者居多，也就是常说的RTX3080等</p>
+<p>目前市场上的顶端显卡是RTX30系，向下有20系，10系，MX系列等。</p>
+<p>今年游戏本大多搭载RTX3050TI及以上的配置，适合游戏，对图形处理有要求的专业。</p>
+<p>大部分的轻薄本是没有显卡的，但依旧能进行图形输出，因为CPU中自带图形输出的能力。</p>
+<ul>
+<li>尺寸</li>
+</ul>
+<p>16寸，基本是指屏幕大小为16寸，其他还有13寸，14寸，15寸，17寸等。</p>
+<p>通过产品型号名thinkbook16+的16也可以看出来，14寸的那款则称为thinkbook14+，轻薄本和全能本大部分产品都可以从命名中的数字看出型号。</p>
+<ul>
+<li>屏幕分辨率</li>
+</ul>
+<p>目前的主流2k，16:10的笔记本都是2560*1600.然后还有1080p或者4k的屏幕。建议游戏本选择2k+高刷，轻薄本则是2k即可，高刷能上就上、</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/hcGSJ50as212IRjibuDMTyb4EojibMI09LQDubmvrhCibt2cPNyJ2ZMlRa0CayINiaOCU2mk1eSE4iaibNCyCOM9mJlA/0?wx_fmt=jpeg" alt="img"></p>
+<ul>
+<li><p>总结</p>
+<p>根据自己的需求选择合适的笔记本。</p>
+<p>经常出行的要关注笔记本的重量和续航能力。</p>
+<p>有较高游戏需求则尽可能选择游戏本。</p>
+<p>如果有什么选购方便疑问可以私信我或者下方留言，如果文章对有帮助，希望可以点个赞，谢谢。如果可以，关注我，我会尽可能保持稳定更新。</p>
+</li>
+<li><p>Tips：不同笔记本尽管配置看上去差不多，但价格和性能也会差的比较多。要以实际为准。</p>
+<p>这篇写的相对很通俗，没有很深的写，后续尽可能出一些更详细的来讲、</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/18/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%BA%8C%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%85%8D%E7%BD%AE%E7%9A%84%E9%80%89%E6%8B%A9%E7%AE%80%E8%BF%B0/" data-id="clgwdaurb008q3s452r7xbwhh" data-title="【科普|第二期】笔记本配置的选择简述" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【科普丨第一期】笔记本品牌和产品线概要" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/14/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81%E7%BA%BF%E6%A6%82%E8%A6%81/" class="article-date">
+  <time class="dt-published" datetime="2022-08-14T15:05:13.000Z" itemprop="datePublished">2022-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/14/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81%E7%BA%BF%E6%A6%82%E8%A6%81/">【科普丨第一期】笔记本品牌和产品线概要</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>【前提概要】<br>这期简单说明一下目前市场上的笔记本品牌以及他们的地位。先放一个数据统计（p2），免得有人说我是凭空捏造，具体见（p3）</p>
+<p>【分类】<br>通过以上数据和我自己的经验总结分类<br>（每个人看法不同）<br>一线：联想，戴尔，惠普 这三家是御三家<br>二线：华硕，机械革命，雷神，神舟，宏碁等<br>其他：七彩虹，火影等<br>手机厂：小米，红米，华为，真我等。<br>说明：华硕ROG等高端品牌属于一线，但华硕本身并不能能算，因为出货量不大，ROG用户毕竟是少数。苹果笔记本特殊，不纳入归类。雷蛇，外星人等高价笔记本我也不做归类。品牌和系列会有疏漏是正常的，我只列举一些我知道和了解的，也欢迎评论区补充和发表自己看法</p>
+<p>笔记本出货量</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vaenFf"><img src="https://s1.ax1x.com/2022/08/14/vaenFf.jpg" alt="vaenFf.jpg"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vaeZwt"><img src="https://s1.ax1x.com/2022/08/14/vaeZwt.jpg" alt="vaeZwt.jpg"></a>	<br>【概述】<br>1.联想<br>绰号美帝良心想，不谈其管理层问题，对于消费者来说，联想无疑是最优的选择，万元以下性价比高，产品线丰富，选择也多。有小新，YOGA，拯救者，thinkbook和thinkpad等系列。<br>2.惠普<br>惠普的战系列（战x，战66等），星系列（配置低，卖外观），envy等小众的就不讲了。<br>游戏本有暗影精灵系列<br>3.戴尔<br>戴尔的灵越系列，xps系列（大部分价格偏高）<br>游戏本有G系列，还有外星人也属于戴尔。<br>4.华硕<br>华硕分华硕和ROG玩家国度<br>灵耀系列（pro16，x14等），<br>无畏系列小众的A豆系列，vivobook。<br>玩家国度：幻，枪神，魔霸等就不一一讲了，价格都是9k＋了。<br>机械革命，雷神，神舟，宏碁等在低价位也有许多的选择。适合预算不足但想要高性能游戏本体验的同学选购,最好有一定的电脑知识，因为售后比较慢。</p>
+<p>手机厂的笔记本更适合不追求高性能，优先考虑生态的同学选择，例如华为生态等。</p>
+<p>【END】<br>感谢您能看到最后。<br>这期字数也不少了，先写到这把。<br>如果有什么选购方便疑问可以私信我或者下方留言，如果文章对有帮助，希望可以点个赞，谢谢。如果可以，关注我，我会尽可能保持稳定更新。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/14/%E3%80%90%E7%A7%91%E6%99%AE%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E7%AC%94%E8%AE%B0%E6%9C%AC%E5%93%81%E7%89%8C%E5%92%8C%E4%BA%A7%E5%93%81%E7%BA%BF%E6%A6%82%E8%A6%81/" data-id="clgwdaurc008y3s456gkb10nd" data-title="【科普丨第一期】笔记本品牌和产品线概要" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-【答疑丨第一期】大学生电脑种类选择" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/13/%E3%80%90%E7%AD%94%E7%96%91%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%94%B5%E8%84%91%E7%A7%8D%E7%B1%BB%E9%80%89%E6%8B%A9/" class="article-date">
+  <time class="dt-published" datetime="2022-08-12T23:43:16.000Z" itemprop="datePublished">2022-08-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/13/%E3%80%90%E7%AD%94%E7%96%91%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%94%B5%E8%84%91%E7%A7%8D%E7%B1%BB%E9%80%89%E6%8B%A9/">【答疑丨第一期】大学生电脑种类选择</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>问题概述：临近开学，很多刚进入的大一新生会在电脑选择方面产生选择，这里先开一个基础的问答贴。<br>Q1:刚开学一定要买电脑么？<br>A:一般来说计算机对于刚开学的学生来说并非必需品，像计算机类专业（例如我自己），在上课的时候都有机房。而且刚开学许多事情可以在手机上完成。当然有电脑会更加便携，我身边有数媒的朋友都是在第二学期采购入的电脑。</p>
+<p>Q2:电脑的购买时间？<br>A:一般来说618是电脑降价最多的时候，而开学前是电脑涨价最多的时候。如果想要不买到溢价严重的电脑，尽可能避开开学前的时期。或者选择新电脑的首发时期（日后有数码产品首发我会更新）</p>
+<p>Q3:台式机还是笔记本<br>A:如果家在临近学校的同学且自家有台式机电脑可以考虑把电脑搬到学校，但一定要注意邮寄或者搬运中防止硬件损坏。<br>我个人更推荐购入一台笔记本，如果要用台式机玩游戏，也可以考虑台式机＋平板等的学习组合。</p>
+<p>Q4:游戏本，轻薄本，全能本则么选（p2）<br>A:很多同学可能会直接选择游戏本（高性能笔记本），但高性能本并不适合所有人，大概的优缺点看P2，<br>文科类，类似会计，商务英语之类的文科类专业倾向于轻薄本推荐，日常文档的处理和看看视频需求即可。<br>理工科：计算机专业的可以考虑全能本或者游戏本，具体得看专业需求。数媒专业的用ps，pr要选择cpu性能强的，大数据专业的要选择大内存，便于虚拟机等学习。<br>有游戏需求的就可以直接买游戏本，不过外带会不方便，适合放在寝室。</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vYOynI"><img src="https://s1.ax1x.com/2022/08/13/vYOynI.jpg" alt="vYOynI.jpg"></a>	<br>End：<br>第一篇答疑先写这么多吧，<br>如果有什么选购方便疑问可以关注公众号留言。<br>如果文章对有帮助，希望可以点个赞，谢谢。<br>如果可以，关注我，我会尽可能保持稳定更新。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/13/%E3%80%90%E7%AD%94%E7%96%91%E4%B8%A8%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%91%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%94%B5%E8%84%91%E7%A7%8D%E7%B1%BB%E9%80%89%E6%8B%A9/" data-id="clgwdaurc008u3s4521pmf67n" data-title="【答疑丨第一期】大学生电脑种类选择" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-教程-电脑重装" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/05/%E6%95%99%E7%A8%8B-%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/" class="article-date">
+  <time class="dt-published" datetime="2022-08-04T19:45:37.000Z" itemprop="datePublished">2022-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/05/%E6%95%99%E7%A8%8B-%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/">教程-U盘重装电脑系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一、准备"><a href="#一、准备" class="headerlink" title="一、准备"></a>一、准备</h2><p>1.一台有网络的电脑设备，有一个USB口</p>
+<p>2.一个U盘 容量大于8GB</p>
+<p>Tips：确保U盘内没有文件，建议先把文件转移到电脑内，并且格式化U盘，等制作完成再把文件转入。</p>
+<h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><p>1.打开微软易升官网，下载微软易升，我们以win11为例</p>
+<p>win10:<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows10">下载 Windows 10 (microsoft.com)</a></p>
+<p>win11:<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows11">Download Windows 11 (microsoft.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUanK"><img src="https://s1.ax1x.com/2022/08/05/vmUanK.png" alt="vmUanK.png"></a></p>
+<p>2.点击箭头所指，等待下载完成，等到下图的应用程序，并打开。</p>
+<p>3.将U盘插入电脑</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUNX6"><img src="https://s1.ax1x.com/2022/08/05/vmUNX6.png" alt="vmUNX6.png"></a></p>
+<h2 id="三、U盘制作"><a href="#三、U盘制作" class="headerlink" title="三、U盘制作"></a>三、U盘制作</h2><p>点击接受</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUrhd"><img src="https://s1.ax1x.com/2022/08/05/vmUrhd.png" alt="vmUrhd.png"></a></p>
+<p>取消勾选 【对这台电脑使用推荐的选项】</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUDtH"><img src="https://s1.ax1x.com/2022/08/05/vmUDtH.png" alt="vmUDtH.png"></a>选择U盘</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUBAe"><img src="https://s1.ax1x.com/2022/08/05/vmUBAe.png" alt="vmUBAe.png"></a></p>
+<p>选择U盘，下一步</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUw7D"><img src="https://s1.ax1x.com/2022/08/05/vmUw7D.png" alt="vmUw7D.png"></a></p>
+<p>等待进度条结束，并最终点击完成。下载速度取决于电脑的网速<a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUd0O"><img src="https://s1.ax1x.com/2022/08/05/vmUd0O.png" alt="vmUd0O.png"></a></p>
+<h2 id="四、U盘制作完成"><a href="#四、U盘制作完成" class="headerlink" title="四、U盘制作完成"></a>四、U盘制作完成</h2><p>打开电脑会发现U盘的图标和名字都已改变</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/vmUy9A"><img src="https://s1.ax1x.com/2022/08/05/vmUy9A.png" alt="vmUy9A.png"></a></p>
+<p>U盘里的内容<a target="_blank" rel="noopener" href="https://imgtu.com/i/vmU61I"><img src="https://s1.ax1x.com/2022/08/05/vmU61I.png" alt="vmU61I.png"></a></p>
+<p>到这里作为系统的启动U盘就已经制作完成了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/05/%E6%95%99%E7%A8%8B-%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85/" data-id="clgwdaurl00a23s45al545iy2" data-title="教程-U盘重装电脑系统" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-PTA团体程序设计天梯赛-练习集" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/04/PTA%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B-%E7%BB%83%E4%B9%A0%E9%9B%86/" class="article-date">
+  <time class="dt-published" datetime="2022-07-04T13:38:27.000Z" itemprop="datePublished">2022-07-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/04/PTA%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B-%E7%BB%83%E4%B9%A0%E9%9B%86/">PTA团体程序设计天梯赛-练习集</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="L1-001-Hello-World"><a href="#L1-001-Hello-World" class="headerlink" title="L1-001 Hello World"></a><strong>L1-001 Hello World</strong></h2><p>分数 5</p>
+<p>全屏浏览题目切换布局</p>
+<p>作者 陈越</p>
+<p>单位 浙江大学</p>
+<p>这道超级简单的题目没有任何输入。</p>
+<p>你只需要在一行中输出著名短句“Hello World!”就可以了。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">无</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>代码长度限制</p>
+<p>16 KB</p>
+<p>时间限制</p>
+<p>400 ms</p>
+<p>内存限制</p>
+<p>64 MB</p>
+<h3 id="解题："><a href="#解题：" class="headerlink" title="解题："></a>解题：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="L1-002-打印沙漏"><a href="#L1-002-打印沙漏" class="headerlink" title="L1-002 打印沙漏"></a><strong>L1-002 打印沙漏</strong></h2><p>分数 20</p>
+<p>全屏浏览题目切换布局</p>
+<p>作者 陈越</p>
+<p>单位 浙江大学</p>
+<p>本题要求你写个程序把给定的符号打印成沙漏的形状。例如给定17个“*”，要求按下列格式打印</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+<p>所谓“沙漏形状”，是指每行输出奇数个符号；各行符号中心对齐；相邻两行符号数差2；符号数先从大到小顺序递减到1，再从小到大顺序递增；首尾符号数相等。</p>
+<p>给定任意N个符号，不一定能正好组成一个沙漏。要求打印出的沙漏能用掉尽可能多的符号。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入在一行给出1个正整数N（≤1000）和一个符号，中间以空格分隔。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>首先打印出由给定符号组成的最大的沙漏形状，最后在一行中输出剩下没用掉的符号数。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">19 *</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"> ***</span><br><span class="line">  *</span><br><span class="line"> ***</span><br><span class="line">*****</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>代码长度限制</p>
+<p>16 KB</p>
+<p>时间限制</p>
+<p>400 ms</p>
+<p>内存限制</p>
+<p>64 MB</p>
+<h3 id="解题：-1"><a href="#解题：-1" class="headerlink" title="解题："></a>解题：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/07/04/PTA%E5%9B%A2%E4%BD%93%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A9%E6%A2%AF%E8%B5%9B-%E7%BB%83%E4%B9%A0%E9%9B%86/" data-id="clgwdaur900853s45e74n79be" data-title="PTA团体程序设计天梯赛-练习集" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PTA/" rel="tag">PTA</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2021%E5%91%A8%E8%AE%B0/">2021周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023%E5%91%A8%E8%AE%B0/">2023周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Compass/">Compass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Write-Something%E2%80%A6%E2%80%A6/">Write Something……</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/">室内设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E4%BA%8B%E6%9C%AC/">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Office/" rel="tag">Office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTA/" rel="tag">PTA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" rel="tag">大学生创新基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag">导航</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%81%E6%96%87/" rel="tag">征文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" rel="tag">目标设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" rel="tag">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 15.71px;">Hexo</a> <a href="/tags/Java/" style="font-size: 18.57px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MySQL/" style="font-size: 17.14px;">MySQL</a> <a href="/tags/Office/" style="font-size: 11.43px;">Office</a> <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/tags/%E5%91%A8%E8%AE%B0/" style="font-size: 20px;">周记</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" style="font-size: 11.43px;">大学生创新基础</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">导航</a> <a href="/tags/%E5%BE%81%E6%96%87/" style="font-size: 10px;">征文</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.14px;">爬虫</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 10px;">电脑</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" style="font-size: 11.43px;">电脑游戏</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">目标设计</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" style="font-size: 12.86px;">笔记本</a> <a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 14.29px;">记事本</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/16/2023%E5%91%A8%E8%AE%B0-4-10-4-16/">周记(4.10-4.16)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/11/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/">网址导航</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/09/2023%E5%91%A8%E8%AE%B0-04-03-04-09/">周记(04.03-04.09)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/%E8%A7%84%E5%88%92-%E5%8F%98%E9%9D%A9-%E5%B1%95%E6%9C%9B/">规划-变革-展望</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/2023%E5%91%A8%E8%AE%B0-03-27-04-02/">周记(03.27-04.02)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

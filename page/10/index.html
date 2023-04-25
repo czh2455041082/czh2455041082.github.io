@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/10/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Java-2022-04-26-窗口" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/26/Java-2022-04-26-%E7%AA%97%E5%8F%A3/" class="article-date">
+  <time class="dt-published" datetime="2022-04-26T01:47:59.000Z" itemprop="datePublished">2022-04-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/26/Java-2022-04-26-%E7%AA%97%E5%8F%A3/">Java(2022-04-26-窗口)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这节课需要windowbuilder</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44451165/article/details/105949403">安装教程</a>(点击跳转)：从第六步开始看，注意windowbuilder全部小写</p>
+<p>代码来自W同学，95%代码由windowbuilder自动生成，非手打。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> java.awt.Color;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> java.awt.BorderLayout;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> java.awt.event.ActionListener;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JOptionPane;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JTextField;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JPasswordField;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JTextField tf_name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> JPasswordField password;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">//创建窗体</span></span><br><span class="line">		JFrame myFrame=<span class="keyword">new</span> <span class="title class_">JFrame</span>(<span class="string">&quot;欢迎光临&quot;</span>);</span><br><span class="line">		myFrame.getContentPane().setBackground(Color.PINK);</span><br><span class="line">		myFrame.getContentPane().setLayout(<span class="literal">null</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JButton</span> <span class="variable">bt_OK</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;\u786E\u5B9A&quot;</span>);</span><br><span class="line">		bt_OK.setBounds(<span class="number">67</span>, <span class="number">167</span>, <span class="number">127</span>, <span class="number">23</span>);</span><br><span class="line">		myFrame.getContentPane().add(bt_OK);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">lb_name</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u7528\u6237\u540D&quot;</span>);</span><br><span class="line">		lb_name.setBounds(<span class="number">47</span>, <span class="number">44</span>, <span class="number">54</span>, <span class="number">15</span>);</span><br><span class="line">		myFrame.getContentPane().add(lb_name);</span><br><span class="line">		</span><br><span class="line">		<span class="type">JLabel</span> <span class="variable">label</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JLabel</span>(<span class="string">&quot;\u5BC6\u7801&quot;</span>);</span><br><span class="line">		label.setBounds(<span class="number">47</span>, <span class="number">78</span>, <span class="number">38</span>, <span class="number">15</span>);</span><br><span class="line">		myFrame.getContentPane().add(label);</span><br><span class="line">		</span><br><span class="line">		tf_name = <span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">		tf_name.setBounds(<span class="number">91</span>, <span class="number">41</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(tf_name);</span><br><span class="line">		tf_name.setColumns(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		password = <span class="keyword">new</span> <span class="title class_">JPasswordField</span>();</span><br><span class="line">		password.setEchoChar(<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">		password.setBounds(<span class="number">91</span>, <span class="number">76</span>, <span class="number">66</span>, <span class="number">21</span>);</span><br><span class="line">		myFrame.getContentPane().add(password);</span><br><span class="line">		<span class="comment">//设置窗体可见</span></span><br><span class="line">		myFrame.setVisible(<span class="literal">true</span>);</span><br><span class="line">		<span class="comment">//设置窗体大小</span></span><br><span class="line">		myFrame.setSize(<span class="number">300</span>, <span class="number">400</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//定义监听器</span></span><br><span class="line">		ActionListener a=<span class="keyword">new</span> <span class="title class_">ActionListener</span>() &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="meta">@Override</span></span><br><span class="line">			<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent arg0)</span> &#123;</span><br><span class="line">				String name,pass;</span><br><span class="line">				<span class="comment">//取数据</span></span><br><span class="line">				name=tf_name.getText();</span><br><span class="line">				<span class="comment">//用字符数组创建字符串</span></span><br><span class="line">				pass= <span class="keyword">new</span> <span class="title class_">String</span>(password.getPassword());</span><br><span class="line">				<span class="comment">//比较,并输出</span></span><br><span class="line">				<span class="keyword">if</span> (name.equals(pass))</span><br><span class="line">				&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(<span class="literal">null</span>, <span class="string">&quot;登录成功！&quot;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					JOptionPane.showMessageDialog(<span class="literal">null</span>, <span class="string">&quot;登录失败！&quot;</span>);</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="comment">//为事件源加监听器</span></span><br><span class="line">		bt_OK.addActionListener(a);</span><br><span class="line">	&#125;<span class="comment">//main</span></span><br><span class="line">&#125;<span class="comment">//Demo</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/26/Java-2022-04-26-%E7%AA%97%E5%8F%A3/" data-id="clgwdauqu005d3s45a4ad2drz" data-title="Java(2022-04-26-窗口)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java-2022-04-20-实训八子类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/20/Java-2022-04-20-%E5%AE%9E%E8%AE%AD%E5%85%AB%E5%AD%90%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2022-04-20T01:04:00.000Z" itemprop="datePublished">2022-04-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/20/Java-2022-04-20-%E5%AE%9E%E8%AE%AD%E5%85%AB%E5%AD%90%E7%B1%BB/">Java(2022-04-20-实训八子类)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="实训八"><a href="#实训八" class="headerlink" title="实训八"></a>实训八</h3><p>1、 定义父类Car，该类可以只包含一个cool()方法，用来输出汽车的驾驶感受信息；定义3个子类（比如宝马，福特，奇瑞等）子类，子类中重写cool()方法；定义一个Driver（驾驶员）类，该类可以只有一个dirving(Car c)方法，用来调用Car类中的cool()方法；定义一个测试类Exam，创建一个Driver（驾驶员）类对象，如zhangsan，让zhangsan分别驾驶3款不同的车型驾驶（利用多态实现）。</p>
+<p>解题：</p>
+<p>Car包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">driver</span> </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">feell</span><span class="params">(example example)</span> </span><br><span class="line">    &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;驾驶感受&quot;</span>);</span><br><span class="line">		example.feel();	</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">example</span> &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">feel</span><span class="params">()</span> </span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;驾驶感受&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">bm</span> <span class="keyword">extends</span> <span class="title class_">example</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">feel</span><span class="params">()</span> </span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;宝马的车速度快&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ft</span> <span class="keyword">extends</span> <span class="title class_">example</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">feel</span><span class="params">()</span> </span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;福特的车很稳&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">qr</span> <span class="keyword">extends</span> <span class="title class_">example</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">feel</span><span class="params">()</span> </span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;奇瑞的车空间小&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>exam包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> exam;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Car.bm;</span><br><span class="line"><span class="keyword">import</span> Car.driver;</span><br><span class="line"><span class="keyword">import</span> Car.ft;</span><br><span class="line"><span class="keyword">import</span> Car.qr;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">deemo</span> </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">	&#123;</span><br><span class="line">		bm bmcar=<span class="keyword">new</span> <span class="title class_">bm</span>();</span><br><span class="line">		ft ftcar=<span class="keyword">new</span> <span class="title class_">ft</span>();</span><br><span class="line">		qr qrcar=<span class="keyword">new</span> <span class="title class_">qr</span>();</span><br><span class="line">		driver zhangsan=<span class="keyword">new</span> <span class="title class_">driver</span>();</span><br><span class="line">		System.out.println(<span class="string">&quot;驾驶开始\n&quot;</span>);</span><br><span class="line">		zhangsan.feell(bmcar);</span><br><span class="line">		zhangsan.feell(ftcar);</span><br><span class="line">		zhangsan.feell(qrcar);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、 编写一个Shape类，具有属性：周长和面积；定义其子类三角形和矩形，分别具有求周长的方法。定义主类E，在其main方法中创建三角形和矩形类的对象，并赋给Shape类的对象a、b，使用对象a、b来测试其特性。</p>
+<p><strong>Tips:E的输出写法不是题目所要求的写法，有点问题</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Shape;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">juxing</span> <span class="keyword">extends</span> <span class="title class_">shape</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">ZC</span><span class="params">(<span class="type">double</span> chang, <span class="type">double</span> kuan)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(chang&gt;<span class="number">0</span>&amp;&amp;kuan&gt;<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;矩形的周长为：&quot;</span>+<span class="number">2</span>*(chang+kuan);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;长宽不正确&quot;</span>;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Shape;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">sanjiao</span> <span class="keyword">extends</span> <span class="title class_">shape</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">ZC</span><span class="params">(<span class="type">double</span> b1,<span class="type">double</span> b2,<span class="type">double</span> b3)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>((b1+b2)&gt;b3&amp;&amp;(b2+b3)&gt;b1&amp;&amp;(b1+b3)&gt;b2)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;三角形的周长为：&quot;</span>+(b1+b2+b3);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;三边不正确&quot;</span>;             </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Shape;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">shape</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> zhouchang;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span> mianji;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getZhouchang</span><span class="params">()</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> zhouchang;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setZhouchang</span><span class="params">(<span class="type">double</span> zhouchang)</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.zhouchang = zhouchang;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getMianji</span><span class="params">()</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> mianji;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setMianji</span><span class="params">(<span class="type">double</span> mianji)</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">this</span>.mianji = mianji;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Shape;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">E</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">              </span><br><span class="line">   </span><br><span class="line">        <span class="type">sanjiao</span> <span class="variable">sj</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">sanjiao</span>();</span><br><span class="line">        System.out.println(sj.ZC(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>));</span><br><span class="line">        System.out.println(sj.ZC(<span class="number">5</span>,<span class="number">6</span>,<span class="number">50</span>));</span><br><span class="line"> </span><br><span class="line">        juxing jx= <span class="keyword">new</span> <span class="title class_">juxing</span>();</span><br><span class="line">        System.out.println(jx.ZC(<span class="number">7</span>,<span class="number">8</span>));</span><br><span class="line">        System.out.println(jx.ZC(<span class="number">50</span>,<span class="number">0</span>));</span><br><span class="line">	</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/20/Java-2022-04-20-%E5%AE%9E%E8%AE%AD%E5%85%AB%E5%AD%90%E7%B1%BB/" data-id="clgwdauqv005k3s45anh02326" data-title="Java(2022-04-20-实训八子类)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022周记-04-18-04-24" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/18/2022%E5%91%A8%E8%AE%B0-04-18-04-24/" class="article-date">
+  <time class="dt-published" datetime="2022-04-18T08:33:31.000Z" itemprop="datePublished">2022-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/18/2022%E5%91%A8%E8%AE%B0-04-18-04-24/">周记(04.18-04.24)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="4-18"><a href="#4-18" class="headerlink" title="4.18"></a>4.18</h3><p>昨晚失眠。</p>
+<p>今天开始看《三日间的幸福》</p>
+<p>看完了《三日间的幸福》</p>
+<p>做了一题二级word综合</p>
+<h3 id="4-19"><a href="#4-19" class="headerlink" title="4.19"></a>4.19</h3><p>义修活动</p>
+<p>又是三天核酸连检</p>
+<p>下午空闲更新了下<a target="_blank" rel="noopener" href="https://czh2455041082-github-io.vercel.app/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD5/">mysql实训</a>，公众号进行了<a target="_blank" rel="noopener" href="https://czh2455041082-github-io.vercel.app/Journal/">更新</a></p>
+<h3 id="4-20"><a href="#4-20" class="headerlink" title="4.20"></a>4.20</h3><p>看了俩集<a target="_blank" rel="noopener" href="https://www.sbdm.net/XFDM/40312/">间谍过家家</a></p>
+<h3 id="4-21"><a href="#4-21" class="headerlink" title="4.21"></a>4.21</h3><p>看完了《重启人生》</p>
+<h3 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h3><p>去天街散步</p>
+<h4 id="4-23"><a href="#4-23" class="headerlink" title="4.23"></a>4.23</h4><p>办公软件二级考试结束</p>
+<h3 id="4-24"><a href="#4-24" class="headerlink" title="4.24"></a>4.24</h3><p>下午图书馆写掉了就业作文（1k），形策作业（2k）</p>
+<h3 id="代办："><a href="#代办：" class="headerlink" title="代办："></a>代办：</h3><p>计算机二级（考完）</p>
+<p>英语视频</p>
+<p>创业论文</p>
+<p>行策作业</p>
+<p>毛概手抄报</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/18/2022%E5%91%A8%E8%AE%B0-04-18-04-24/" data-id="clgwdaupp000q3s4576gyhzph" data-title="周记(04.18-04.24)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-答案-办公软件二级-判断" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%88%A4%E6%96%AD/" class="article-date">
+  <time class="dt-published" datetime="2022-04-16T09:08:04.000Z" itemprop="datePublished">2022-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%88%A4%E6%96%AD/">办公软件二级-判断</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>判断题</p>
+<p>1、 COUNT函数用于计算区域中单元格个数。 F</p>
+<p>2、 EXCEL保护工作薄中,分为结构和窗口两个选项。T</p>
+<p>3、 EXCEL保护工作薄中,可以保护工作表和锁定指定的单元格的内容。T</p>
+<p>4、 Excel的同一个数组常量中不可以使用不同类型的值。F</p>
+<p>5、 Excel工作表的数量可根据工作需要作适当增加或减少，并可以进行重命名、设置标签颜色等相应的操作。T</p>
+<p>6、 Excel 可以通过Excel选项自定义选项卡和自定义快速访问工具栏。T</p>
+<p>7、 Excel使用的是从公元0年开始的日期系统。F</p>
+<p>8、 Excel中Rand函数在工作表计算—次结果后就固定下来。 F</p>
+<p>9、 Excel 中不能进行超链接设置。F</p>
+<p>10、      Excel中的数据库函数的参数个数均为4个。F</p>
+<p>11、      Excel中的数据库函数都以字母D开头。T</p>
+<p>12、      EXCEL中三维引用的运算符是”!”。F</p>
+<p>13、      Excel中使用分类汇总，必须先对数据区域进行排序。 T</p>
+<p>14、      Excel中数组常量中的值可以是常量和公式。F</p>
+<p>15、      Excel中数组区域的单元格可以单独编辑。F</p>
+<p>16、      EXCEL中提供了保护工作表、保护工作薄和保护特定工作区域的功能。T</p>
+<p>17、      Excel中只能用“套用表格格式”设置表格样式，不能设置单个单元格样式。F</p>
+<p>18、      HLookup函数是在表格或区域的第一行搜寻特定值。T</p>
+<p>19、      MEDIAN函数返回给定数值集合的平均值。F</p>
+<p>20、      MOD函数得到的是商。F</p>
+<p>21、      ROUND函数返回指定小数位数的四舍五入数值，第二个参数只能是正整数。F</p>
+<p>22、      ROUND函数是向上取整网数。F</p>
+<p>23、      不带分隔符的文本文件导入Excel中时无法分列。T</p>
+<p>24、      不同字段之间进行“或”运算的条件必须使用高级筛选。T</p>
+<p>25、      单击“数据”选项卡→“获取外部数据” →”自文本” ,按文本导入向导命令可以把数据导入工作表中。T</p>
+<p>26、      当原始数据发生变化后,只需单击“更新数据” 按钮,数据透视表就会自动更新数据。T</p>
+<p>27、      对一张已经排好序的Excel表格,可以直接执行分类汇总操作。T</p>
+<p>28、      分类汇总只能按一个字段分类。T</p>
+<p>29、      高级筛选不需要建立条件区,只需要指定数据区域就可以。F</p>
+<p>30、      高级筛选可以对某一字段设定多个( 2个或2个以上)条件。T</p>
+<p>31、      高级筛选可以将筛选结果放在指定的区域。T</p>
+<p>32、      高级筛选可以快速将满足条件的记录显示到指定区域。T</p>
+<p>33、      排序时如果有多个关键字段,则所有关键字段必须选用相同的排序趋势(递增&#x2F;递减)。F</p>
+<p>34、      取消“汇总结果显示在数据下方”选项后,将不再显示汇总结果。F</p>
+<p>35、      如果对一个工作表进行保护，并锁定单元格的内容之后，想要重新编辑，得先取消保护。 T</p>
+<p>36、      如果对一个工作表进行保护，井锁定单元格内容之后，用户只能选定单元格 ,不能进行其它的操作。T</p>
+<p>37、      如果所选条件出现在多列中。并且条件间有“与” 的关系,必须使用高级筛选。F</p>
+<p>38、      如需编辑公式,可点击“插入” 选项卡中”fx” 图标启动公式编辑器。F</p>
+<p>39、      使用记录单可以快速的在指定位置插入一条记录。T</p>
+<p>40、      数据透视表中的字段是不能进行修改的。F</p>
+<p>41、      数据透视图就是将数据透视表以图表的形式显示出来。T</p>
+<p>42、      通过数据验证的设置,可对数据的输入值进行校验。T</p>
+<p>43、      修改了图表数据源单元格的数据，图表会自动跟着刷新。T</p>
+<p>44、      要将最近使用的工作薄固定到列表，可打开 “最近所用文件”,点击想固定的工作薄右边对应的按钮即可。T</p>
+<p>45、      运用”条件格式”中的“项目选取规划”, 可自动显示学生成绩中某列前:10名内单元格的格式。T</p>
+<p>46、      再次执行分类汇总时—定会将替换前—次的汇总结果。F</p>
+<p>47、      在Excel表格中是无法执行分类汇总操作的。F</p>
+<p>48、      在Excel工作表中建立数据透视图时,数据系列只能是数值。T</p>
+<p>49、      在Excel中，不排序就无法正确执行分类汇总操作。T</p>
+<p>50、      在Excel中，除在°视图”功能可以进行显示比例调整外，还可以在工作簿右下角的状态栏拖动缩放滑块进行快速设置。T</p>
+<p>51、      在Excel中，分类汇总的数据折叠层次最多是8层。T</p>
+<p>52、      在Excel中，符号“&amp;””是文本运算符。T</p>
+<p>53、      在Excel中 ,工作表和表格是同一个概念。F</p>
+<p>54、      在Excel中 ,后台“保存自动恢复信息的时间间隔”默认为10分钟。T</p>
+<p>55、      在Excel中，迷你图可以显示一系列数值的变化趋势，并突出显示最值。T</p>
+<p>56、      在Excel中,切片器只能用于数据透视表中。F</p>
+<p>57、      在Excel中，数组常量不得含有不同长度的行或列。T</p>
+<p>58、      在Excel中,数组常量可以分为一维数组和二维数组。T</p>
+<p>59、      在Excel 中,只能设置表格的边框,不能设置单元格边框。F</p>
+<p>60、      在Excel中,只要应用了一种表格格式,就不能对表格格式作更改和清除。F</p>
+<p>61、      在EXCEL中创建数据透视表时,可以从外部(如DBF、MDB等数据库文件)获取源数据。T</p>
+<p>62、      在Excel中当我们插入图片、剪贴画、屏幕截图后，选项卡就会出现”图片工具-格式”选项卡，打开图片工具选项卡面板做相应的设置。T</p>
+<p>63、      在EXCEL中既可以按行排序,也可以按列排序。T</p>
+<p>64、      在Excel中可以更改工作表的名称和位置。T</p>
+<p>65、      在Excel中可以进行嵌套分类汇总。T</p>
+<p>66、      在Excel 中设置“页眉和页脚”, 只能通过“插入”选项卡来插入页眉和页脚,没有其他的操作方法。F</p>
+<p>67、      在Excel中输入分数时，需在输入的分数前加上一个“0”和一个空格。T</p>
+<p>68、      在Excel中套用表格格式后可在“表格样式选项”中选取”汇总行”显示出汇总行,但不能在汇总行中进行数据类别的选择和显示。F</p>
+<p>69、      在Excel 中只能插入和删除行、列,但不能插入和删除单元格。F</p>
+<p>70、      在Excel中只能清除单元格中的内容,不能清除单元格中的格式。F</p>
+<p>71、      在Excel中只要运用了套用表格格式，就不能消除表格格式，把表格转为原始的普通表格。F</p>
+<p>72、      在创建数据透视表时，列标签” 中的字段对应的数据将各占透视表的一列。T</p>
+<p>73、      在创建数据透视表时，”数值” 中的字段指明的是进行汇总的字段名称及汇总方式。T</p>
+<p>74、      在创建数据透视表时，“行标签” 中的字段对应的数据将各占透视表的一行。T</p>
+<p>75、      在创建数据透视表时，“行标签” 中的字段只能有一个。F</p>
+<p>76、      在创建数据透视图的同时自动创建数据透视表。T</p>
+<p>77、      在排序“选项”中可以指定关键字段按字母排序或按笔画排序。T</p>
+<p>78、      只有每列数据都有标题的工作表才能够使用记录单功能。T</p>
+<p>79、      自定义自动筛选可以一次性地对某一字段设定多个(2个或2个以上)条件。T</p>
+<p>80、      自动筛选的条件只能是一个,高级筛选的条件可以是多个。F</p>
+<p>81、      自动筛选和高级筛选都可以将结果筛选至另外的区域中。F</p>
+<p>82、      自动筛选可以快速将满足条件的记录显示到指定区域。F</p>
+<p>83、      自动筛序只能筛选出满足与关系的条件的记录。F</p>
+<p>84、      Office 的word文档有两种密码,一种是打开密码, 一种是文档保护密码。T</p>
+<p>85、      Office中的宏很容易潜入病毒，即宏病毒。T</p>
+<p>86、      按人员限制权限可能分为用户帐户限制和文档的权限。T</p>
+<p>87、      宏是一段程序代码，可以用任何一种高级语言编写宏代码。F</p>
+<p>88、      可以用VBA编写宏代码。T</p>
+<p>89、      如果文本从其他应用程序引入后，由于颜色对比的原因难以阅读，最好改变背景的颜色。F</p>
+<p>90、      无需特别授权，可以直接对Office文件设置IRM功能。F</p>
+<p>91、      用密码进行加密时,如果忘记设置的密码了, 就无法使用此文档。T</p>
+<p>92、      在Office的所有组件中，都可以通过录制宏来记录一组操作。F</p>
+<p>93、      在Office的所有组件中，用来编辑宏代码的开发工具选项卡并不在功能区，需要特别设置。T</p>
+<p>94、      在保存Office文件时,可以设置打开或修改文件的密码。T</p>
+<p>95、      在受保护的视图下打开的文档，所有人都不能編辑。T</p>
+<p>96、      PowerPoint中不但提供了对文稿的编辑保护，还可以设置对节分隔的区域内容进行编辑限制和保护。F</p>
+<p>97、      PPT文档保护可以对文件的内容进行加密，只要在文件菜单的信息选项中进行设置。T</p>
+<p>98、      PPT文档保护可以对文件的内容进行加密。T</p>
+<p>99、      当在—张幻灯片中将某文本行降级时，使该行缩进一个幻灯片层。F</p>
+<p>100、    可以改变单个幻灯片背景的图案和字体。T</p>
+<p>101、    演示文稿的背景色最好采用统一的颜色。T</p>
+<p>102、    在PowerPoint中 ,旋转工具能旋转文本和图形对象。T</p>
+<p>103、    在幻灯片母版设置中,可以起到统一标题内容作用。F</p>
+<p>104、    在幻灯片母版中进行设置,可以起到统一整个幻灯片的风格的作用。T</p>
+<p>105、    在幻灯片中,超链接的颜色设置是不能改变的。F</p>
+<p>106、    在幻灯片中，剪贴图有静态和动态两种。T</p>
+<p>107、    在幻灯中,可以对文字进行三维效果设置。T</p>
+<p>108、     “管理样式” 功能是样式的总指挥站, 使用该对话框可以控制快速样式库和样式任务窗格的样式显示内容,创建、修改和删除样式。T</p>
+<p>109、    “下—页”分节符与硬分页的效果相同。F</p>
+<p>110、     “邮件合并” 不是域的一个类别。F</p>
+<p>111、    dotx格式为启用宏的模板格式,而dotm格式无法启用宏。F</p>
+<p>112、    WORD保护文档的编辑限制分修订、批注、填写窗体、不允许任何修改(只读)四种。T</p>
+<p>113、    Word的屏幕截图功能可以将任何最小化后收藏到任务栏的程序屏幕视图等插入到文档中。T</p>
+<p>114、    Word文档保护的格式设置限制的对话框中有“全部”、“推荐的样式”、“”无”三个按钮。T</p>
+<p>115、    WORD文档的窗体保护可以分为分节保护和窗体域保护。T</p>
+<p>116、    WORD文档的格式可以限制对选定的样式进行格式设置。T</p>
+<p>117、    WORD文档中不能一次性删除所有批注。F</p>
+<p>118、    WORD允许嵌套使用域。T</p>
+<p>119、    WORD中不但提供了对文档的编辑保护，还可以设置对节分隔的区域内容进行编辑限制和保护。T</p>
+<p>120、    word中可以一次性删除所有批注。T</p>
+<p>121、    按一次TAB键就右移一个制表位，按一次DELETE键左移一个制表位。F</p>
+<p>122、    标记为最终状态可以将文档设为只读模式。T</p>
+<p>123、    插入—个分栏符能够将页面分为两栏。F</p>
+<p>124、    打印时，在Word中插入的批注将与文档内容—起被打印出来，无法隐藏。F</p>
+<p>125、    对文档区域的分栏只能是等分分隔处理,无法自定义每个栏的宽度。F</p>
+<p>126、    分栏的栏宽和间隙都可以自定义调整。T</p>
+<p>127、    分页符、分节符等编辑标记只能在草稿视图中查看。F</p>
+<p>128、    根据栏宽和间距，可以设置文档区域1到N(N&gt;1)栏的分栏效果。T</p>
+<p>129、    拒绝修订的功能等同于撤销操作。F</p>
+<p>130、    可以根据页边或者文字为基准来设置和调整与页面边框的距离。T</p>
+<p>131、    可以通过插入域代码的方法在文档中插入页码，具体方法是先输入花括号“{”、 再输入 “page”、最后输入花括号 “}” 即呵。选中域代码后按下”Shift” +“F9” , 即可显示为当前页的页码。F</p>
+<p>132、    目录和索引分别定位了文档中标题和关键词所在的页码,便于阅读和查找。T</p>
+<p>133、    批注和修订标记的颜色只能是红色。F</p>
+<p>134、    批注会对文档本身进行修改。F</p>
+<p>135、    批注仅是审阅者为文档的一部分内容所做的注释,并不对文档本身进行修改。T</p>
+<p>136、    嵌入式批注就是把批注内容放在批注内容后面。T</p>
+<p>137、    如果采用·拼页的编辑方式，当第一页的文字是垂直排版时，那么打印输出的结果是第一页会排在一页纸张的右边，而左边是编辑顺序的第二页。F</p>
+<p>138、    如果删除了某个分节符，其前面的文字将合并到后面的节中，并且采用后者的格式设置。T</p>
+<p>139、    如果通过搜索关键字导航，那么当文档中匹配的关键字太多时，导航窗格就不会显示搜索结果。F</p>
+<p>140、    如果文档中的标题没有套用大纲级别或者是样式标题，那么就无法通过页面导航窗格来定位页面。T</p>
+<p>141、    如果要在更新域时保留原格式，只要将域代码中“)*MERGEFORMAT”删除即可。F</p>
+<p>142、    如果有多人参与批注或修订操作，只能显示所有审阅者的批注和修订，而不能进行选择性显示。F</p>
+<p>143、    如需对某个样式进行修改，可点击插入选项卡中的“更改样式”按钮。F</p>
+<p>144、    如需使用导航窗格对文档进行标题导航，必须预先为标题文字设定大纲级别。T</p>
+<p>145、    软分页和硬分页都可以根据需要随时插入。F</p>
+<p>146、    若要使格式设置限制或者编辑限制生效，不—定要启动强制保护。F</p>
+<p>147、    删除批注时只能一个一个删除。F</p>
+<p>148、    设置页码格式和在指定位置插入页码是两个独立的操作，要分开进行。T</p>
+<p>149、    审阅者添加的修订只能接受，不能拒绝。F</p>
+<p>150、    审阅者在添加批注时,不能更改显示在批注框内的用户名。F</p>
+<p>151、    书签名必须以字母、数字或者汉字开头，不能有空格，可以有下划线字符来分隔文字。F</p>
+<p>152、    虽然文档的页码可以设置为多种格式类型，但是页码必须由系统生成，因为页码实际上是一种域的值呈现。T</p>
+<p>153、    通过打印设置中的“打印标记”选项，可以设置文档中的修订标记是否被打印出来。T</p>
+<p>154、    通过页面布局的页面背景为页面设置的页面背景填充图片依赖于图片本身的实际大小并且无法调节。F</p>
+<p>155、    图片被裁剪后，被裁剪的部分仍作为图片文件的一部分被保存在文档中。T</p>
+<p>156、    位于每节或者文档结尾,用于对文档某些特定字符、专有名词或术语进行注解的注释,就是脚注。F</p>
+<p>157、    文档的任何位置都可以通过运用TC域标记为目录项后建立目录。T</p>
+<p>158、    文档的页眉页脚不是每篇文档都必须要设置。T</p>
+<p>159、    文档的页面边框受到节区域的限制，而文字或段落边框没有这个限制。T</p>
+<p>160、    文档页面的主题以及主题元素:颜色、字体和效果都可以自定义并保存，以供后续使用。T</p>
+<p>161、    文档右侧的批注框只用于显示批注。F</p>
+<p>162、    文字和段落样式的分类，根据创建主题的不同分为:内置样式和自定义样式。T</p>
+<p>163、    相邻节与节之间的页眉或页脚的关联关系是可以分开设置的，也就是页眉可以有关联，但页脚可以没有关联。T</p>
+<p>164、    相邻节与节之间的页眉页脚的关联关系是可以选择或者取消的。T</p>
+<p>165、    修订是直接对文章进行更改，并以批注的形式显示，不仅能看出那些地方修改了，还可以选择接受或者不接受修改。T</p>
+<p>166、    样式的优先级可以在新建样式时自行设置。F</p>
+<p>167、    页眉页脚区的信息空间是固定的，不可以逾越。F</p>
+<p>168、    页面的背景可以填充渐变色、图片、图案或者纹理，但是页面背景不受节区域的限制。T</p>
+<p>169、    页面的页码必须放置在页脚的位置。F</p>
+<p>170、    页面的页码可以通过键盘直接输入页码编号的数码。F</p>
+<p>171、    页面的左边距不包括装订线的部分。T</p>
+<p>172、    页面的左右边距也就是文档段落的左右缩进。F</p>
+<p>173、    页面中的文字行列数是可以任意自定义的。F</p>
+<p>174、    一般论文中，图片和图形的题注在其下方，表格的题注在其上方。T</p>
+<p>175、    隐藏修订不会从文档中删除现有的修订或批注。T</p>
+<p>176、    应用样式时可以使用格式刷功能进行复制粘贴。T</p>
+<p>177、    有时在页眉上的文字下方会出现一条横线,但是这条横线是无法删除的。F</p>
+<p>178、    与页码设置一样，脚注也支持节操作，可以为注释引用标记在每节中重新编号。T</p>
+<p>179、    域代码不区分英文大小写。T</p>
+<p>180、    域代码中的域参数是必选项，不能省略。F</p>
+<p>181、    域代码中的域名是关键字，不可省略。T</p>
+<p>182、    域结果的格式不能改变。F</p>
+<p>183、    域就像一段程序代码,文档中显示的内容是域代码运行的结果。T</p>
+<p>184、    域是文档中可能发生变化的数据或邮件合并文档中参用信封、标签的占位符。T</p>
+<p>185、    域特征字符可以直接输入。T</p>
+<p>186、    域有两种显示方式:域代码和域结果。T</p>
+<p>187、    在”根据格式设置创建新样式”对话框中可以新建表格样式，但表格样式在”样式”任务窗格中不显示。T</p>
+<p>188、    在编号所在页面下面的解释是脚注,在章节结尾或全文末尾处的解释是尾注。T</p>
+<p>189、    在插入页码、制作目录时都用到了城。T</p>
+<p>190、    在插入页码时，页码的范围只能从1开始。F</p>
+<p>191、    在大纲视图中是无法观察到文档的段落格式和自然分页的情况。T</p>
+<p>192、    在各个视图方式下能否显示文档格式标识,可以自定义设置的。F</p>
+<p>193、    在键盘输入域代码后必须更新域才能显示域结果。T</p>
+<p>194、    在审阅时，对于文档中的所有修订标记只能全部接受或全部拒绝。F</p>
+<p>195、    在文档中点击构建基块库中已有的文档部件，会出现构建基块框架。T</p>
+<p>196、    在文字行的尾端敲入回车，可以实现分段的效果，分段主要用于设置以段落为单位的段落格式。T</p>
+<p>197、    在页面设置过程中,若下边距为2cm ,页脚区为0.5cm,则版心底部距离页面底部的实际距离为2.5cm。F</p>
+<p>198、    在页面设置过程中，若左边距为3cm，装订线为0.5cm,则版心左边距离页面左边沿的实际距离为3.5cm。T</p>
+<p>199、    只能对已经插入节的区域进行分栏处理。F</p>
+<p>200、    只需双击文档版心正文区就可以退出页眉页脚的编辑状态。T</p>
+<p>201、    只有在页面视图才能调整页面的显示比例。F</p>
+<p>202、    纸张的型号尺寸是源于纸张系列最大号纸张的面积值，每沿着长度方向对折一次就得到小一号的纸张型号。T</p>
+<p>203、    中国的引文样式标准准IS0690。F</p>
+<p>204、    主控文档中的子文档既可以折叠为几行超链接，也可以展开为长文档并自动生成整个文档的目录。T</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%88%A4%E6%96%AD/" data-id="clgwdaurw00bx3s457rgid9jb" data-title="办公软件二级-判断" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Office/" rel="tag">Office</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-答案-办公软件二级-单选" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%8D%95%E9%80%89/" class="article-date">
+  <time class="dt-published" datetime="2022-04-16T08:43:05.000Z" itemprop="datePublished">2022-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%8D%95%E9%80%89/">办公软件二级-单选</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="一、单选题。"><a href="#一、单选题。" class="headerlink" title="一、单选题。"></a>一、单选题。</h4><p>\1.    A2单元格存储了”8913821”要使用函数将”8913821”这一号码升级为”88913821”，应该使用(B)</p>
+<p>A. MID(A2,2,0,8)</p>
+<p>B.REPLACE (A2,2,0,8)</p>
+<p>C.GETMID (A2,2,0,8)</p>
+<p>D.EXTRACTMID(A2,2,0,8)</p>
+<p>\2.    B1单元格存了“20150825”，要取出当前月应该(A )</p>
+<p>​    A.MID ( B1,5,2)</p>
+<p>​    B.REPLACE ( B1,5, 2)</p>
+<p>​    C.GETMID ( B1,5,2 )</p>
+<p>​    D.EXTRACTMID (B1,5,2 )</p>
+<p>\3.    Excel的筛选功能包括（B）和高级筛选。</p>
+<p>A.直接筛选;</p>
+<p>B.自动筛选;</p>
+<p>C.简单筛选;</p>
+<p>D.间接筛选;</p>
+<p>\4.    Excel可以把工作表转换成Web页面所需的( A)格式。</p>
+<p>A.HTML;</p>
+<p>B.TXT;</p>
+<p>C.BAT;</p>
+<p>D.EXE;</p>
+<p>\5.    Excel图表是动态的，当在图表中修改了数据系列的值时，与图表相关的工作表中的数据( C)</p>
+<p>A.出现错误值;</p>
+<p>B.不变;</p>
+<p>C.自动修改;</p>
+<p>D.用特殊颜色显示;</p>
+<p>\6.    Excel文档包括(D)</p>
+<p>​    A.工作表</p>
+<p>​    B.工作薄</p>
+<p>​    c.编辑区域</p>
+<p>​    D.以上都是</p>
+<p>\7.    Excel—维垂直数组中元素用（D）分开。</p>
+<p>A. \</p>
+<p>B.\</p>
+<p>C.,</p>
+<p>D. ;</p>
+<p>\8.    Excel—维水平数组中元素用（C）分开。</p>
+<p>A. ；</p>
+<p>B.\</p>
+<p>C.，</p>
+<p>D. \</p>
+<p>\9.    Excel用条件格式设置隔行不同颜色的方法（B）</p>
+<p>A.条件格式-填充色;</p>
+<p>B.条件格式-新建规则;</p>
+<p>C.条件格式-数据分类;</p>
+<p>D.格式-设置单元格式;</p>
+<p>\10.  Excel中，在单元格输入负数时，两种可使用的表示负数的方法是(A )</p>
+<p>A.在负数前加一个减号或用圆括号;</p>
+<p>B.斜杠(&#x2F;)或反斜杠(\);</p>
+<p>C.斜杠(&#x2F;)或连接符(-);</p>
+<p>D.反斜杠(\)或连接符(-);</p>
+<p>\11.  Excel中PMT函数的用于( A)</p>
+<p>A.基于固定利率及等额分期付款方式，返回贷款的每期付款额。</p>
+<p>B.等额分期付款方式，返回贷款的每期付款额。</p>
+<p>C.基于固定利率,返回贷款的每期付款额。</p>
+<p>D.贷款的每期付款额。</p>
+<p>\12.  SUMIF的第1个参数是( A)</p>
+<p>A.条件区域</p>
+<p>B .指定的条件</p>
+<p>C .需要求和的区域</p>
+<p>D.其他</p>
+<p>\13.  SUMIF的第2个参数是( B)</p>
+<p>A.条件区域</p>
+<p>B .指定的条件</p>
+<p>C .需要求和的区域</p>
+<p>D.其他</p>
+<p>\14.  SUMIF的第3个参数是( C)</p>
+<p>A.条件区域</p>
+<p>B .指定的条件</p>
+<p>C .需要求和的区域</p>
+<p>D.其他</p>
+<p>\15.  VLOOKUP的第1个参数的含义是(A)</p>
+<p>A.查找值;</p>
+<p>B.查找范围;</p>
+<p>C.查找列;</p>
+<p>D.匹配;</p>
+<p>\16.  VLOOKUP的第2个参数的含义是(B)</p>
+<p>A.查找值;</p>
+<p>B.查找范围;</p>
+<p>C.查找列;</p>
+<p>D.匹配;</p>
+<p>\17.  VLOOKUP的第3个参数的含义是(C)</p>
+<p>A.查找值;</p>
+<p>B.查找范围;</p>
+<p>C.查找列;</p>
+<p>D.匹配;</p>
+<p>\18.  VLOOKUP函数从一个数组或表格的(C )中查找含有特定值的字段 ,再返回同一列中其一指定单元格中的值。</p>
+<p>A.第一行</p>
+<p>B.最末行</p>
+<p>C.最左列</p>
+<p>D.最右列</p>
+<p>\19.  返回参数组中非空单元格数的函数是( D)</p>
+<p>A. COUNT</p>
+<p>B. COUNTBLANK</p>
+<p>C. COUNTIF</p>
+<p>D. COUNTA</p>
+<p>\20.  返回参数组中非空值单元格数目的函数是( D)</p>
+<p>A. COUNT</p>
+<p>B. COUNTBLANK</p>
+<p>C. COUNTIF</p>
+<p>D. COUNTA</p>
+<p>\21.  公式&#x3D; RIGHT(中国农业银行”,2)的运算结果是(C)</p>
+<p>A.中国</p>
+<p>B.农业</p>
+<p>C.银行</p>
+<p>D.行</p>
+<p>\22.  公式&#x3D;VALUE(“12”)+SQRT(9)的运算结果是( C)</p>
+<p>A. #NAME?</p>
+<p>B. #VALUE?</p>
+<p>C.15 </p>
+<p>D.21</p>
+<p>\23.  公式&#x3D;LEFT(RIGHT(中国农业银行”,4),2)的运算结果是(B )</p>
+<p>A.中国</p>
+<p>B.农业</p>
+<p>C.银行</p>
+<p>D.农</p>
+<p>\24.  关于Excel表格,下面说法不正确的是( D)</p>
+<p>A.表格的第一行为列标题 (称字段名)</p>
+<p>B.表格中不能有空列</p>
+<p>C.表格与其他数据间至少留有空行或空列</p>
+<p>D.为了清晰,表格总是把第一行作为列标题。而把第二行空出来</p>
+<p>\25.  关于Excel区域定义不正确的论述是(C )</p>
+<p>A.区域可由同一行连续多个单元格组成</p>
+<p>B.区域可由同一列连续多个单元格组成</p>
+<p>C.区域可由单一单元格组成</p>
+<p>D.区域可由不连续的单元格组成</p>
+<p>\26.  关于分类汇总,叙述正确的是(A )</p>
+<p>A.分类汇总前首先应按分类字段值对记录排序</p>
+<p>B .分类汇总可以按多个字段分类</p>
+<p>C.只能对数值型字段分类</p>
+<p>D.汇总方式只能求和</p>
+<p>\27.  关于筛选,叙述正确的是(B )</p>
+<p>A.自动筛选可以同时显示数据区域和筛选结果</p>
+<p>B.高级筛选可以进行更复杂条件的筛选</p>
+<p>C.高级筛选不需要建立条件区域</p>
+<p>D.自动筛选可将筛选结果放在指定区域</p>
+<p>\28.  关于筛选的叙述，下列错误的是（B）</p>
+<p>A.筛选可以将符台条件的数据显示出来;</p>
+<p>B.筛选功能会改变原始工作表的数据结构与内容;</p>
+<p>C.可以自定义筛选的条件;</p>
+<p>D.可以设置多个字段的筛选条件;</p>
+<p>\29.  计算贷款指定期数应付的利息额应该使用函数（A）</p>
+<p>A.IPMT;</p>
+<p>B.SLN;</p>
+<p>C.PV;</p>
+<p>D.FV;</p>
+<p>\30.  计算贷款指定期数应付的利息额应使用(C)函数。</p>
+<p>A.FV;</p>
+<p>B.PV;</p>
+<p>C.IPMT;</p>
+<p>D.PMT;</p>
+<p>\31.  计算物品的线性折旧费应使用函数(B ).</p>
+<p>​    A.IPMT</p>
+<p>​    B. SLN</p>
+<p>​    C. PV</p>
+<p>​    D. FV</p>
+<p>\32.  假设在某工作表A1单元格存储的公式中含有$B1 ,将其复制到C2单元格后,公式中的$B1将变为(C )</p>
+<p>A. $D2</p>
+<p>B. $D1</p>
+<p>C. $B2</p>
+<p>D.$B1</p>
+<p>\33.  将Excel工作表中单元格E8的公式” &#x3D; $A3+B4”移至G8 ,应变为(B )</p>
+<p>A. $A3+B4</p>
+<p>B. SA3+D4</p>
+<p>C. $C3+B4</p>
+<p>D. $C3+D4</p>
+<p>\34.  将Excel表格的首行或者首列固定不动的功能是(C)</p>
+<p>​    A.锁定</p>
+<p>​    B.保护工作表</p>
+<p>​    c .冻结窗格</p>
+<p>​    D.不知道</p>
+<p>\35.  将单元格A3中的公式”&#x3D;$A1+A$2” 复制到单元格B4中，则单元格B4中的公式为(A )</p>
+<p>A. “&#x3D;$A2+B$2”</p>
+<p>B. “&#x3D;$A2 +B$1”</p>
+<p>C. “&#x3D;$A1+B$2”</p>
+<p>D. “&#x3D;$A1+B$1”</p>
+<p>\36.  将数字截尾取整的函数是( A)</p>
+<p>A. TRUNC</p>
+<p>B. INT</p>
+<p>C. ROUND</p>
+<p>D. CEILING</p>
+<p>\37.  将数字向上舍入到最接近的偶数的函数是( A)</p>
+<p>A. EVEN</p>
+<p>B. ODD</p>
+<p>C. ROUND</p>
+<p>D. TRUNC</p>
+<p>\38.  将数字向上舍入到最接近的奇数的函数是( D)</p>
+<p>A. ROUND</p>
+<p>B. TRUNC </p>
+<p>C. EVEN</p>
+<p>D. ODD</p>
+<p>\39.  默认情况下,每个工作薄包含(A ) 个工作表</p>
+<p>A.1</p>
+<p>B.2</p>
+<p>C.3</p>
+<p>D.4</p>
+<p>\40.  某单位要统计各科室人员工资情况，按工资从高到低排序,若工资相同,以工龄降序排列,则以下做法正确的是( A)</p>
+<p>A.主要关键字为”科室”，次要关键字为”工资”,第二个次要关键字为”工龄”</p>
+<p>B.主要关键字为”工资” ，次要关键字为”工龄”, 第二个次要关键字为”科室”</p>
+<p>C.主要关键字为”工龄”，次要关键字为”工资”,第二个次要关键字为”科室”</p>
+<p>D.主要关键字为”科室”。次要关键字为工龄” ,第二个次要关键字为”工资”</p>
+<p>\41.  求取某数据库区域满足某指定条件数据的平均值用(C)</p>
+<p>A.DGETA;</p>
+<p>B.DCOUNT;</p>
+<p>C.DAVERAGE;</p>
+<p>D.DSUM;</p>
+<p>\42.  如何快速的将一个数据表格的行、列交换:(D )</p>
+<p>A. 利用复制、粘贴命令</p>
+<p>B .利用剪切、粘贴命令</p>
+<p>C. 使用鼠标拖动的方法实现</p>
+<p>D. 使用复制命令，然后使用选择性粘贴，再选中“转置”, 确定即可</p>
+<p>\43.  设置Excel单元格颜色以便突出显示的方法（C）</p>
+<p>A.条件格式-突出显示;</p>
+<p>B.条件格式-突出设置单元格格式;</p>
+<p>C.条件格式-突出显示单元格规则;</p>
+<p>D.条件格式-突出显示单元格;</p>
+<p>\44.  设置数据按颜色分组的方法（C）</p>
+<p>A.条件格式-设置颜色;</p>
+<p>B.条件格式-设置分类的条件-设置颜色;</p>
+<p>C.条件格式-新建规则;</p>
+<p>D.条件格式-设置颜色-设置分类的条件;</p>
+<p>\45.  使用Excel的数据筛选功能，是将( B)</p>
+<p>​    A.满足条件的记录显示出来，而删除掉不满足条件的数据</p>
+<p>​    B.不满足条件的记录暂时隐藏起来，只显示满足条件的数据</p>
+<p>​    C.不满足条件的数据用另外—个工作表来保存起来</p>
+<p>​    D.将满足条件的数据突出显示</p>
+<p>\46.  使用记录单增加记录时,当输完一个记录的数据后,按（D）便可再次出现一个空白记录以便继续增加记录。</p>
+<p>A.[关闭]按钮;</p>
+<p>B.[下一条]按钮;</p>
+<p>C.[ ↑]键;</p>
+<p>D.[↓]键或回车键或[新建]按钮;</p>
+<p>\47.  数据条的渐变填充是( A)实现的。</p>
+<p>A.条件格式-数据条-渐变填充;</p>
+<p>B.条件格式-渐变填充;</p>
+<p>C.格式设置单元格格式;</p>
+<p>D.条件格式-数据条;</p>
+<p>\48.  数据透视表在插入选项卡（C）组中。</p>
+<p>A.插图;</p>
+<p>B.文本;</p>
+<p>C.表格;</p>
+<p>D.符号;</p>
+<p>\49.  统计某数据库中记录字段满足某指定条件的非空单元格数用(A)</p>
+<p>A . DCOUNTA</p>
+<p>B. DCOUNT</p>
+<p>c. DAVERAGE</p>
+<p>D. DSUM</p>
+<p>\50.  为了实现多字段的分类汇总, Excel提供的工具是( D)</p>
+<p>A.数据地图</p>
+<p>B.数据列表</p>
+<p>C .数据分析</p>
+<p>D.数据透视表</p>
+<p>\51.  下拉列表框的设置可以通过使用( B) 命令来完成。</p>
+<p>A. 名称管理器</p>
+<p>B. 数据有效性(数据验证)</p>
+<p>c. 公式审核</p>
+<p>D. 模拟分析</p>
+<p>\52.  下列函数中，(C ) 函数不需要参数。</p>
+<p>A. DATE</p>
+<p>B. DAY </p>
+<p>C. TODAY </p>
+<p>D. TIME</p>
+<p>\53.  要取出某时间值的分钟数要用（B）</p>
+<p>A.HOUR;</p>
+<p>B. MINUTE;</p>
+<p>C.SECOND;</p>
+<p>D.TIME;</p>
+<p>\54.  要在Excel工作薄中同时选择多个不相邻的工作表，可以在按住（C）键的同时依次单击各个工作表的标签。</p>
+<p>A.Shift;</p>
+<p>B.Alt;</p>
+<p>C. Ctrl;</p>
+<p>D.CapsLock;</p>
+<p>\55.  一个工作表各列数据均含标题,要对所有列数据进行排序,用户应选取的排序区域是（A）</p>
+<p>A.含标题的所有数据区;</p>
+<p>B.含标题任—列数据;</p>
+<p>C.不含标题的所有数据区;</p>
+<p>D.不含标题任—列数据;</p>
+<p>\56.  以下Excel运算符中优先级最高的是(A)</p>
+<p>​    A . :</p>
+<p>​    B. ,</p>
+<p>​    C .*</p>
+<p>​    D.+</p>
+<p>\57.  以下不属于Excel中数字分类的是(D )</p>
+<p>A.常规</p>
+<p>​    B.货币</p>
+<p>​    c.文本</p>
+<p>​    D.条形码</p>
+<p>\58.  以下哪种方式可在Exce1中输入数值-6( B)</p>
+<p>A. “6;</p>
+<p>B. -6;</p>
+<p>C. H6;</p>
+<p>D.W6;</p>
+<p>\59.  以下哪种方式可在Exce1中输入数值-6(B)</p>
+<p>A. “6;</p>
+<p>B. (6);</p>
+<p>C. \6;</p>
+<p>D.\6;</p>
+<p>\60.  以下哪种方式可在Excel中输入文本类型的数字”0001”（B）</p>
+<p>A. “0001”;</p>
+<p>B. ‘0001;</p>
+<p>C.\0001;</p>
+<p>D.\0001;</p>
+<p>\61.  有关表格排序的说法正确是(D )</p>
+<p>A.只有数字类型可以作为排序的依据</p>
+<p>B.只有日期类型可以作为排序的依据</p>
+<p>C.笔画和拼音不能作为排序的依据</p>
+<p>D .排序规则有升序和降序</p>
+<p>\62.  在Excel 表格的单元格中出现一连串的“####”符号，则表示(C )</p>
+<p>A.需重新输入数据</p>
+<p>B.需删去该单元格</p>
+<p>C.需调整单元格的宽度</p>
+<p>D.需删去这些符号</p>
+<p>\63.  在Exce|单元格中输入的数据有两种类型，一种常量，可以是数值或文字。另一种是以“&#x3D;”开头的(A)</p>
+<p>A.公式</p>
+<p>B.批注</p>
+<p>C.数字</p>
+<p>D.字母</p>
+<p>\64.  在Excel的高级筛选中, 条件区域中不同行的条件是(A )</p>
+<p>A.或关系</p>
+<p>B.与关系.</p>
+<p>C.非关系</p>
+<p>D.异或关系.</p>
+<p>\65.  在Excel的高级筛选中，条件区域中写在同—行的条件是（B）</p>
+<p>A.或关系;</p>
+<p>B.与关系;</p>
+<p>C.非关系;</p>
+<p>D.异或关系;</p>
+<p>\66.  在Excel的工作表中,每个单元格都有其固定的地址,如”A5” 表示(A )</p>
+<p>A.”A”代表”A”列，“5”代表第“5”行</p>
+<p>B.”A”代表“A”行，“5”代表第“5”列</p>
+<p>C. “A5” 代表单元格的數据</p>
+<p>D.以上都不是</p>
+<p>\67.  在Excel的工作表中建立的数据表，通常把每一行称之为一个(A)</p>
+<p>​    A.记录</p>
+<p>​    B.二维表</p>
+<p>​    C.属性</p>
+<p>​    D.关键字</p>
+<p>\68.  在Excel公式复制时，为使公式中的( A)，必须使用绝对地址(引用)。</p>
+<p>A.引用不随新位置而变化;</p>
+<p>B.单元格地址随新位置而变化;</p>
+<p>C.引用随新位置而变化;</p>
+<p>D.引用大小随新位置而变化;</p>
+<p>\69.  在Excel中,(B)可将选定的图表删除。</p>
+<p>​    A.“文件”菜单下的命令</p>
+<p>​    B.按“Del”</p>
+<p>​    C.“数据”菜单下的命令</p>
+<p>​    D.图表菜单下的命令</p>
+<p>\70.  在Excel中,单元格地址有3种引用方式,它们是相对引用、绝对引用、和(B )</p>
+<p>A.相互引用</p>
+<p>B.混合引用</p>
+<p>C.简单引用</p>
+<p>D.复杂引用</p>
+<p>\71.  在Excel中 ,当公式中出现被零除的现象时,产生的错误值是(A )</p>
+<p>A. #DIV&#x2F;0!</p>
+<p>B. #N&#x2F;A!</p>
+<p>C. #NUM!</p>
+<p>D. #VALUE!</p>
+<p>\72.  在Excel中，关于“筛选”的正确叙述是（B）</p>
+<p>A.自动筛选和高级筛选都可以将结果筛选至另外的区域中;</p>
+<p>B.执行高级筛选前必须在另外的区域中给出筛选条件;</p>
+<p>C.自动筛选的条件只能是—个,高级筛选的条件可以是多个;</p>
+<p>D.如果所选条件出现在多列中,并且条件间有与的关系,必须使用高级筛选;</p>
+<p>\73.  在Excel中，求最大值的函数是（D）</p>
+<p>A. IF();</p>
+<p>B.COUNT();</p>
+<p>C. MIN();</p>
+<p>D. MAX();</p>
+<p>\74.  在Excel中，如果我们只需要数据列表中记录的一部分时，可以使用Excel提供的（B）</p>
+<p>A.排序;</p>
+<p>B.自动筛选;</p>
+<p>C.分类汇总;</p>
+<p>D.以上全部;</p>
+<p>\75.  在Excel中，使用函数LEFT(A1，4)等价于（C）</p>
+<p>A.LEFT(4,A1);</p>
+<p>B.MID(A1,4);</p>
+<p>C.MID(A1,1,4);</p>
+<p>D. MID(A1,4,1);</p>
+<p>\76.  在Excel中，下面不是获取外部数据的方法的是（D）</p>
+<p>A.现有连接;</p>
+<p>B.来自网站;</p>
+<p>C.来自Access;</p>
+<p>D.来自word;</p>
+<p>\77.  在Excel中，在(D )选项卡可进行工作簿视图方式的切换。</p>
+<p>​    A.开始</p>
+<p>​    B.页面布局</p>
+<p>​    c.审阅</p>
+<p>​    D.视图</p>
+<p>\78.  在Excel中，在打印学生成绩单时，对不及格的成绩用醒目的方式表示(如用红色表示等），当要处理大量的学生成绩时，利用（B）命令最为方便</p>
+<p>​    A.查找</p>
+<p>​    B.条件格式</p>
+<p>​    C.数据筛选</p>
+<p>​    D.定位</p>
+<p>\79.  在Excel中，在进行自动分类汇总之前必须(C)</p>
+<p>​    A.对数据清单进行索引</p>
+<p>​    B.选中数据清单</p>
+<p>​    C.必须对数据清单按要进行分类汇总的列进行排序</p>
+<p>​    D.数据清单的第一行里必须有列标记</p>
+<p>\80.  在Excel中创建图表 ,首先要打开( B) ,然后在“图表” 组中操作。</p>
+<p>A. “开始”选项卡</p>
+<p>B.“插入”选项卡</p>
+<p>C.”公式”选项卡</p>
+<p>D.“数据”选项卡</p>
+<p>\81.  在Excel中的某个单元格中输入”(123)” , 则该单元格中的内容为(A)</p>
+<p>A.-123</p>
+<p>B. “123”</p>
+<p>C.”(123)”</p>
+<p>D.123</p>
+<p>\82.  在ExcelI建立图表时,有很多图表类型可供选择,能够很好地表现一段时期内数据变化趋势的图表类型是(B)</p>
+<p>A.柱形图</p>
+<p>B.折线图</p>
+<p>C.饼图</p>
+<p>D. XY散点图</p>
+<p>\83.  在Excel中使用填充柄对包含数字的区域复制时应按住(B）键。</p>
+<p>​    A . Alt</p>
+<p>​    B . Ctrl</p>
+<p>​    C. Shift</p>
+<p>​    D. Tab</p>
+<p>\84.  在Excel中套用表格格式后，会出现(B )选项卡。</p>
+<p>A.图片工具</p>
+<p>B.表格工具</p>
+<p>C.绘图工具</p>
+<p>D.其他工具</p>
+<p>\85.  在Excel 中要想设置行高、列宽,应选用( A)选项卡中的“格式”命令。</p>
+<p>A.开始</p>
+<p>B.插入</p>
+<p>C.页面布局</p>
+<p>D.视图</p>
+<p>\86.  在表格中，如需运算的空格恰好位于表格最底部，需将将该空格以上的内容累加，可通过该插入那句公式实现(D )</p>
+<p>A. &#x3D;ADD(BELOW)</p>
+<p>B. &#x3D;ADD(ABOVE)</p>
+<p>C. &#x3D;SUM(BELOW)</p>
+<p>D. &#x3D;SUM(ABOVE)</p>
+<p>\87.  在单元格A1中输入字符”XYZ””，在B1中输入”100”(均不含引号)，在单元格C1中输入函数&#x3D;IF(AND(A1&#x3D;”XYZ”,B1&lt;100),B1+10,B1-10)，则C1单元格中的结果为(B)</p>
+<p>A.80;</p>
+<p>B.90;</p>
+<p>C.100;</p>
+<p>D.110;</p>
+<p>\88.  在对Excel中，对数据表进行排序时，在”排序”对话框中能够指定的排序关键字个数限制为（D）</p>
+<p>A.1个;</p>
+<p>B.2个;</p>
+<p>C.3个;</p>
+<p>D.任意;</p>
+<p>\89.  在一个表格中,为了查看满足部分条件的数据内容,最有效的方法是( C)</p>
+<p>A.选中相应的单元格</p>
+<p>B .采用数据透视表工具</p>
+<p>C .采用数据筛选工具</p>
+<p>D .通过宏来实现</p>
+<p>\90.  在一工作表中筛选出某项的正确操作方法是(B)</p>
+<p>​    A.鼠标单击数据表外的任一单元格，执行“数据→筛选→自动筛选”菜单命令，鼠标单击想查找列的向下箭头，从下拉菜单中选择筛选项</p>
+<p>​    B．鼠标单击数据表中的任一单元格，执行“数据→筛选→自动筛选”菜单命令，鼠标单击想查找列的向下箭头，从下拉菜单中选择筛选项</p>
+<p>​    C.执行“编辑→查找”菜单命令，在“查找”对话框的“查找内容”框输入要查找的项，单击【关闭】按钮。</p>
+<p>​    D.执行“编辑→查找”菜单命令，在“查找”对话框的“查找内容”框输入要查找的项，单击【查找下一个】按钮。</p>
+<p>\91.  自定义序列可以通过(C）来建立。</p>
+<p>​    A.执行”开始→格式”菜单命令</p>
+<p>​    B.执行”数据→筛选”菜单命令</p>
+<p>​    C.执行”开始→排序和筛选→自定义排序→次序→自定义序列”命令</p>
+<p>​    D .执行”数据→创建组”菜单命令</p>
+<p>\92.  Office提供的对文件的保护包括: (D )</p>
+<p>A. 防打开</p>
+<p>B. 防修改</p>
+<p>C.防丢失</p>
+<p>D.以上都是</p>
+<p>\93.  OFFICE文件获取数字签名方式包括（D）</p>
+<p>A.从商业认证机构;</p>
+<p>B.从内部安全管理员;</p>
+<p>C.使用SELFCERT程序;</p>
+<p>D.以上都是;</p>
+<p>\94.  防止文件丢失的方法有: (D )</p>
+<p>A. 自动备份</p>
+<p>B. 自动保存</p>
+<p>C.另存一份</p>
+<p>D.以上都是.</p>
+<p>\95.  宏病毒的特点是: (A)</p>
+<p>A.传播快、制作和变种方便、破坏性大和兼容性差</p>
+<p>B.传播快、制作和变种方便、破坏性大和兼容性好</p>
+<p>C. 传播快、传染性强。破坏性大和兼容性好</p>
+<p>D.以上都是</p>
+<p>\96.  宏代码也是用程序设计语言编写，与其最接近的高级语言是: (B )</p>
+<p>A. Delphi</p>
+<p>B. Visual Basic</p>
+<p>C.C#</p>
+<p>D. JAVA</p>
+<p>\97.  宏可以实现的功能不包括: (B )</p>
+<p>A.自动执行一-串操作或重复操作</p>
+<p>B.自动执行杀毒操作</p>
+<p>C.创建定制的命令</p>
+<p>D.创建自定义的按钮和插件</p>
+<p>\98.  下列对象中 ,不可以设置链接的是(B )</p>
+<p>A.文本上</p>
+<p>B.背景上</p>
+<p>C.图形上</p>
+<p>D.剪贴图上</p>
+<p>\99.  Powerpoint文档保护方法包括（D）</p>
+<p>A.用密码进行加密;</p>
+<p>B.转换文件类型;</p>
+<p>C.IRM权限设置；</p>
+<p>D.以上都是;</p>
+<p>\100. PowerPoint中 ,下列说法中错误的是(C)</p>
+<p>A.可以动态显示文本和对象</p>
+<p>B .可以更改动画对象的出现顺序</p>
+<p>C .图表中的元素不可以设置动画效果</p>
+<p>D.可以设置幻灯片切换效果</p>
+<p>\101. 改变演示文稿外观可以通过(D )</p>
+<p>A. 修改主题</p>
+<p>B. 修改母版</p>
+<p>C. 修改背景样式</p>
+<p>D. 以上三个都对</p>
+<p>\102. 幻灯片的主题不包括( A)</p>
+<p>A. 主题动画</p>
+<p>B. 主题颜色</p>
+<p>C.主题效果</p>
+<p>D.主题字体</p>
+<p>\103. 幻灯片放映过程中,单击鼠标右键, 选择“指针选项”中的荧光笔,在讲解过程中可以进行写和画,其结果是(D )</p>
+<p>A.对幻灯片进行了修改</p>
+<p>B.对幻灯片没有进行修改</p>
+<p>C.写和画的内容留在幻灯片上，下次放映还会显示出来</p>
+<p>D .写和画的内容可以保存起来,以便下次放映时显示出来</p>
+<p>\104. 幻灯片中占位符的作用是(D )</p>
+<p>A.表示文本长度</p>
+<p>B.限制插入对象的数量</p>
+<p>C .表示图形大小</p>
+<p>D.为文本、图形预留位置</p>
+<p>\105. 可以用拖动方法改变幻灯片的顺序是( C)</p>
+<p>​    A.幻灯片视图</p>
+<p>​    B.备注页视图</p>
+<p>​    C.幻灯片浏览视图</p>
+<p>​    D.幻灯片放映</p>
+<p>\106. 如果希望在演示过程中终止幻灯片的演示,则随时可按的终止键是( D)</p>
+<p>A. Delete</p>
+<p>B. Ctrl+E</p>
+<p>C. Shift+C</p>
+<p>D. Esc</p>
+<p>\107. 下面哪个视图中,不可以编辑、修改幻灯片( A)</p>
+<p>A.浏览.</p>
+<p>B.普通</p>
+<p>C.大纲</p>
+<p>D.备注页</p>
+<p>\108. (A )域用于依序为文档中的章节、表、图以及其它页面元素编号。</p>
+<p>A. StyleRef</p>
+<p>B .TOC</p>
+<p>C.Seq</p>
+<p>D. PageRef</p>
+<p>\109. (D )是特殊的指令，在域中可引发特定的操作。</p>
+<p>A. 域名</p>
+<p>B.域参数</p>
+<p>C.域代码</p>
+<p>D. 域开关</p>
+<p>\110. Smart图形不包含下面的（A）</p>
+<p>A.图表;</p>
+<p>B.流程图;</p>
+<p>C.循环图;</p>
+<p>D.层次结构图;</p>
+<p>\111. TOC域属于以下哪一类( B)。</p>
+<p>A.等式和公式</p>
+<p>B.索引和目录</p>
+<p>C.文档自动化</p>
+<p>D.日期和时间</p>
+<p>\112. WORD文档的编辑限制包括: (D )</p>
+<p>A. 格式设置限制</p>
+<p>B .编辑限制</p>
+<p>C. 权限保护</p>
+<p>D. 以上都是</p>
+<p>\113. Word中的手动换行符是通过(D)产生的</p>
+<p>​    A.插入分页符</p>
+<p>​    B.插入分节符</p>
+<p>​    C.键入ENTER</p>
+<p>​    D.按SHIFT+ENTER</p>
+<p>\114. Word插入题注时如需加入章节号,如“图1-1”, 无需进行的操作是(D )</p>
+<p>A.将章节的标题套用固定样式</p>
+<p>B .将章节的标题应用多级列表</p>
+<p>C .将章节起始位置应用自动编号</p>
+<p>D.自定义题注样式为“图”</p>
+<p>\115. Word文档分为三个层次，由上到下分别是:文本层、绘图层和(C )</p>
+<p>A.编辑层</p>
+<p>B.绘画层</p>
+<p>C.文本层之下层</p>
+<p>D.绘图层之下层</p>
+<p>\116. word中运用文档的(A)功能,可以进行建立批注、标记修订、跟踪修订标记等操作,提高文档编辑效率。</p>
+<p>A.审阅</p>
+<p>B.插入</p>
+<p>C.查找</p>
+<p>D.新建</p>
+<p>\117. 插入软回车的快捷键是(C )</p>
+<p>A. CTRL +ENTER</p>
+<p>B . ALT+ ENTER</p>
+<p>C . SHIFT+ENTER</p>
+<p>D. ENTER</p>
+<p>\118. 插入硬回车的快捷键是(D )</p>
+<p>A. CTRL+ENTER</p>
+<p>B. ALT+ENTER</p>
+<p>C. SHIFT+ENTER</p>
+<p>D. ENTER</p>
+<p>\119. 更新域的快捷键是(A)</p>
+<p>A.F9;</p>
+<p>B.Ctrl+F9;</p>
+<p>c. shift+F9;</p>
+<p>D.Alt+F9;</p>
+<p>\120. 关于Word的页码设置,以下表述错误的是(C )</p>
+<p>A. 页码可以披插入到页眉页脚区域</p>
+<p>B .页码可以被插入到左右页边距</p>
+<p>C. 如果希望首页和其他页页码不同必须设置“首页不同”</p>
+<p>D.可以自定义页码并添加到构建基块管理器中的页码库中</p>
+<p>\121. 关于Word修订，下列哪项是错误的(C )</p>
+<p>A .在Word中可以突出显示修订</p>
+<p>B .不同的修订者的修订会用不同颜色显示</p>
+<p>C. 所有修订都用同一种比较鲜明的颜色显示</p>
+<p>D. 在Word中可以针对某一修订进行接受或拒绝修订</p>
+<p>\122. 关于大纲级别和内置样式的对应关系,以下说法正确的是(A )</p>
+<p>A.如果文字套用内置样式“正文”, 则一定在大纲视图中显示为“正文文本”</p>
+<p>B .如果文字在大纲视图中显示为“正文文本”, 则一定对应样式为“正文”</p>
+<p>C .如果文字的大纲级别为1级,则被套用样式“标题1”</p>
+<p>D .以上说法都不正确</p>
+<p>\123. 关于导航窗格,以下表述错误的是(D )</p>
+<p>A.能够浏览文档中的标题</p>
+<p>B .能够浏览文档中的各个页面</p>
+<p>C .能够浏览文档中的关键文字和词</p>
+<p>D.能够浏览文档中的脚注、尾注、题注等</p>
+<p>\124. 关于交叉引用，以下说法正确的是(D)</p>
+<p>   A.在书籍、期刊、论文正文中用于标识引用来源的文字被称为交叉引用。</p>
+<p>​    B.交叉引用是在创建文档时参考或引用的文献列表，通常位于文档的末尾。</p>
+<p>​    C.交叉引用设定在对象的上下两边，为对象添加带编号的注释说明</p>
+<p>​    D.为文档内容添加的注释内容设置引用说明，以保证注释与文字对应关系的引用关系称为交叉引用。</p>
+<p>\125. 关于题注的说明,以下说法错误的是(D )</p>
+<p>A. 题注由标签及编号组成。</p>
+<p>B.题注主要针对文字、表格、图片和图形混合编排的大型文稿。</p>
+<p>C. 题注设定在对象的上下两边,为对象添加带编号的注释说明</p>
+<p>D .题注本质上与脚注和尾注是没有区别的。</p>
+<p>\126. 可以查看到文档页面的页眉页脚的视图方式有( C)</p>
+<p>A.页面视图和草稿视图</p>
+<p>B.页面视图和大纲视图</p>
+<p>C.页面视图和阅读版式视图</p>
+<p>D.页面视图和WEB版式视图</p>
+<p>\127. 可以折叠和展开文档标题并进行标题级别设置和升降级的视图方式是(B)</p>
+<p>​    A.页面视图</p>
+<p>​    B.大纲视图</p>
+<p>​    C.草稿视图</p>
+<p>​    D . web版式视图</p>
+<p>\128. 每年的元旦,某信息公司要发大量的内容相同的信，只是信中的称呼不一样，为了不做重复的编辑工作、提高效率，可以用以下哪种功能实现（A）</p>
+<p>A.邮件合并</p>
+<p>B.书签</p>
+<p>C.信封和选项卡</p>
+<p>D.复制</p>
+<p>\129. 能够呈现页面实际打印效果的视图方式是(A)</p>
+<p>​    A．页面视图</p>
+<p>​    B．大纲视图</p>
+<p>​    C．草稿视图</p>
+<p>​    D．web版式视图</p>
+<p>\130. 如果WORD文档中有一段文字不允许别人修改，可以通过:(B)</p>
+<p>​    A.格式设置限制</p>
+<p>​    B.编辑限制</p>
+<p>​    C.设置文件修改密码</p>
+<p>​    D.以上都是</p>
+<p>\131. 如果要将某个新建样式应用到文档中，以下哪种方法无法完成样式的应用(D )</p>
+<p>A.使用快速样式库或样式任务窗格直接应用</p>
+<p>B.使用查找与替换功能替换样式</p>
+<p>C. 使用格式刷复制样式</p>
+<p>D. 使用CTRL+W快捷键重复应用样式</p>
+<p>\132. 若文档被分为多个节，并在“页面设置”的版式选项卡中将页眉和页脚设置为奇偶页不同，则以下关于页眉和页脚说法正确的是(D)</p>
+<p>​    A.文档中所有奇偶页的页眉必然都不相同</p>
+<p>​    B.文档中所有奇偶页的页眉可以都不相同</p>
+<p>​    C.每个节中奇数页页眉和偶数页页眉必然不相同</p>
+<p>​    D.每个节的奇数页页眉和偶数页页眉可以不相同</p>
+<p>\133. 通过设置内置标题样式，以下哪个功能无法实现( B)</p>
+<p>A.自动生成题注编号</p>
+<p>B.自动生成脚注编号</p>
+<p>C.自动显示文档结构</p>
+<p>D.自动生成目录</p>
+<p>\134. 我们常用的打印纸张A3号和A4号的关系是(B)</p>
+<p>​    A.A3是A4的一半</p>
+<p>​    B.A3是A4的一倍</p>
+<p>​    C.A4是A3的四分之一</p>
+<p>​    D.A4是A3的一倍</p>
+<p>\135. 无法为以下哪一种文档注释方式创建交叉引用( A)</p>
+<p>A.引文</p>
+<p>B.书签</p>
+<p>C.公式</p>
+<p>D.脚注</p>
+<p>\136. 下列关于目录的说法，正确的是(D)</p>
+<p>A.当新增了一些内容使页码发生变化时,生成的目录不会随之改变,需要手动更改;</p>
+<p>B.目录生成后有时目录文字下会有灰色底纹,打印时会打印出来;</p>
+<p>C.如果要把某—级目录文字字体改为”小三”，需要一一手动修改;</p>
+<p>D. Word的目录提取是基于大纲级别和段落样式的;</p>
+<p>\137. 页面的页眉信息区域是指( A)</p>
+<p>A.页眉设置值的区域</p>
+<p>B.页面的上边距的区域</p>
+<p>C.页面的上边距减去页眉设置值的区域</p>
+<p>D.页面的上边距加顷眉设置值的区域</p>
+<p>\138. 一个word文档共有5页内容,其中第1页的正文文字垂直竖排,第2页文字有行号, 第3页的文字段落前有项目符号, 第4页文字段落首字下沉。第5页有页面边框,最优的处理的方法是(C)</p>
+<p>A.插入五个硬分页</p>
+<p>B.插入四个”下一页”的节</p>
+<p>C.插入三个“下一页”的节</p>
+<p>D.插入五个“下一页”的节</p>
+<p>\139. 以下( B)是可被包含文档模板中的元素①样式②快捷健③页面设置信息④宏方案项⑤工具栏</p>
+<p>A. ①②④⑤</p>
+<p>B.①②③④</p>
+<p>C.①③④⑤</p>
+<p>D.①②③④⑤</p>
+<p>\140. 以下关于Word目录的描述,说法正确的是(C )</p>
+<p>A.默认建立的目录开启了超链接功能。只需要按下Shift健,同时在目录上单击鼠标左键,就可以跳转到目录对应的文档位置。</p>
+<p>B.应用“引用”选项卡中的[目录] &#x2F; [插入目录]命令,可以快速自动地为各种形式的文档生成目录</p>
+<p>C.当章、节标题发生变化时，按F9功能键可以自动更新生成的目录</p>
+<p>D.如果要更改目录样式。需要在文档模板中一并进行更改设置</p>
+<p>\141. 以下哪一个选项卡不是Word的标准选项卡(B)</p>
+<p>A.审阅</p>
+<p>B.图表工具</p>
+<p>C.开发工具</p>
+<p>D.加载项</p>
+<p>\142. 以下哪一项不是目录对话框中的内容( C)</p>
+<p>A.打印预览与Web预览</p>
+<p>B.制表符前导符号下拉列表</p>
+<p>C.样式下拉列表</p>
+<p>D.显示级别选项框</p>
+<p>\143. 在Word新建段落样式时，可以设置字体段落、编号等多项样式属性,以下不属于样式属性的是(C )</p>
+<p>A.制表位</p>
+<p>B.语言</p>
+<p>C.文本框</p>
+<p>D.快捷键</p>
+<p>\144. 在Word 中,按照用途可以将域分为(D )类。</p>
+<p>A.6</p>
+<p>B.7</p>
+<p>C.8</p>
+<p>D.9</p>
+<p>\145. 在Word中,域信息由域的代码符号和字符两种形式显示。执行(B ) 命令,这两种形式可以相互转换。</p>
+<p>A. [更新域]</p>
+<p>B. [切换域代码]</p>
+<p>C. [编辑域]</p>
+<p>D. [插入域]</p>
+<p>\146. 在书籍杂志的排版中，为了将页边距根据页面的内侧、外侧进行设置，可将页面设置为(A)</p>
+<p>​    A.对称页边距</p>
+<p>​    B.拼页</p>
+<p>​    C.书籍折页</p>
+<p>​    D .反向书籍折页</p>
+<p>\147. 在同一个页面中,如果希望页面上半部分为一栏,后半部分分为两栏,应插入的分隔符号为(C )</p>
+<p>A.分页符</p>
+<p>B.分栏符</p>
+<p>C.分节符(连续)</p>
+<p>D.分节符(奇数页)</p>
+<p>\148. 主控文档的创建和编辑操作可以在( B)中进行。</p>
+<p>A.页面视图</p>
+<p>B.大纲视图</p>
+<p>C.草稿视图</p>
+<p>D．web版式视图</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/16/%E7%AD%94%E6%A1%88-%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%8D%95%E9%80%89/" data-id="clgwdaurx00c03s450tmbeyye" data-title="办公软件二级-单选" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Office/" rel="tag">Office</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java-2022-04-13-子类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/13/Java-2022-04-13-%E5%AD%90%E7%B1%BB/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T12:04:42.000Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/13/Java-2022-04-13-%E5%AD%90%E7%B1%BB/">Java(2022-04-13-子类)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="father包："><a href="#father包：" class="headerlink" title="father包："></a>father包：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> father;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> String fur,tooth=<span class="string">&quot;父类的牙齿&quot;</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> height,weight;</span><br><span class="line"><span class="comment">//方法的重载：在同一个类里，方法名字相同，参数不同</span></span><br><span class="line"><span class="comment">//1.参数个数不同 2.参数个数相同，但类型不同</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;不吃饿得慌！&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">(String food)</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;我在吃&quot;</span>+food);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sleep</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;不睡困！&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="son包"><a href="#son包" class="headerlink" title="son包"></a>son包</h3><p>rabbit</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> son;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> father.Animal;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rabbit</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> String tail;</span><br><span class="line">	<span class="keyword">public</span> String tooth=<span class="string">&quot;兔子的牙齿&quot;</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">haveTail</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;尾巴短&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">/*方法的重写：子类重新定义父类的同名方法</span></span><br><span class="line"><span class="comment">        1.不能降低父类同名方法的访问权限 </span></span><br><span class="line"><span class="comment">		2.实现内容和弗雷不一样</span></span><br><span class="line"><span class="comment">		3.方法名称,参数，返回值都要和父类完全相同*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//用super关键字调用被隐藏的父类的同名方法</span></span><br><span class="line">		<span class="built_in">super</span>.eat();</span><br><span class="line">		System.out.println(<span class="string">&quot;吃萝卜&quot;</span>+<span class="built_in">super</span>.tooth );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">(String food,<span class="type">int</span> count)</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>tiger</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> son;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> father.Animal;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Tiger</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">	String paw;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">havePaw</span><span class="params">()</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;利爪&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试包"><a href="#测试包" class="headerlink" title="测试包"></a>测试包</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 测试;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> father.Animal;</span><br><span class="line"><span class="keyword">import</span> son.Rabbit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">	&#123;</span><br><span class="line">		Animal a=<span class="keyword">new</span> <span class="title class_">Animal</span>();</span><br><span class="line">		a.fur=<span class="string">&quot;毛茸茸&quot;</span>;</span><br><span class="line">		<span class="comment">//a.tooth=&quot;白牙&quot;;</span></span><br><span class="line">		</span><br><span class="line">		Rabbit r=<span class="keyword">new</span> <span class="title class_">Rabbit</span>();</span><br><span class="line">		r.tail=<span class="string">&quot;像雪球&quot;</span>;</span><br><span class="line">		r.fur=<span class="string">&quot;纯白&quot;</span>;</span><br><span class="line">		<span class="comment">//r.tooth=&quot;扁平&quot;;</span></span><br><span class="line">		</span><br><span class="line">		r.eat();</span><br><span class="line">		r.sleep();</span><br><span class="line">		r.haveTail();</span><br><span class="line">		</span><br><span class="line">		System.out.println(r.tooth);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/13/Java-2022-04-13-%E5%AD%90%E7%B1%BB/" data-id="clgwdauqt00553s45a3pp19yf" data-title="Java(2022-04-13-子类)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022周记-04-11-04-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/12/2022%E5%91%A8%E8%AE%B0-04-11-04-17/" class="article-date">
+  <time class="dt-published" datetime="2022-04-12T01:53:37.000Z" itemprop="datePublished">2022-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/12/2022%E5%91%A8%E8%AE%B0-04-11-04-17/">周记(04.11-04.17)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="4-11："><a href="#4-11：" class="headerlink" title="4.11："></a>4.11：</h3><p>晚修，画画，看书。</p>
+<h3 id="4-12："><a href="#4-12：" class="headerlink" title="4.12："></a>4.12：</h3><p>下午参加了三个小时的CPR+AED急救的培训。拿到了证书</p>
+<h3 id="4-13："><a href="#4-13：" class="headerlink" title="4.13："></a>4.13：</h3><p>今天收到了好久之前买的三秋缒的书了</p>
+<p>看完了《恋爱寄生虫》</p>
+<p>晚上上了志愿者的礼仪课</p>
+<h3 id="4-14："><a href="#4-14：" class="headerlink" title="4.14："></a>4.14：</h3><p>无</p>
+<h3 id="4-15："><a href="#4-15：" class="headerlink" title="4.15："></a>4.15：</h3><p>帮朋友装了个电脑并且获得了一包零食，血赚</p>
+<h3 id="4-16："><a href="#4-16：" class="headerlink" title="4.16："></a>4.16：</h3><p>12-17一下午在图书馆刷了会办公软件二级</p>
+<p>上传了<a target="_blank" rel="noopener" href="https://czh2455041082-github-io.vercel.app/2022/04/16/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%8D%95%E9%80%89/">单选</a>和<a target="_blank" rel="noopener" href="https://czh2455041082-github-io.vercel.app/2022/04/16/%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%E4%BA%8C%E7%BA%A7-%E5%88%A4%E6%96%AD/">判断</a>的题库</p>
+<h4 id="4-17"><a href="#4-17" class="headerlink" title="4.17:"></a>4.17:</h4><p>失眠。</p>
+<p>晚上合唱训练</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/12/2022%E5%91%A8%E8%AE%B0-04-11-04-17/" data-id="clgwdaupq000u3s452alk7z9p" data-title="周记(04.11-04.17)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Java-2022-04-12-同心圆&amp;存取钱" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/12/Java-2022-04-12-%E5%90%8C%E5%BF%83%E5%9C%86&%E5%AD%98%E5%8F%96%E9%92%B1/" class="article-date">
+  <time class="dt-published" datetime="2022-04-12T01:51:23.000Z" itemprop="datePublished">2022-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/12/Java-2022-04-12-%E5%90%8C%E5%BF%83%E5%9C%86&%E5%AD%98%E5%8F%96%E9%92%B1/">Java(2022-04-12-同心圆&amp;存取钱)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="同心圆"><a href="#同心圆" class="headerlink" title="同心圆:"></a>同心圆:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class 圆  </span><br><span class="line">&#123;	</span><br><span class="line">	</span><br><span class="line">	<span class="type">double</span> r;</span><br><span class="line">	<span class="keyword">static</span> Point 圆心;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> 圆(<span class="type">double</span> r) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.r = r;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getR</span><span class="params">()</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setR</span><span class="params">(<span class="type">double</span> r)</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">this</span>.r = r;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">double</span> 计算周长()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">3.14</span>*<span class="number">29</span>*r;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">double</span> 计算面积()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">3.14</span>*r*r;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class 圆柱 &#123;</span><br><span class="line">	<span class="type">double</span> h;</span><br><span class="line">	圆 底圆;</span><br><span class="line">	<span class="keyword">public</span> 圆柱(<span class="type">double</span> h, 圆 底圆) &#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.h = h;</span><br><span class="line">		<span class="built_in">this</span>.底圆 = 底圆;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">double</span> <span class="title function_">getH</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setH</span><span class="params">(<span class="type">double</span> h)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.h = h;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> 圆 get底圆() &#123;</span><br><span class="line">		<span class="keyword">return</span> 底圆;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> set底圆(圆 底圆) &#123;</span><br><span class="line">		<span class="built_in">this</span>.底圆 = 底圆;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">double</span> 计算体积()</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> 底圆.计算面积()*h;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Point</span> </span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> x,y;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Point</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">super</span>();</span><br><span class="line">		<span class="built_in">this</span>.x = x;</span><br><span class="line">		<span class="built_in">this</span>.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">	&#123;</span><br><span class="line">		Point p=<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">		圆.圆心=p;</span><br><span class="line">		圆 奥利奥<span class="number">1</span>=<span class="keyword">new</span> 圆(<span class="number">2</span>);</span><br><span class="line">		圆 奥利奥<span class="number">2</span>=<span class="keyword">new</span> 圆(<span class="number">4</span>);</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;奥利奥1的圆心:&quot;</span>+奥利奥<span class="number">1.</span>圆心.x+<span class="string">&quot;,&quot;</span>+奥利奥<span class="number">1.</span>圆心.y);</span><br><span class="line">		System.out.println(<span class="string">&quot;奥利奥1的圆心:&quot;</span>+奥利奥<span class="number">2.</span>圆心.x+<span class="string">&quot;,&quot;</span>+奥利奥<span class="number">2.</span>圆心.y);</span><br><span class="line">		</span><br><span class="line">		圆柱 水杯<span class="number">1</span>=<span class="keyword">new</span> 圆柱(<span class="number">10</span>,奥利奥<span class="number">1</span>);</span><br><span class="line">		圆柱 水杯<span class="number">2</span>=<span class="keyword">new</span> 圆柱(<span class="number">20</span>,奥利奥<span class="number">1</span>);		</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;水杯1的体积是：&quot;</span>+水杯<span class="number">1.</span>计算体积());</span><br><span class="line">		System.out.println(<span class="string">&quot;水杯2的体积是：&quot;</span>+水杯<span class="number">2.</span>计算体积());</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="账户："><a href="#账户：" class="headerlink" title="账户："></a>账户：</h3><p>建立在Alax包下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Alax;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class 账户</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">private</span> String id;</span><br><span class="line">	<span class="keyword">private</span> String mima;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="type">int</span> money;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> 账户(String id,String mima,String name,<span class="type">int</span> money) </span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">super</span>();</span><br><span class="line">	<span class="built_in">this</span>.id = id;</span><br><span class="line">	<span class="built_in">this</span>.mima = mima;</span><br><span class="line">	<span class="built_in">this</span>.name = name;</span><br><span class="line">	<span class="built_in">this</span>.money = money;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> 查余额(String name,String mima)</span><br><span class="line">&#123;  <span class="keyword">if</span>(<span class="built_in">this</span>.name.equals(name)&amp;&amp;</span><br><span class="line">			<span class="built_in">this</span>.mima.equals(mima)) </span><br><span class="line">	&#123;</span><br><span class="line">	 <span class="type">int</span> 余额值;	</span><br><span class="line">        余额值=money;</span><br><span class="line">	 <span class="keyword">return</span> 余额值;</span><br><span class="line">	 &#125;</span><br><span class="line"><span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> 取款(String name,String id,String mima,<span class="type">int</span> qukuan)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">this</span>.name.equals(name)&amp;&amp;</span><br><span class="line">			<span class="built_in">this</span>.id.equals(id)&amp;&amp;</span><br><span class="line">			<span class="built_in">this</span>.mima.equals(mima))</span><br><span class="line">	&#123;</span><br><span class="line">		money=money-qukuan;</span><br><span class="line">		<span class="keyword">return</span> qukuan;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> 存款(String name,String id,<span class="type">int</span> cunkuan) </span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">this</span>.name.equals(name)&amp;&amp;</span><br><span class="line">			<span class="built_in">this</span>.id.equals(id))</span><br><span class="line">	&#123;</span><br><span class="line">		money=money+cunkuan;</span><br><span class="line">		<span class="keyword">return</span> cunkuan;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Alax;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span></span><br><span class="line">	&#123;</span><br><span class="line">		账户 小虎=<span class="keyword">new</span> 账户(<span class="string">&quot;123456&quot;</span>, <span class="string">&quot;666666&quot;</span>, <span class="string">&quot;跳跳虎&quot;</span>,<span class="number">2000</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;看看我还有多少钱：&quot;</span>+</span><br><span class="line">		       小虎.查余额(<span class="string">&quot;跳跳虎&quot;</span>, <span class="string">&quot;666666&quot;</span>));</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;取200元充话费：&quot;</span>+</span><br><span class="line">		    小虎.取款(<span class="string">&quot;跳跳虎&quot;</span>, <span class="string">&quot;123456&quot;</span>, <span class="string">&quot;66666&quot;</span>, <span class="number">200</span>));</span><br><span class="line">		System.out.println(<span class="string">&quot;看看我还有多少钱：&quot;</span>+</span><br><span class="line">			       小虎.查余额(<span class="string">&quot;跳跳虎&quot;</span>, <span class="string">&quot;666666&quot;</span>));</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">&quot;收到红包，真开心：&quot;</span>+</span><br><span class="line">		       小虎.存款(<span class="string">&quot;跳跳虎&quot;</span>, <span class="string">&quot;123456&quot;</span>, <span class="number">1000</span>));</span><br><span class="line">		System.out.println(<span class="string">&quot;看看我还有多少钱：&quot;</span>+</span><br><span class="line">			       小虎.查余额(<span class="string">&quot;跳跳虎&quot;</span>, <span class="string">&quot;666666&quot;</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/12/Java-2022-04-12-%E5%90%8C%E5%BF%83%E5%9C%86&%E5%AD%98%E5%8F%96%E9%92%B1/" data-id="clgwdauqs00523s457e5q3idh" data-title="Java(2022-04-12-同心圆&amp;存取钱)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022周记-04-04-04-10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/04/2022%E5%91%A8%E8%AE%B0-04-04-04-10/" class="article-date">
+  <time class="dt-published" datetime="2022-04-04T13:49:28.000Z" itemprop="datePublished">2022-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/04/04/2022%E5%91%A8%E8%AE%B0-04-04-04-10/">周记(04.04-04.10)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="4-4："><a href="#4-4：" class="headerlink" title="4.4："></a>4.4：</h3><p>今天中午起来吃了个饭就去图书馆了。一下午到闭馆（5点不到）</p>
+<p>一直在搞容器的事情，但是一直报错没成功。</p>
+<p>跑了个步，吃了个晚饭就回寝室了。</p>
+<p>回寝搞到了9点多，问了下朋友，可能是系统原因，换了个乌班图终于成功了。一整天终于把这个事情搞出来了！</p>
+<h3 id="4-5"><a href="#4-5" class="headerlink" title="4.5:"></a>4.5:</h3><p>早八老师请假，可以睡个懒觉，舒服</p>
+<p>合唱训练。</p>
+<p>去宝龙负一找好吃的，吃了个番茄肉酱意面（太酸了，不好吃，量还少）</p>
+<h3 id="4-6："><a href="#4-6：" class="headerlink" title="4.6："></a>4.6：</h3><p>核酸检测（三天）</p>
+<p>晚饭吃了顿华莱士的烤鸡</p>
+<p>破例的一天咖啡+奶茶</p>
+<h3 id="4-7："><a href="#4-7：" class="headerlink" title="4.7："></a>4.7：</h3><p>志愿者上课</p>
+<p>京东买了几本小说，一直不送……11-14-15-16</p>
+<p>早上想喝原味李子园，结果一瓶不剩</p>
+<p>晚上想吃个番茄味薯片，一包没有。</p>
+<h3 id="4-8："><a href="#4-8：" class="headerlink" title="4.8："></a>4.8：</h3><p>理发</p>
+<p>下了个彩六，和同学玩了一会。反转局，一挑四，芜湖。</p>
+<p>英语课上看了会CPP。</p>
+<p>周五唯二的的下午毛概因为核酸直接取消了。</p>
+<p>金沙城那边又出了一例阳性，最近又严重起来了。</p>
+<h3 id="4-9："><a href="#4-9：" class="headerlink" title="4.9："></a>4.9：</h3><p>下午到图书馆做了几道word单项</p>
+<p>写了下mysql的<a target="_blank" rel="noopener" href="https://czh2455041082-github-io.vercel.app/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD2/">实训2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/04/2022%E5%91%A8%E8%AE%B0-04-04-04-10/" data-id="clgwdaupo000o3s45gkux6jgr" data-title="周记(04.04-04.10)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-MySQL实训11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD11/" class="article-date">
+  <time class="dt-published" datetime="2022-03-31T13:48:18.000Z" itemprop="datePublished">2022-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD11/">MySQL实训11-用户权限设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="实训十一-用户权限设置"><a href="#实训十一-用户权限设置" class="headerlink" title="实训十一 用户权限设置"></a><strong>实训十一</strong> <strong>用户权限设置</strong></h2><h3 id="一、实训目的与要求"><a href="#一、实训目的与要求" class="headerlink" title="一、实训目的与要求"></a><strong>一、实训目的与要求</strong></h3><p>通过本次实训，使学生了解在Mysql中如何设置用户权限。</p>
+<h3 id="二、实训设备和软件环境"><a href="#二、实训设备和软件环境" class="headerlink" title="二、实训设备和软件环境"></a><strong>二、实训设备和软件环境</strong></h3><p>计算机、MySQL软件、WorkBench或Navicat软件</p>
+<h3 id="三、实训课时"><a href="#三、实训课时" class="headerlink" title="三、实训课时"></a><strong>三、实训课时</strong></h3><p>2课时</p>
+<h3 id="四、实训内容-和结果记录"><a href="#四、实训内容-和结果记录" class="headerlink" title="四、实训内容****和结果记录"></a><strong>四、实训内容****和结果记录</strong></h3><p>1、创建一个名称为test，密码是123456，主机名是localhost的用户；</p>
+<p>2、创建一个名称为supertest，密码是123，可以在任何主机上登录；</p>
+<p>3、查询mysql数据库下的user表的 user、host和authentication_string字段内容，验证test和supertest用户是否创建成功；</p>
+<p>4、用test用户登录数据库，访问school数据库，是否可以访问？</p>
+<p>5、授予用户test对school数据库中student表的学号和姓名的查询权限和修改student表的权限；</p>
+<p>6、授予用户supertest对school数据库中所有数据表操作的所有权限；</p>
+<p>7、用test用户查询school数据库中的student表中的学号和姓名，是否可以访问？</p>
+<p>8、查询两个用户的授权；</p>
+<p>9、收回用户test对school数据库中student表的查询权限；</p>
+<p>10、刷新权限表,再查询test用户的授权；</p>
+<p>11、将test用户名修改为test01；</p>
+<p>12、修改test01的登录密码为123；</p>
+<p>13、创建本地计算机登录的test02用户，密码为123456,test02用户每小时可以发出的查询次数是50次，每小时可以连接数据库10次，每小时可以修改数据库5次；</p>
+<p>14、将test02用户每小时发出的查询次数修改为100次；</p>
+<p>15、删除test01、test02和supertest用户。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD11/" data-id="clgwdaur400793s450stl0cip" data-title="MySQL实训11-用户权限设置" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2021%E5%91%A8%E8%AE%B0/">2021周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023%E5%91%A8%E8%AE%B0/">2023周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Compass/">Compass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Write-Something%E2%80%A6%E2%80%A6/">Write Something……</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/">室内设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E4%BA%8B%E6%9C%AC/">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Office/" rel="tag">Office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTA/" rel="tag">PTA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" rel="tag">大学生创新基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag">导航</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%81%E6%96%87/" rel="tag">征文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" rel="tag">目标设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" rel="tag">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 15.71px;">Hexo</a> <a href="/tags/Java/" style="font-size: 18.57px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MySQL/" style="font-size: 17.14px;">MySQL</a> <a href="/tags/Office/" style="font-size: 11.43px;">Office</a> <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/tags/%E5%91%A8%E8%AE%B0/" style="font-size: 20px;">周记</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" style="font-size: 11.43px;">大学生创新基础</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">导航</a> <a href="/tags/%E5%BE%81%E6%96%87/" style="font-size: 10px;">征文</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.14px;">爬虫</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 10px;">电脑</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" style="font-size: 11.43px;">电脑游戏</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">目标设计</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" style="font-size: 12.86px;">笔记本</a> <a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 14.29px;">记事本</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/16/2023%E5%91%A8%E8%AE%B0-4-10-4-16/">周记(4.10-4.16)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/11/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/">网址导航</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/09/2023%E5%91%A8%E8%AE%B0-04-03-04-09/">周记(04.03-04.09)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/%E8%A7%84%E5%88%92-%E5%8F%98%E9%9D%A9-%E5%B1%95%E6%9C%9B/">规划-变革-展望</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/2023%E5%91%A8%E8%AE%B0-03-27-04-02/">周记(03.27-04.02)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

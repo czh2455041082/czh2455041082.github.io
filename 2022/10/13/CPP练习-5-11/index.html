@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CPP练习(5.11) | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="12345678910111213141516171819202122&#x2F;&#x2F;5.11-1#include &lt;stdio.h&gt; int main(void)&amp;#123;	const int set &#x3D; 60;	int time, hour ,min;	printf(&quot;ÊäÈëÒ»¸öÊ±¼ä\n&quot;);	scanf(&quot;%d&quot;, &amp;time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CPP练习(5.11)">
+<meta property="og:url" content="http://example.com/2022/10/13/CPP%E7%BB%83%E4%B9%A0-5-11/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122&#x2F;&#x2F;5.11-1#include &lt;stdio.h&gt; int main(void)&amp;#123;	const int set &#x3D; 60;	int time, hour ,min;	printf(&quot;ÊäÈëÒ»¸öÊ±¼ä\n&quot;);	scanf(&quot;%d&quot;, &amp;time">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-13T14:00:01.000Z">
+<meta property="article:modified_time" content="2022-10-24T11:04:07.427Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CPP练习-5-11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/13/CPP%E7%BB%83%E4%B9%A0-5-11/" class="article-date">
+  <time class="dt-published" datetime="2022-10-13T14:00:01.000Z" itemprop="datePublished">2022-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CPP练习(5.11)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5.11-1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span> </span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> <span class="built_in">set</span> = <span class="number">60</span>;</span><br><span class="line">	<span class="type">int</span> time, hour ,min;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;ÊäÈëÒ»¸öÊ±¼ä\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;time);</span><br><span class="line">	<span class="keyword">while</span>(time &gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		hour = time /<span class="built_in">set</span>;</span><br><span class="line">		min = time % <span class="built_in">set</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d ÊÇ %d Ð¡Ê±£¬%d·ÖÖÓ\n&quot;</span>,time,hour,min);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëÏÂÒ»¸öÊ±¼ä(0¼´ÎªÍË³ö);&quot;</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span> , &amp;time);</span><br><span class="line">		 </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;³ÌÐò½áÊø\n&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a,b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个整数\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">	b=a+<span class="number">11</span>;</span><br><span class="line">	<span class="keyword">while</span>(a&lt;b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">		a++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a,weak ,day;</span><br><span class="line">	<span class="type">int</span> <span class="built_in">set</span> = <span class="number">7</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入天数\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(a&gt;<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		weak = a /<span class="built_in">set</span>;</span><br><span class="line">		day = a %<span class="built_in">set</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d天是 %d周 %d天\n&quot;</span>,a,weak,day);</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入天数,0则退出\n&quot;</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;程序结束\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125; </span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> chi; </span><br><span class="line">	<span class="type">float</span> tall,cun,b;</span><br><span class="line">	<span class="type">float</span> <span class="built_in">set</span>=<span class="number">2.54</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入你的身高（cm）\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;tall);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(tall&gt;=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		</span><br><span class="line">		chi= tall/<span class="number">30.48</span>;</span><br><span class="line">		b=chi*<span class="number">30.48</span>;</span><br><span class="line">		cun=(tall-b)/<span class="number">2.54</span>; </span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%0.1f厘米=%d英尺=%0.1f英寸 \n&quot;</span>,tall,chi,cun);</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;请输入身高\n&quot;</span>);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;tall);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;程序结束\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> count , sum ,<span class="built_in">set</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个数字\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;<span class="built_in">set</span>);</span><br><span class="line">	count = <span class="number">0</span>;</span><br><span class="line">	sum = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(count++ &lt;<span class="built_in">set</span>)</span><br><span class="line">		sum = sum+ count;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum = %d\n&quot;</span>, sum); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> count , sum ,<span class="built_in">set</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个数字\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;<span class="built_in">set</span>);</span><br><span class="line">	count = <span class="number">0</span>;</span><br><span class="line">	sum = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(count++ &lt;<span class="built_in">set</span>)</span><br><span class="line">		sum = sum+ count*count;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;sum = %d\n&quot;</span>, sum); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">show</span><span class="params">(<span class="type">double</span> x)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">double</span> x;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;请输入一个double类型的值\n&quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;x);</span><br><span class="line">	show(x);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125; </span><br><span class="line"> <span class="type">void</span> <span class="title function_">show</span><span class="params">(<span class="type">double</span> x)</span></span><br><span class="line"> &#123;</span><br><span class="line"> 	<span class="built_in">printf</span>(<span class="string">&quot;%e的立方是%e \n&quot;</span>,x,x*x*x);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//5.11-8</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a,b,c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëµÚÒ»¸öÖµ:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëµÚ¶þ¸öÖµ:&quot;</span>);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(b&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        c=b%a;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d ³ý %d ÊÇ %d\n&quot;</span>,b,a,c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëÏÂÒ»¸öÖµ£¬Ð¡ÓÚ0ÔòÍË³ö:&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;³ÌÐò½áÊø&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Tem</span><span class="params">(<span class="type">double</span> h)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Tem</span><span class="params">(<span class="type">double</span> h)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> sheshi =<span class="number">5.0</span>/<span class="number">9.0</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> kaishi = <span class="number">273.16</span>;</span><br><span class="line">    <span class="type">double</span> s,k;</span><br><span class="line">    s = sheshi*(h<span class="number">-32.0</span>);</span><br><span class="line">    k=s+kaishi;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%1.2lf»ªÊÏ¶È=%1.2lfÉãÊÏ¶È=%1.2lf¿ªÊÏÎÂ¶È\n&quot;</span>,h,s,k);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">double</span> huashi;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëÒ»¸ö»ªÊÏÎÂ¶È:&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;huashi)==<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Tem(huashi);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;ÇëÊäÈëÏÂÒ»¸ö»ªÊÏÎÂ¶È£¨ÈÎÒâ·ÇÊý×ÖÍË³ö³ÌÐò£©:&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;huashi);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;³ÌÐò½áÊø&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>9#2</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Tem</span><span class="params">(<span class="type">double</span> h)</span>;</span><br><span class="line"><span class="type">void</span> <span class="title function_">Tem</span><span class="params">(<span class="type">double</span> h)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> sheshi =<span class="number">5.0</span>/<span class="number">9.0</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">double</span> kaishi = <span class="number">273.16</span>;</span><br><span class="line">    <span class="type">double</span> s,k;</span><br><span class="line">    s = sheshi*(h<span class="number">-32.0</span>);</span><br><span class="line">    k=s+kaishi;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%1.2lf华氏度=%1.2lf摄氏度=%1.2lf开氏温度\n&quot;</span>,h,s,k);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">double</span> huashi;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;请输入一个华氏温度:&quot;</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%lf&quot;</span>,&amp;huashi)==<span class="literal">true</span>) </span><br><span class="line">    <span class="comment">//while(scanf(&quot;%lf&quot;,&amp;huashi)==1)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Tem(huashi);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请输入下一个华氏温度（任意非数字退出程序）:&quot;</span>);</span><br><span class="line">        <span class="comment">//scanf(&quot;%lf&quot;,&amp;huashi);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;程序结束&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/13/CPP%E7%BB%83%E4%B9%A0-5-11/" data-id="clgwdauqn004e3s455nv3f2i9" data-title="CPP练习(5.11)" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/16/2022%E5%91%A8%E8%AE%B0-10-10-10-16/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          周记(10.10-10.16)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/09/%E6%95%99%E7%A8%8B-CentOS7%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">教程-CentOS7安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2021%E5%91%A8%E8%AE%B0/">2021周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023%E5%91%A8%E8%AE%B0/">2023周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Compass/">Compass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Write-Something%E2%80%A6%E2%80%A6/">Write Something……</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/">室内设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E4%BA%8B%E6%9C%AC/">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Office/" rel="tag">Office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTA/" rel="tag">PTA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" rel="tag">大学生创新基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag">导航</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%81%E6%96%87/" rel="tag">征文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" rel="tag">目标设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" rel="tag">记事本</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 15.71px;">Hexo</a> <a href="/tags/Java/" style="font-size: 18.57px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MySQL/" style="font-size: 17.14px;">MySQL</a> <a href="/tags/Office/" style="font-size: 11.43px;">Office</a> <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/tags/%E5%91%A8%E8%AE%B0/" style="font-size: 20px;">周记</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" style="font-size: 11.43px;">大学生创新基础</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">导航</a> <a href="/tags/%E5%BE%81%E6%96%87/" style="font-size: 10px;">征文</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.14px;">爬虫</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 10px;">电脑</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" style="font-size: 11.43px;">电脑游戏</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">目标设计</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" style="font-size: 12.86px;">笔记本</a> <a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 14.29px;">记事本</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/16/2023%E5%91%A8%E8%AE%B0-4-10-4-16/">周记(4.10-4.16)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/11/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/">网址导航</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/09/2023%E5%91%A8%E8%AE%B0-04-03-04-09/">周记(04.03-04.09)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/%E8%A7%84%E5%88%92-%E5%8F%98%E9%9D%A9-%E5%B1%95%E6%9C%9B/">规划-变革-展望</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/03/2023%E5%91%A8%E8%AE%B0-03-27-04-02/">周记(03.27-04.02)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
