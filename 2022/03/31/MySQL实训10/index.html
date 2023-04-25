@@ -1,283 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>MySQL实训10-存储过程和触发器 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="实训十 存储过程和触发器一、实训目的与要求通过本次实训，使学生加深对Mysq中存储过程的理解和使用。 二、实训设备和软件环境计算机、MySQL软件、WorkBench或Navicat软件 三、实训课时2课时 四、实训内容****和结果记录1、创建存储过程select_stu，用指定的学号查询学生信息和成绩。 2、调用存储过程select_stu，查询学号为60231903的学生信息和成绩。 3、创">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MySQL实训10-存储过程和触发器">
-<meta property="og:url" content="http://example.com/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD10/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="实训十 存储过程和触发器一、实训目的与要求通过本次实训，使学生加深对Mysq中存储过程的理解和使用。 二、实训设备和软件环境计算机、MySQL软件、WorkBench或Navicat软件 三、实训课时2课时 四、实训内容****和结果记录1、创建存储过程select_stu，用指定的学号查询学生信息和成绩。 2、调用存储过程select_stu，查询学号为60231903的学生信息和成绩。 3、创">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-31T13:48:14.000Z">
-<meta property="article:modified_time" content="2022-06-26T11:12:00.460Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="MySQL">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+extends includes/layout.pug
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+block content
+  -
+    const prev = page.prev
+    const next = page.next
+    const dateConf = theme.post.date
+    const updatedConf = theme.post.updated
+    const excerptConf = theme.post.excerpt
+    const reward = theme.post.reward
+    const encrypted = page.encrypt || page.password
+    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
+    const countWord = theme.post.count === true && wordcount !== undefined ? wordcount(page.content) : null
+    const countTime = theme.post.time === true && min2read !== undefined ? min2read(page.content) : null
+  #post-bg
+    #post-title
+      h1= page.title
+      if (dateConf || updatedConf) && page.published
+        #post-info
+          - var first = true
+          if dateConf
+            span #{__('post.posted')}
+              div.control
+                time(datetime=page.date.toJSON())#date
+                  = ' ' + date(page.date, date_format)
+            - first = false
+          if updatedConf
+            if !first
+              br
+            span #{__('post.edited')}
+              div.control
+                time(datetime=page.updated.toJSON())#updated
+                  = ' ' + date(page.updated, date_format)
+            - first = false
+          if countWord
+            if !first
+              br
+            span #{__('post.countTotal')}
+              div.control #{countWord}
+            - first = false
+          if countTime
+            if !first
+              br
+            span #{__('post.timeTotal')}
+              div.control #{countTime} #{__('post.timeUnit')}
+    hr
+    #post-content
+      if excerptConf || encrypted
+        != page.content
+      else
+        != page.more
+      #paginator!= paginator()
+    #post-footer
+      if prev || next
+        - let fix = ""
+        if prev === undefined
+          - fix = "justify-content: flex-end"
+        if next === undefined
+          - fix = "justify-content: flex-start"
+        #pages(style=fix)
+          if prev !== undefined
+            .footer-link(style="width: 50%;text-align:right;border-right:1px #fe2 solid")
+              a(href=url_for(prev.path))
+                |← Next
+                = ' ' + prev.title
+          if next !== undefined
+            .footer-link(style="width: 50%;right:1px;border-left:1px #fe2 solid")
+              a(href=url_for(next.path))
+                = next.title + ' '
+                |Prev →
+    if reward !== false
+      details#reward
+        summary #{__('post.reward')}
+        each imgSrc, pay in reward
+          div
+            span #{pay}
+            br
+            img(src=config.root + imgSrc)
+    if page.comments
+      if theme.valine.enable === true
+        #Valine
+      if theme.gitalk.enable === true
+        #comments
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-MySQL实训10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD10/" class="article-date">
-  <time class="dt-published" datetime="2022-03-31T13:48:14.000Z" itemprop="datePublished">2022-03-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      MySQL实训10-存储过程和触发器
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="实训十-存储过程和触发器"><a href="#实训十-存储过程和触发器" class="headerlink" title="实训十 存储过程和触发器"></a><strong>实训十</strong> <strong>存储过程和触发器</strong></h3><h2 id="一、实训目的与要求"><a href="#一、实训目的与要求" class="headerlink" title="一、实训目的与要求"></a><strong>一、实训目的与要求</strong></h2><p>通过本次实训，使学生加深对Mysq中存储过程的理解和使用。</p>
-<h2 id="二、实训设备和软件环境"><a href="#二、实训设备和软件环境" class="headerlink" title="二、实训设备和软件环境"></a><strong>二、实训设备和软件环境</strong></h2><p>计算机、MySQL软件、WorkBench或Navicat软件</p>
-<h2 id="三、实训课时"><a href="#三、实训课时" class="headerlink" title="三、实训课时"></a><strong>三、实训课时</strong></h2><p>2课时</p>
-<h2 id="四、实训内容-和结果记录"><a href="#四、实训内容-和结果记录" class="headerlink" title="四、实训内容****和结果记录"></a><strong>四、实训内容****和结果记录</strong></h2><p>1、创建存储过程select_stu，用指定的学号查询学生信息和成绩。</p>
-<p>2、调用存储过程select_stu，查询学号为60231903的学生信息和成绩。</p>
-<p>3、创建存储过程class_info，查询指定班级的男女生人数，输出班级信息，并根据男女生人数，输出相应信息’男生比女生多！’、’男女生人数一致！’或’男生比女生少!’。</p>
-<p>4、调用存储过程 calss_info，查询W602319班的学生情况。</p>
-<p>5、查看两个存储过程的定义。</p>
-<p>6、删除定义的两个存储过程。</p>
-<p>7、在student表中，定义一个触发器student_trigger，当一个学生的信息被删除时，把该生的信息添加到del_student表中，并删除对应的score表中相应的成绩，将删除的成绩添加到del_score表中。。</p>
-<p> CREATE TABLE del_student ( studentno char(8) NOT NULL, name varchar(10) NOT NULL, </p>
-<p>sex enum(‘男’,’女’) , birthday date DEFAULT NULL, </p>
-<p>classNo char(7) DEFAULT NULL, PRIMARY KEY (studentno)</p>
-<p>);</p>
-<p>CREATE TABLE del_score ( studentno char(8) NOT NULL, courseno char(3) NOT NULL,</p>
-<p>​             finalscore tinyint(4) DEFAULT ‘0’, PRIMARY KEY (courseno,studentno)</p>
-<p>);</p>
-<p>8、删除学生表中学号为60111901的学生信息，删除完成后查询del_student表和del_score表的内容。</p>
-<p>9、查看student_trigger触发器的创建语句。</p>
-<p>10、在score表上创建触发器score_update，当修改score表时，将用户信息、修改时间和操作类型记录到log_score表中。</p>
-<p> create table log_score ( user varchar(20),</p>
-<p>​              u_time timestamp default now(),  &#x2F;<em>操作时间</em>&#x2F;</p>
-<p>​              op varchar(10) &#x2F;<em>操作类型，例如insert、delete和update</em>&#x2F;</p>
-<p> );</p>
-<p>11、在score表中将学号为60231903的同学的C03课程成绩修改为85，修改完成后，查看log_score表内容。</p>
-<p>12、删除触发器student_trigger和score_update。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD10/" data-id="clgwdaur400763s450qu1bfwx" data-title="MySQL实训10-存储过程和触发器" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD11/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          MySQL实训11-用户权限设置
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/03/31/MySQL%E5%AE%9E%E8%AE%AD9/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MySQL实训9-MySQL编程基础</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/2021%E5%91%A8%E8%AE%B0/">2021周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2022%E5%91%A8%E8%AE%B0/">2022周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/2023%E5%91%A8%E8%AE%B0/">2023周记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Compass/">Compass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Write-Something%E2%80%A6%E2%80%A6/">Write Something……</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%9E%E8%AE%AD/">实训</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/">室内设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%B0%E4%BA%8B%E6%9C%AC/">记事本</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Office/" rel="tag">Office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PTA/" rel="tag">PTA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%A8%E8%AE%B0/" rel="tag">周记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" rel="tag">大学生创新基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AF%BC%E8%88%AA/" rel="tag">导航</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%81%E6%96%87/" rel="tag">征文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91/" rel="tag">电脑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" rel="tag">目标设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" rel="tag">记事本</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 14.29px;">C</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 15.71px;">Hexo</a> <a href="/tags/Java/" style="font-size: 18.57px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 11.43px;">JavaScript</a> <a href="/tags/MySQL/" style="font-size: 17.14px;">MySQL</a> <a href="/tags/Office/" style="font-size: 11.43px;">Office</a> <a href="/tags/PTA/" style="font-size: 10px;">PTA</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/tags/%E5%91%A8%E8%AE%B0/" style="font-size: 20px;">周记</a> <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%94%9F%E5%88%9B%E6%96%B0%E5%9F%BA%E7%A1%80/" style="font-size: 11.43px;">大学生创新基础</a> <a href="/tags/%E5%AF%BC%E8%88%AA/" style="font-size: 10px;">导航</a> <a href="/tags/%E5%BE%81%E6%96%87/" style="font-size: 10px;">征文</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 17.14px;">爬虫</a> <a href="/tags/%E7%94%B5%E8%84%91/" style="font-size: 10px;">电脑</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" style="font-size: 11.43px;">电脑游戏</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">目标设计</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" style="font-size: 12.86px;">笔记本</a> <a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 14.29px;">记事本</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/04/16/2023%E5%91%A8%E8%AE%B0-4-10-4-16/">周记(4.10-4.16)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/11/%E7%BD%91%E5%9D%80%E5%AF%BC%E8%88%AA/">网址导航</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/09/2023%E5%91%A8%E8%AE%B0-04-03-04-09/">周记(04.03-04.09)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/03/%E8%A7%84%E5%88%92-%E5%8F%98%E9%9D%A9-%E5%B1%95%E6%9C%9B/">规划-变革-展望</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/03/2023%E5%91%A8%E8%AE%B0-03-27-04-02/">周记(03.27-04.02)</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+block aside-block
+  - 
+    const encrypted = page.encrypt || page.password
+    const tocContent = encrypted === undefined ? toc(page.content, theme.toc) : toc(page.origin, theme.toc)
+  if (tocContent.length > 0)
+    #toc-div(style=encrypted !== undefined?"display:none":"")
+      h1 #{__('post.index')}
+      |!{tocContent}
