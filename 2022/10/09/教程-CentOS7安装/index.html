@@ -1,332 +1,121 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>教程-CentOS7安装 | AlaxEleven&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="WIndows11 中 Vmware Workstations16 安装CentOS 7[TOC] 1、准备Windows版本是 Windows 11 专业版 版本   22H2 安装日期   ‎2022&#x2F;‎6&#x2F;‎25 操作系统版本   22623.730 体验   Windows Feature Experience Pack 1000.22636.1000.0 VMwar">
-<meta property="og:type" content="article">
-<meta property="og:title" content="教程-CentOS7安装">
-<meta property="og:url" content="https://czh2455041082.github.io/2022/10/09/%E6%95%99%E7%A8%8B-CentOS7%E5%AE%89%E8%A3%85/index.html">
-<meta property="og:site_name" content="AlaxEleven&#39;s Blog">
-<meta property="og:description" content="WIndows11 中 Vmware Workstations16 安装CentOS 7[TOC] 1、准备Windows版本是 Windows 11 专业版 版本   22H2 安装日期   ‎2022&#x2F;‎6&#x2F;‎25 操作系统版本   22623.730 体验   Windows Feature Experience Pack 1000.22636.1000.0 VMwar">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/617a092cfc64494c812cd9abdcb7505c.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/f000c018a4254ebbb6e9bdeecb0634e6.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2360d13015bc4ea5b17f2e29c856b98f.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/c0d78abd24834bf5b16362a08f3bbbb6.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/f523d1122c804919b120e02fe5f53b1e.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/8821c1b6d4e8497abed691db0d3286f7.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/d9f6472bc6fc4f278e9a1f07c8ea8837.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/e9a805cdfacd473fb6d6d588a8a376be.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/83e7b76c4cd94ec698ce95512ec21787.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/026e955abd9442008ee73f1e4b226731.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/6ac34e172dc94676b1523e7c3b537965.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/7f758303fe6f401392424c1937fd544a.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/e4623bc69ec7448ca73bc69a0833f49f.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/aa99930ceaec4ddb9cc40ac509e9960a.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/634349a353704edf873ec20213c5d769.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/0a5cba59e13a41b1bd7d8a5f37445147.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2980571685b54dfb88aa7a9eec37ec74.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/4a182f37838c4761ba23f94d28795145.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/784696b3bb1b484fa7e9bdc415eefa19.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/25a57f9fae624b4996715faa10a191e1.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/e9f3cd2619e240edbf3c0ad5c8a47e9f.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/3076b160ee26450488aeb24ab4e84c03.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/b1d5ad78cd4745f6830b006276cf8859.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/5d92dc08a3e74a8aadfede33fa9146fc.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/9bac5f45373f4050ba361c9f2b5554be.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/61970222f12247a0a6290065b3582253.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/c0ced9570f6145ae994258d7bd0e08c6.png">
-<meta property="article:published_time" content="2022-10-09T15:14:10.000Z">
-<meta property="article:modified_time" content="2022-10-09T15:30:20.727Z">
-<meta property="article:author" content="Alax Eleven">
-<meta property="article:tag" content="分布式">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/617a092cfc64494c812cd9abdcb7505c.png">
-  
-    <link rel="alternate" href="/atom.xml" title="AlaxEleven's Blog" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">AlaxEleven&#39;s Blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://czh2455041082.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-教程-CentOS7安装" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/10/09/%E6%95%99%E7%A8%8B-CentOS7%E5%AE%89%E8%A3%85/" class="article-date">
-  <time class="dt-published" datetime="2022-10-09T15:14:10.000Z" itemprop="datePublished">2022-10-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      教程-CentOS7安装
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
+<!DOCTYPE html><html lang="en" theme-mode="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>教程-CentOS7安装 | AlaxEleven's Blog</title><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><script>var config = {"root":"/","search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}}</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light')
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark')
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg');
+ --light-background: url('/img/bk.jpg');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script async src="//unpkg.com/valine/dist/Valine.min.js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {new Valine({
+ el: '#valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 'This comment is sent by Penguin Logistics.'
+ , path: window.location.pathname
+});document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.busuanzi'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><script class="pjax-js">reset= () => {new Valine({
+ el: '#valine'
+ , appId: '0S3zxjMw28KEnsCehhDJ3wiT-9Nh9j0Va'
+ , appKey: 'yOGHPh6zhpaj0HXG9weXSQqc' , placeholder: 'This comment is sent by Penguin Logistics.'
+ , path: window.location.pathname
+});document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);reset()})</script><meta name="generator" content="Hexo 7.2.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>教程-CentOS7安装</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2022-10-09T15:14:10.000Z" id="date"> 2022-10-09</time></div></span><br><span>Last Update: <div class="control"><time datetime="2022-10-09T15:30:20.727Z" id="updated"> 2022-10-09</time></div></span></div></div><hr><div id="post-content"><hr>
 <h1 id="WIndows11-中-Vmware-Workstations16-安装CentOS-7"><a href="#WIndows11-中-Vmware-Workstations16-安装CentOS-7" class="headerlink" title="WIndows11 中 Vmware Workstations16 安装CentOS 7"></a>WIndows11 中 Vmware Workstations16 安装CentOS 7</h1><p>[TOC]</p>
 <h2 id="1、准备"><a href="#1、准备" class="headerlink" title="1、准备"></a>1、准备</h2><p>Windows版本是</p>
 <p>Windows 11 专业版<br> 版本   22H2<br> 安装日期   ‎2022&#x2F;‎6&#x2F;‎25<br> 操作系统版本   22623.730<br> 体验   Windows Feature Experience Pack 1000.22636.1000.0</p>
 <p>VMware版本是 16.2.4 build-20089737</p>
 <p>CentOS的版本是 CentOS-7-x86_64-DVD-1908</p>
 <h2 id="2、镜像导入安装及配置"><a href="#2、镜像导入安装及配置" class="headerlink" title="2、镜像导入安装及配置"></a>2、镜像导入安装及配置</h2><p>1.点击 创建新的虚拟机</p>
-<p><img src="https://img-blog.csdnimg.cn/617a092cfc64494c812cd9abdcb7505c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p><img src="https://img-blog.csdnimg.cn/f000c018a4254ebbb6e9bdeecb0634e6.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/2360d13015bc4ea5b17f2e29c856b98f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/617a092cfc64494c812cd9abdcb7505c.png'><img src="https://img-blog.csdnimg.cn/617a092cfc64494c812cd9abdcb7505c.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/f000c018a4254ebbb6e9bdeecb0634e6.png'><img src="https://img-blog.csdnimg.cn/f000c018a4254ebbb6e9bdeecb0634e6.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/2360d13015bc4ea5b17f2e29c856b98f.png'><img src="https://img-blog.csdnimg.cn/2360d13015bc4ea5b17f2e29c856b98f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> <strong>虚拟机名称和虚拟机储存的位置都可以自定义</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/c0d78abd24834bf5b16362a08f3bbbb6.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/c0d78abd24834bf5b16362a08f3bbbb6.png'><img src="https://img-blog.csdnimg.cn/c0d78abd24834bf5b16362a08f3bbbb6.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> 内存依据需求即可 我们使用默认20G</p>
-<p> <img src="https://img-blog.csdnimg.cn/f523d1122c804919b120e02fe5f53b1e.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/f523d1122c804919b120e02fe5f53b1e.png'><img src="https://img-blog.csdnimg.cn/f523d1122c804919b120e02fe5f53b1e.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> 点击<strong>自定义硬件</strong></p>
-<p><img src="https://img-blog.csdnimg.cn/8821c1b6d4e8497abed691db0d3286f7.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/8821c1b6d4e8497abed691db0d3286f7.png'><img src="https://img-blog.csdnimg.cn/8821c1b6d4e8497abed691db0d3286f7.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>内存和处理器根据自身电脑配置即可（我选择4GB内存和4处理器X1核）</p>
 <p>移除USB控制器和打印机（有需要可以保留）</p>
-<p><img src="https://img-blog.csdnimg.cn/d9f6472bc6fc4f278e9a1f07c8ea8837.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/d9f6472bc6fc4f278e9a1f07c8ea8837.png'><img src="https://img-blog.csdnimg.cn/d9f6472bc6fc4f278e9a1f07c8ea8837.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> 点击新CD&#x2F;DVD 选择下载好的centos镜像文件.iso </p>
-<p><img src="https://img-blog.csdnimg.cn/e9a805cdfacd473fb6d6d588a8a376be.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"><img src="https://img-blog.csdnimg.cn/83e7b76c4cd94ec698ce95512ec21787.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/e9a805cdfacd473fb6d6d588a8a376be.png'><img src="https://img-blog.csdnimg.cn/e9a805cdfacd473fb6d6d588a8a376be.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动" class='item-img' data-src='data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=='><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>完成后点击完成即可</p>
-<p><img src="https://img-blog.csdnimg.cn/026e955abd9442008ee73f1e4b226731.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/026e955abd9442008ee73f1e4b226731.png'><img src="https://img-blog.csdnimg.cn/026e955abd9442008ee73f1e4b226731.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <h2 id="3、CenOS7安装"><a href="#3、CenOS7安装" class="headerlink" title="3、CenOS7安装"></a>3、CenOS7安装</h2><p>开启虚拟机</p>
-<p><img src="https://img-blog.csdnimg.cn/6ac34e172dc94676b1523e7c3b537965.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/6ac34e172dc94676b1523e7c3b537965.png'><img src="https://img-blog.csdnimg.cn/6ac34e172dc94676b1523e7c3b537965.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p>双击 鼠标进入虚拟机，按键盘的↑让install centos7发光 再按下enter回车执行。</p>
 <p>按ctrl+alt切换鼠标回windows</p>
-<p><img src="https://img-blog.csdnimg.cn/7f758303fe6f401392424c1937fd544a.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/e4623bc69ec7448ca73bc69a0833f49f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> 滑到底选中文<img src="https://img-blog.csdnimg.cn/aa99930ceaec4ddb9cc40ac509e9960a.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/634349a353704edf873ec20213c5d769.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/0a5cba59e13a41b1bd7d8a5f37445147.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/7f758303fe6f401392424c1937fd544a.png'><img src="https://img-blog.csdnimg.cn/7f758303fe6f401392424c1937fd544a.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/e4623bc69ec7448ca73bc69a0833f49f.png'><img src="https://img-blog.csdnimg.cn/e4623bc69ec7448ca73bc69a0833f49f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 滑到底选中文<img src="https://img-blog.csdnimg.cn/aa99930ceaec4ddb9cc40ac509e9960a.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/aa99930ceaec4ddb9cc40ac509e9960a.png'><img src="https://img-blog.csdnimg.cn/aa99930ceaec4ddb9cc40ac509e9960a.png" alt="img"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/634349a353704edf873ec20213c5d769.png'><img src="https://img-blog.csdnimg.cn/634349a353704edf873ec20213c5d769.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/0a5cba59e13a41b1bd7d8a5f37445147.png'><img src="https://img-blog.csdnimg.cn/0a5cba59e13a41b1bd7d8a5f37445147.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
 <p> 打开网络</p>
-<p><img src="https://img-blog.csdnimg.cn/2980571685b54dfb88aa7a9eec37ec74.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> 修改主机名打开网络<img src="https://img-blog.csdnimg.cn/4a182f37838c4761ba23f94d28795145.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/2980571685b54dfb88aa7a9eec37ec74.png'><img src="https://img-blog.csdnimg.cn/2980571685b54dfb88aa7a9eec37ec74.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 修改主机名打开网络<img src="https://img-blog.csdnimg.cn/4a182f37838c4761ba23f94d28795145.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/4a182f37838c4761ba23f94d28795145.png'><img src="https://img-blog.csdnimg.cn/4a182f37838c4761ba23f94d28795145.png" alt="img"></p>
 <p> <strong>软件选择</strong></p>
 <p>根据需求选择安装，我们选择最小安装</p>
-<p>如果需要安装桌面（可视化）就选择GNOME并且安装右侧全部<img src="https://img-blog.csdnimg.cn/784696b3bb1b484fa7e9bdc415eefa19.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p>（此图为展示 最小安装则跳过） <img src="https://img-blog.csdnimg.cn/25a57f9fae624b4996715faa10a191e1.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>如果需要安装桌面（可视化）就选择GNOME并且安装右侧全部<img src="https://img-blog.csdnimg.cn/784696b3bb1b484fa7e9bdc415eefa19.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/784696b3bb1b484fa7e9bdc415eefa19.png'><img src="https://img-blog.csdnimg.cn/784696b3bb1b484fa7e9bdc415eefa19.png" alt="img"></p>
+<p>（此图为展示 最小安装则跳过） <img src="https://img-blog.csdnimg.cn/25a57f9fae624b4996715faa10a191e1.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/25a57f9fae624b4996715faa10a191e1.png'><img src="https://img-blog.csdnimg.cn/25a57f9fae624b4996715faa10a191e1.png" alt="img"></p>
 <p> 开始安装程序</p>
-<p>点击root密码和创建用户分别设置<img src="https://img-blog.csdnimg.cn/e9f3cd2619e240edbf3c0ad5c8a47e9f.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/3076b160ee26450488aeb24ab4e84c03.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> <img src="https://img-blog.csdnimg.cn/b1d5ad78cd4745f6830b006276cf8859.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> 等待进度条安装<img src="https://img-blog.csdnimg.cn/5d92dc08a3e74a8aadfede33fa9146fc.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
-<p> 重启以完成安装<img src="https://img-blog.csdnimg.cn/9bac5f45373f4050ba361c9f2b5554be.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p>点击root密码和创建用户分别设置<img src="https://img-blog.csdnimg.cn/e9f3cd2619e240edbf3c0ad5c8a47e9f.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/e9f3cd2619e240edbf3c0ad5c8a47e9f.png'><img src="https://img-blog.csdnimg.cn/e9f3cd2619e240edbf3c0ad5c8a47e9f.png" alt="img"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/3076b160ee26450488aeb24ab4e84c03.png'><img src="https://img-blog.csdnimg.cn/3076b160ee26450488aeb24ab4e84c03.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/b1d5ad78cd4745f6830b006276cf8859.png'><img src="https://img-blog.csdnimg.cn/b1d5ad78cd4745f6830b006276cf8859.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 等待进度条安装<img src="https://img-blog.csdnimg.cn/5d92dc08a3e74a8aadfede33fa9146fc.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/5d92dc08a3e74a8aadfede33fa9146fc.png'><img src="https://img-blog.csdnimg.cn/5d92dc08a3e74a8aadfede33fa9146fc.png" alt="img"></p>
+<p> 重启以完成安装<img src="https://img-blog.csdnimg.cn/9bac5f45373f4050ba361c9f2b5554be.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/9bac5f45373f4050ba361c9f2b5554be.png'><img src="https://img-blog.csdnimg.cn/9bac5f45373f4050ba361c9f2b5554be.png" alt="img"></p>
 <p>输入root和root密码登录即可</p>
-<p> <img src="https://img-blog.csdnimg.cn/61970222f12247a0a6290065b3582253.png" alt="img"></p>
-<p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"><img src="https://img-blog.csdnimg.cn/c0ced9570f6145ae994258d7bd0e08c6.png" alt="img"><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p class='item-img' data-src='https://img-blog.csdnimg.cn/61970222f12247a0a6290065b3582253.png'><img src="https://img-blog.csdnimg.cn/61970222f12247a0a6290065b3582253.png" alt="img"></p>
+<p class='item-img' data-src='data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=='><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"><img src="https://img-blog.csdnimg.cn/c0ced9570f6145ae994258d7bd0e08c6.png" alt="img" class='item-img' data-src='https://img-blog.csdnimg.cn/c0ced9570f6145ae994258d7bd0e08c6.png'><img src="https://img-blog.csdnimg.cn/c0ced9570f6145ae994258d7bd0e08c6.png" alt="img"></p>
 <p> WIndows11 中 Vmware Workstations16 安装CentOS 7 到此结束</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://czh2455041082.github.io/2022/10/09/%E6%95%99%E7%A8%8B-CentOS7%E5%AE%89%E8%A3%85/" data-id="clvex10my000rs8qe97tuh00g" data-title="教程-CentOS7安装" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/10/19/%E6%95%99%E7%A8%8B-Hadoop%E9%85%8D%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          教程-Hadoop的HDFS配置
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/09/24/%E6%95%99%E7%A8%8B-COD19/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">教程(COD19公开测试注册和安装)</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Write-Something%E2%80%A6%E2%80%A6/">Write Something……</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%A4%E5%86%85%E8%AE%BE%E8%AE%A1/">室内设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/">电脑游戏</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%A7%91%E6%99%AE/">科普</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E6%A1%88%E6%95%B4%E7%90%86/">答案整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AD%94%E7%96%91/">答疑</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Office/" rel="tag">Office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="tag">分布式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BE%81%E6%96%87/" rel="tag">征文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag">游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" rel="tag">电脑游戏</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" rel="tag">目标设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" rel="tag">笔记本</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" rel="tag">记事本</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 12.5px;">JavaScript</a> <a href="/tags/Office/" style="font-size: 12.5px;">Office</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 10px;">分布式</a> <a href="/tags/%E5%BE%81%E6%96%87/" style="font-size: 10px;">征文</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F/" style="font-size: 12.5px;">电脑游戏</a> <a href="/tags/%E7%9B%AE%E6%A0%87%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">目标设计</a> <a href="/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/" style="font-size: 15px;">笔记本</a> <a href="/tags/%E8%AE%B0%E4%BA%8B%E6%9C%AC/" style="font-size: 17.5px;">记事本</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">January 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/04/25/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/03/%E8%A7%84%E5%88%92-%E5%8F%98%E9%9D%A9-%E5%B1%95%E6%9C%9B/">规划-变革-展望</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/26/%E6%95%99%E7%A8%8B-%E6%B5%99%E7%BB%8F%E9%99%A2%E6%95%99%E8%82%B2%E9%82%AE%E7%AE%B1%E6%B3%A8%E5%86%8C%E5%92%8C%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">教程-浙经院教育邮箱注册和使用指南</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/22/CAD%E7%AC%94%E8%AE%B0/">CAD笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/22/JavaScript%E7%AC%94%E8%AE%B0/">JavaScript笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 Alax Eleven<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2022/10/19/%E6%95%99%E7%A8%8B-Hadoop%E9%85%8D%E7%BD%AE/">← Next 教程-Hadoop的HDFS配置</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2022/09/24/%E6%95%99%E7%A8%8B-COD19/">教程(COD19公开测试注册和安装) Prev →</a></div></div></div><div id="comments"><div id="valine"></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">Alax Eleven</a></h1><div id="description"><p></p></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#WIndows11-%E4%B8%AD-Vmware-Workstations16-%E5%AE%89%E8%A3%85CentOS-7"><span class="toc-number">1.</span> <span class="toc-text">WIndows11 中 Vmware Workstations16 安装CentOS 7</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">1、准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E9%95%9C%E5%83%8F%E5%AF%BC%E5%85%A5%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">2、镜像导入安装及配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81CenOS7%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.</span> <span class="toc-text">3、CenOS7安装</span></a></li></ol></li></ol></div></div><footer><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas></body></html>
